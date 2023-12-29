@@ -10,7 +10,6 @@ import {
     TableCell,
     Typography,
     TableContainer,
-    LinearProgress,
     Paper,
     Link
 } from '@mui/material';
@@ -30,20 +29,13 @@ import mockData from '../mock/mockData';
 // assets
 import App1 from "../assets/placeholderAppsLogos/App1.svg";
 import EcosystemLogo1 from "../assets/ecosystems/EcosystemLogo1.svg";
-import Community from "../assets/Community.svg";
-import Core from "../assets/Core.svg";
+
 
 import { fNumber } from '../utils/format';
 import { Client } from '../utils/client';
 import { Waypoint } from 'react-waypoint';
 
 
-const StyledLinearProgress = styled((props) => <LinearProgress {...props} />)(
-    ({ theme }) => ({
-
-
-    }),
-);
 
 function SearchNotFound({ searchQuery = '', ...other }) {
     return (
@@ -255,7 +247,8 @@ export default function MainTable({ search }) {
                                             sx={{
                                                 height: '5rem',
                                                 paddingLeft: { xl: '3rem', lg: '1.5rem' },
-                                                border: 'none'
+                                                border: 'none',
+                                                backgroundColor: 'tableColor.main'
                                             }}
                                         >
                                             <Typography
@@ -285,7 +278,8 @@ export default function MainTable({ search }) {
                                             padding="none"
                                             sx={{
                                                 height: '5rem',
-                                                border: 'none'
+                                                border: 'none',
+                                                backgroundColor: 'tableColor.main'
                                             }}
                                         >
                                             <Stack direction='row' alignItems='center'>
@@ -325,7 +319,8 @@ export default function MainTable({ search }) {
                                             scope="row"
                                             padding="none"
                                             sx={{
-                                                border: 'none'
+                                                border: 'none',
+                                                backgroundColor: 'tableColor.main'
                                             }}
                                         >
 
@@ -338,7 +333,8 @@ export default function MainTable({ search }) {
                                             scope="row"
                                             padding="none"
                                             sx={{
-                                                border: 'none'
+                                                border: 'none',
+                                                backgroundColor: 'tableColor.main'
                                             }}
                                         >
                                             <Typography
@@ -361,7 +357,8 @@ export default function MainTable({ search }) {
                                             scope="row"
                                             padding="none"
                                             sx={{
-                                                border: 'none'
+                                                border: 'none',
+                                                backgroundColor: 'tableColor.main'
                                             }}
                                         >
                                             <Typography
@@ -386,6 +383,7 @@ export default function MainTable({ search }) {
                                             sx={{
                                                 border: 'none',
                                                 paddingRight: '3rem',
+                                                backgroundColor: 'tableColor.main'
                                             }}
                                         >
                                             <ReactApexChart
@@ -408,7 +406,8 @@ export default function MainTable({ search }) {
                                             scope="row"
                                             padding="none"
                                             sx={{
-                                                border: 'none'
+                                                border: 'none',
+                                                backgroundColor: 'tableColor.main'
                                             }}
                                         >
                                             <Typography variant="subtitle2" noWrap>
@@ -424,7 +423,8 @@ export default function MainTable({ search }) {
                                             scope="row"
                                             padding="none"
                                             sx={{
-                                                border: 'none'
+                                                border: 'none',
+                                                backgroundColor: 'tableColor.main'
                                             }}
                                         >
                                             <Typography variant="subtitle2" noWrap>
@@ -438,7 +438,8 @@ export default function MainTable({ search }) {
                                             scope="row"
                                             padding="none"
                                             sx={{
-                                                border: 'none'
+                                                border: 'none',
+                                                backgroundColor: 'tableColor.main'
                                             }}
                                         >
                                             <Typography variant="subtitle2" noWrap>

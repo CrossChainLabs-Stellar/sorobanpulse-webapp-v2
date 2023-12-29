@@ -11,6 +11,8 @@ import DAppsPage from './components/DAppsPage';
 import HighlightsPage from './components/HighlightsPage';
 import Metrics from './components/Metrics';
 
+import Circles from './components/Circles';
+
 function App() {
   const [mode, setMode] = useState('light');
   const [value, setValue] = useState(0);
@@ -24,6 +26,7 @@ function App() {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme} >
+        <Circles />
         <CssBaseline />
         <Header />
         <SorobanBox value={value} handleChange={handleChange} />

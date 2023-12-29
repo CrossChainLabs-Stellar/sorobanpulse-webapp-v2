@@ -3,8 +3,6 @@ import { AppBar, Toolbar, Typography, Grid, Box } from '@mui/material';
 
 import logo from "../assets/logo.svg";
 
-const BG_COLOR = '#ffffff';
-
 const HEIGHT = 92;
 
 
@@ -25,7 +23,7 @@ const TextTypography = styled(Typography)(({ theme }) => ({
 export default function Header() {
 
     return (
-        <AppBar sx={{ boxShadow: 0, bgcolor: BG_COLOR }}>
+        <AppBar sx={{ boxShadow: 0, bgcolor: 'backgroundColor.main' }}>
             <ToolbarStyle disableGutters sx={{ height: '5em' }}>
                 <Grid container>
                     <Grid item xs={12} md={0} />

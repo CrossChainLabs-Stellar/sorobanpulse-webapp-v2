@@ -23,6 +23,9 @@ const getPallete = (mode) => {
         tabsColors: {
             main: '#6d6d6d',
         },
+        tableColor: {
+            main: '#fff',
+        },
         linkColors: {
             logo: '#fff',
             main: '#000',
@@ -52,6 +55,9 @@ const getPallete = (mode) => {
         },
         tabsColors: {
             main: '#a7a7a7',
+        },
+        tableColor: {
+            main: '#333333',
         },
         linkColors: {
             logo: '#2e2e2e',
