@@ -143,9 +143,8 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '20%',
                         //     md: '7.5rem'
                         // },
-                        width: '11%',
                         backgroundColor: "#FDDA24",
-                        paddingLeft: '3rem',
+                        paddingLeft: { xl: '3rem', lg: '1.5rem' },
                         borderTopLeftRadius: '10px',
                         borderBottomLeftRadius: '10px',
                     }}
@@ -196,7 +195,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '20%',
                         //     md: '7.5rem'
                         // },
-                        width: '12%',
+                        // width: '12%',
                         backgroundColor: "#FDDA24",
                     }}
                 >
@@ -246,7 +245,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '12%',
                         //     md: '10rem',
                         // },
-                        width: '11%',
+                        // width: '11%',
                         backgroundColor: "#FDDA24"
                     }}
                 >
@@ -283,7 +282,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '13%',
                         //     md: '10rem',
                         // },
-                        width: '11%',
+                        // width: '11%',
                         backgroundColor: "#FDDA24"
                     }}
                 >
@@ -333,7 +332,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '13%',
                         //     md: '10rem',
                         // },
-                        width: '11%',
+                        // width: '11%',
                         backgroundColor: "#FDDA24"
                     }}
                 >
@@ -383,7 +382,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '20%',
                         //     md: '15rem'
                         // },
-                        width: '11%',
+                        // width: '11%',
                         backgroundColor: "#FDDA24",
                     }}
                 >
@@ -446,7 +445,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '13%',
                         //     md: '10rem'
                         // },
-                        width: '11%',
+                        // width: '11%',
                         backgroundColor: "#FDDA24",
                     }}
                 >
@@ -497,7 +496,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '12%',
                         //     md: '12rem'
                         // },
-                        width: '11%',
+                        // width: '11%',
                         backgroundColor: "#FDDA24",
                     }}
                 >

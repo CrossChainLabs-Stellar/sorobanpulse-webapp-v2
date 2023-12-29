@@ -198,6 +198,7 @@ export default function MainTable({ search }) {
             <TableContainer
                 sx={{
                     // minWidth: 800,
+                    // width: 'max-content',
                     maxHeight: '86rem',
                 }}
             // ref={tableEl}
@@ -253,7 +254,7 @@ export default function MainTable({ search }) {
                                             padding="none"
                                             sx={{
                                                 height: '5rem',
-                                                paddingLeft: '3rem',
+                                                paddingLeft: { xl: '3rem', lg: '1.5rem' },
                                                 border: 'none'
                                             }}
                                         >
@@ -261,13 +262,13 @@ export default function MainTable({ search }) {
                                                 variant="subtitle2"
                                                 noWrap
                                                 sx={{
-                                                    maxWidth: {
-                                                        xxl: '20rem',
-                                                        xl: '20rem',
-                                                        lg: '20rem',
-                                                        md: '75%',
-                                                        sm: '75%'
-                                                    },
+                                                    // maxWidth: {
+                                                    //     xxl: '20rem',
+                                                    //     xl: '20rem',
+                                                    //     lg: '20rem',
+                                                    //     md: '75%',
+                                                    //     sm: '75%'
+                                                    // },
                                                     whiteSpace: 'nowrap',
                                                     overflow: 'hidden',
                                                     textOverflow: 'ellipsis',
@@ -293,13 +294,14 @@ export default function MainTable({ search }) {
                                                     variant="subtitle2"
                                                     noWrap
                                                     sx={{
-                                                        maxWidth: {
-                                                            xxl: '14rem',
-                                                            xl: '14rem',
-                                                            lg: '14rem',
-                                                            md: '75%',
-                                                            sm: '75%'
-                                                        },
+                                                        // maxWidth: {
+                                                        //     xxl: '14rem',
+                                                        //     xl: '14rem',
+                                                        //     lg: '14rem',
+                                                        //     md: '75%',
+                                                        //     sm: '75%'
+                                                        // },
+                                                        maxWidth: '50%',
                                                         whiteSpace: 'nowrap',
                                                         overflow: 'hidden',
                                                         textOverflow: 'ellipsis',
@@ -343,7 +345,7 @@ export default function MainTable({ search }) {
                                                 variant="subtitle2"
                                                 noWrap
                                                 sx={{
-                                                    maxWidth: { xl: '18rem', lg: '10rem' },
+                                                    // maxWidth: { xl: '18rem', lg: '10rem' },
                                                     whiteSpace: 'nowrap',
                                                     overflow: 'hidden',
                                                     textOverflow: 'ellipsis',
@@ -366,7 +368,7 @@ export default function MainTable({ search }) {
                                                 variant="subtitle2"
                                                 noWrap
                                                 sx={{
-                                                    maxWidth: { xl: '18rem', lg: '10rem' },
+                                                    // maxWidth: { xl: '18rem', lg: '10rem' },
                                                     whiteSpace: 'nowrap',
                                                     overflow: 'hidden',
                                                     textOverflow: 'ellipsis',

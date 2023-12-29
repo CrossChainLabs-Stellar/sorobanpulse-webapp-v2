@@ -9,7 +9,7 @@ const NewsCards = ({ titleShort, titleLong, text, mainColor, secondaryColor }) =
             sx={{
                 backgroundColor: mainColor,
                 padding: '2rem',
-                width: '22rem',
+                width: { xl: '22rem', lg: '18rem', },
                 height: '25rem',
                 borderRadius: '5px',
                 boxShadow: 1

@@ -18,8 +18,8 @@ export default function Metrics() {
             marginX: {
                 xxl: '24rem',
                 xl: '20rem',
-                lg: '8rem',
                 lg_xl: '8rem',
+                lg: '8rem',
                 md: '4rem',
                 sm: '2rem',
             },
