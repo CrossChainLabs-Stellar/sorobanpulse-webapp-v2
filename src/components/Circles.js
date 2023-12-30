@@ -1,55 +1,59 @@
-import zIndex from '@mui/material/styles/zIndex';
 import React from 'react';
-import GriStanga from '../assets/GriStanga.svg';
-import GriDr from '../assets/GriDr.svg';
-import GalbenDr from '../assets/GalbenDr.svg';
-import GalbenStanga from '../assets/GalbenStanga.svg';
 
-const Circles = () => {
-    const circles = [
+
+import GriSt from '../assets/circles/GriSt.svg';
+import GriDr from '../assets/circles/GriDr.svg';
+import GalbenDr from '../assets/circles/GalbenDr.svg';
+import GablenSt from '../assets/circles/GalbenSt.svg';
+
+import DGalbenDr from '../assets/circles/DGalbenDr.svg';
+import DGalbenSt from '../assets/circles/DGalbenSt.svg';
+import DGriDr from '../assets/circles/DGriDr.svg';
+import DGriSt from '../assets/circles/DGriSt.svg';
+
+const Circles = ({ mode }) => {
+    const positions = [
         {
             top: 50,
-            left: 800,
-            backgroundImage: `url(${GalbenDr})`,
+            left: 1000,
+            backgroundImage: mode === 'light' ? GalbenDr : DGalbenDr,
         },
         {
-            top: 500,
-            left: 0,
-            backgroundImage: `url(${GriStanga})`,
+            top: 600,
+            left: -200,
+            backgroundImage: mode === 'light' ? GriSt : DGriSt,
         },
         {
-            top: 900,
-            left: 900,
-            backgroundImage: `url(${GriDr})`,
+            top: 1000,
+            left: 1000,
+            backgroundImage: mode === 'light' ? GriDr : DGriDr,
         },
         {
             top: 1500,
-            left: 0,
-            backgroundImage: `url(${GalbenStanga})`,
+            left: -200,
+            backgroundImage: mode === 'light' ? GablenSt : DGalbenSt,
         }
     ];
 
-    return (
+    const circles = positions.map((position, index) => (
         <div
+            key={index}
             style={{
-                display: 'flex',
-                width: '100vw',
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundSize: 'cover'
+                position: 'absolute',
+                top: position.top,
+                left: position.left,
+                // width: '100%',
+                // height: '100%',
+                zIndex: -1,
             }}
         >
-            {circles.map((circle) => (
-                <div key={circle.id} style={{
-                    position: 'absolute',
-                    width: '100%',
-                    height: '100%',
-                    zIndex: '-1',
-                    backgroundRepeat: 'no-repeat',
-                    ...circle,
-                }}>
-                </div>
-            ))}
+            <img src={position.backgroundImage} alt="Eclipse" />
+        </div>
+    ));
+
+    return (
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden' }}>
+            {circles}
         </div>
     );
 };

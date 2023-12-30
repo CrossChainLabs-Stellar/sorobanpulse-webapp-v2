@@ -26,7 +26,7 @@ function App() {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme} >
-        <Circles />
+        <Circles mode={mode} />
         <CssBaseline />
         <Header />
         <SorobanBox value={value} handleChange={handleChange} />
