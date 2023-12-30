@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 
+import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material';
+
 import TopCard from "./highlightCards/TopCard";
 import NewsCards from "./highlightCards/NewsCards";
 
 const HighlightsPage = () => {
     const mapper = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.down('xl'));
     return (
         <Box sx={{
-
             marginBottom: '5rem'
         }}
         >
@@ -17,7 +21,7 @@ const HighlightsPage = () => {
                 spacing={3}
                 sx={{
                     paddingY: '2rem',
-                    paddingX: '3rem'
+                    paddingX: { xl: '8rem', lg: '4rem' }
                 }}
             >
 
@@ -57,7 +61,7 @@ const HighlightsPage = () => {
                     spacing={3}
                     sx={{
                         paddingY: '2rem',
-                        paddingX: '3rem'
+                        paddingX: { xl: '6rem', lg: '2rem' }
                     }}
                 >
                     <Grid item xs={4} md={4} lg={4}>
@@ -162,7 +166,7 @@ const HighlightsPage = () => {
 
             <Typography
                 sx={{
-                    marginLeft: '5rem',
+                    marginLeft: { xl: '8rem', lg: '4rem' },
                     marginTop: '3rem',
                     fontSize: '24px',
                     fontWeight: '600'
@@ -174,10 +178,10 @@ const HighlightsPage = () => {
 
             <Grid
                 container
-                spacing={2}
+                spacing={matches ? 8 : 12}
                 sx={{
                     paddingY: '2rem',
-                    paddingX: '8rem'
+                    paddingX: { xl: '8rem', lg: '4rem' }
                 }}
             >
                 {mapper.map((item, index) => {

@@ -24,21 +24,18 @@ export default function Header() {
 
     return (
         <AppBar sx={{ boxShadow: 0, bgcolor: 'backgroundColor.main' }}>
-            <ToolbarStyle disableGutters sx={{ height: '5em' }}>
-                <Grid container>
-                    <Grid item xs={12} md={0} />
-                    <Box
-                        component="img"
-                        src={logo}
-                        alt=""
-                        sx={{
-                            maxWidth: 45,
-                            marginRight: '0.7rem',
-                            marginLeft: { xl: '21rem', lg: '5.5rem' }
-                        }}
-                    />
-                    <TextTypography>SorobanPulse</TextTypography>
-                </Grid>
+            <ToolbarStyle disableGutters sx={{ height: '5em', padding: 0 }}>
+                <Box
+                    component="img"
+                    src={logo}
+                    alt=""
+                    sx={{
+                        maxWidth: 45,
+                        marginRight: '0.7rem',
+                        marginLeft: { xl: '8rem', lg: '4rem' }
+                    }}
+                />
+                <TextTypography>SorobanPulse</TextTypography>
             </ToolbarStyle>
         </AppBar>
     );

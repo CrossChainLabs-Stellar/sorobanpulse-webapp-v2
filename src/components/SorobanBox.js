@@ -15,7 +15,7 @@ export default function SorobanBox({ value, handleChange }) {
                 boxShadow: 0,
             }}
         >
-            <Tabs value={value} onChange={handleChange} sx={{ marginLeft: { xl: '23rem', lg: '7.5rem' } }}>
+            <Tabs value={value} onChange={handleChange} sx={{ marginLeft: { xl: '8rem', lg: '4rem' } }}>
                 <Tab label="DApps" sx={{ textTransform: 'none' }} />
                 <Tab label="Stellar Highlights" sx={{ textTransform: 'none' }} />
                 <Tab label="Soroban Metrics" sx={{ textTransform: 'none' }} />
