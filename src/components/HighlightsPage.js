@@ -13,7 +13,7 @@ const HighlightsPage = () => {
     const matches = useMediaQuery(theme.breakpoints.down('xl'));
     return (
         <Box sx={{
-            marginBottom: '5rem'
+            marginBottom: '5rem',
         }}
         >
             <Grid
@@ -21,40 +21,92 @@ const HighlightsPage = () => {
                 spacing={3}
                 sx={{
                     paddingY: '2rem',
-                    paddingX: { xl: '8rem', lg: '4rem' }
+                    paddingX: { xl: '8rem', lg: '4rem' },
                 }}
             >
 
-                <Grid item xs={12} md={12} lg={4}>
+                <Grid
+                    item
+                    xs={12} md={12} lg={4}
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                >
                     <TopCard
                         title='Fast to Finality'
                         text='The Stellar network transactions are confirmed within 5 seconds, with all time average ledger speed at 5.19s'
-                        boxStyling={{ boxShadow: 1, height: { xl: '12rem', lg: '15rem' }, width: { xl: '35rem', lg: '27rem' }, borderRadius: '10px', padding: '2rem', backgroundColor: '#fff' }}
+                        boxStyling={{
+                            boxShadow: 12,
+                            height: { xl: '12rem', lg: '15rem' },
+                            width: '33rem',
+                            borderRadius: '10px',
+                            padding: '2rem',
+                            backgroundColor: '#fff'
+                        }}
                         textStyling={{ marginLeft: '2rem', marginTop: '2rem', }}
                     />
                 </Grid>
 
-                <Grid item xs={12} md={12} lg={4}>
+                <Grid
+                    item
+                    xs={12} md={12} lg={4}
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                >
                     <TopCard
                         title='Energy-Efficient Design'
                         text='Research showed the Stellar network’s footprint is the equivalent to the greenhouse gas emissions from 33.7 US homes’ electricity use for one year.'
-                        boxStyling={{ boxShadow: 1, height: { xl: '12rem', lg: '15rem' }, width: { xl: '35rem', lg: '27rem' }, borderRadius: '10px', padding: '2rem', backgroundColor: '#fff' }}
+                        boxStyling={{
+                            boxShadow: 12,
+                            height: { xl: '12rem', lg: '15rem' },
+                            width: '33rem',
+                            borderRadius: '10px',
+                            padding: '2rem',
+                            backgroundColor: '#fff'
+                        }}
                         textStyling={{ marginLeft: '2rem', marginTop: '2rem' }}
                     />
                 </Grid>
 
-                <Grid item xs={12} md={12} lg={4}>
+                <Grid
+                    item
+                    xs={12} md={12} lg={4}
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                >
                     <TopCard
                         title='Affordable for Developers'
                         text='The Stellar network performs transactions for a fraction of a US penny, with the average transaction cost = .000002 XLM.'
-                        boxStyling={{ boxShadow: 1, height: { xl: '12rem', lg: '15rem' }, width: { xl: '35rem', lg: '27rem' }, borderRadius: '10px', padding: '2rem', backgroundColor: '#fff' }}
+                        boxStyling={{
+                            boxShadow: 12,
+                            height: { xl: '12rem', lg: '15rem' },
+                            width: '33rem',
+                            borderRadius: '10px',
+                            padding: '2rem',
+                            backgroundColor: '#fff'
+                        }}
                         textStyling={{ marginLeft: '2rem', marginTop: '2rem' }}
                     />
                 </Grid>
 
             </Grid>
 
-            <Box sx={{ backgroundColor: '#000', height: { xl: '40rem', lg: '45rem' }, opacity: '0.85', padding: '2rem' }}>
+            <Box
+                sx={{
+                    backgroundColor: '#2A2A2A',
+                    height: { xl: '40rem', lg: '45rem' },
+                    opacity: theme.palette.mode === 'light' ? '0.9' : 1,
+                    padding: '2rem'
+                }}
+            >
 
                 <Grid
                     container
@@ -64,99 +116,279 @@ const HighlightsPage = () => {
                         paddingX: { xl: '6rem', lg: '2rem' }
                     }}
                 >
-                    <Grid item xs={4} md={4} lg={4}>
-                        <Typography sx={{ color: '#fff', width: { xl: '35rem', lg: '27rem' }, fontWeight: '600' }} align="center">
+                    <Grid
+                        item
+                        xs={4} md={4} lg={4}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
+                        <Typography
+                            sx={{
+                                color: '#fff',
+                                width: '33rem',
+                                fontWeight: '600'
+                            }}
+                            align="center"
+                        >
                             BTC
                         </Typography>
                     </Grid>
 
-                    <Grid item xs={4} md={4} lg={4} >
-                        <Typography sx={{ color: '#fff', width: { xl: '35rem', lg: '27rem' }, fontWeight: '600' }} align="center">
+                    <Grid
+                        item
+                        xs={4} md={4} lg={4}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
+                        <Typography
+                            sx={{
+                                color: '#fff',
+                                width: '33rem',
+                                fontWeight: '600'
+                            }}
+                            align="center"
+                        >
                             XML
                         </Typography >
                     </Grid>
 
-                    <Grid item xs={4} md={4} lg={4}>
-                        <Typography sx={{ color: '#fff', width: { xl: '35rem', lg: '27rem' }, fontWeight: '600' }} align="center">
+                    <Grid
+                        item
+                        xs={4} md={4} lg={4}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
+                        <Typography
+                            sx={{
+                                color: '#fff',
+                                width: '33rem',
+                                fontWeight: '600'
+                            }}
+                            align="center"
+                        >
                             ETH
                         </Typography>
                     </Grid>
 
-                    <Grid item xs={4} md={4} lg={4}>
+                    <Grid
+                        item
+                        xs={4} md={4} lg={4}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
                         <TopCard
                             title='Speed'
                             text='tx 5 seconds, with all time average ledger speed at 5.19s'
-                            boxStyling={{ boxShadow: 1, height: { xl: '8rem', lg: '10rem' }, width: { xl: '35rem', lg: '27rem' }, borderRadius: '10px', padding: '2rem', backgroundColor: '#fff' }}
+                            boxStyling={{
+                                boxShadow: 1,
+                                height: { xl: '8rem', lg: '10rem' },
+                                width: '33rem',
+                                borderRadius: '10px',
+                                padding: '2rem',
+                                backgroundColor: '#fff'
+                            }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
                     </Grid>
 
-                    <Grid item xs={4} md={4} lg={4}>
+                    <Grid
+                        item
+                        xs={4} md={4} lg={4}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
                         <TopCard
                             title='Speed'
                             text='tx 5 seconds, with all time average ledger speed at 5.19s'
-                            boxStyling={{ boxShadow: 1, height: { xl: '8rem', lg: '10rem' }, width: { xl: '35rem', lg: '27rem' }, borderRadius: '10px', padding: '2rem', backgroundColor: '#fff' }}
+                            boxStyling={{
+                                boxShadow: 1,
+                                height: { xl: '8rem', lg: '10rem' },
+                                width: '33rem',
+                                borderRadius: '10px',
+                                padding: '2rem',
+                                backgroundColor: '#fff'
+                            }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
                     </Grid>
 
-                    <Grid item xs={4} md={4} lg={4}>
+                    <Grid
+                        item
+                        xs={4} md={4} lg={4}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
                         <TopCard
                             title='Speed'
                             text='tx 5 seconds, with all time average ledger speed at 5.19s'
-                            boxStyling={{ boxShadow: 1, height: { xl: '8rem', lg: '10rem' }, width: { xl: '35rem', lg: '27rem' }, borderRadius: '10px', padding: '2rem', backgroundColor: '#fff' }}
+                            boxStyling={{
+                                boxShadow: 1,
+                                height: { xl: '8rem', lg: '10rem' },
+                                width: '33rem',
+                                borderRadius: '10px',
+                                padding: '2rem',
+                                backgroundColor: '#fff'
+                            }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
                     </Grid>
-                    <Grid item xs={4} md={4} lg={4}>
+                    <Grid
+                        item
+                        xs={4} md={4} lg={4}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
                         <TopCard
                             title='Energy'
                             text='tx 5 seconds, with all time average ledger speed at 5.19s'
-                            boxStyling={{ boxShadow: 1, height: { xl: '8rem', lg: '10rem' }, width: { xl: '35rem', lg: '27rem' }, borderRadius: '10px', padding: '2rem', backgroundColor: '#fff' }}
+                            boxStyling={{
+                                boxShadow: 1,
+                                height: { xl: '8rem', lg: '10rem' },
+                                width: '33rem',
+                                borderRadius: '10px',
+                                padding: '2rem',
+                                backgroundColor: '#fff'
+                            }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
                     </Grid>
 
-                    <Grid item xs={4} md={4} lg={4}>
+                    <Grid
+                        item
+                        xs={4} md={4} lg={4}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
                         <TopCard
                             title='Energy'
                             text='tx 5 seconds, with all time average ledger speed at 5.19s'
-                            boxStyling={{ boxShadow: 1, height: { xl: '8rem', lg: '10rem' }, width: { xl: '35rem', lg: '27rem' }, borderRadius: '10px', padding: '2rem', backgroundColor: '#fff' }}
+                            boxStyling={{
+                                boxShadow: 1,
+                                height: { xl: '8rem', lg: '10rem' },
+                                width: '33rem',
+                                borderRadius: '10px',
+                                padding: '2rem',
+                                backgroundColor: '#fff'
+                            }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
                     </Grid>
 
-                    <Grid item xs={4} md={4} lg={4}>
+                    <Grid
+                        item
+                        xs={4} md={4} lg={4}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
                         <TopCard
                             title='Energy'
                             text='tx 5 seconds, with all time average ledger speed at 5.19s'
-                            boxStyling={{ boxShadow: 1, height: { xl: '8rem', lg: '10rem' }, width: { xl: '35rem', lg: '27rem' }, borderRadius: '10px', padding: '2rem', backgroundColor: '#fff' }}
+                            boxStyling={{
+                                boxShadow: 1,
+                                height: { xl: '8rem', lg: '10rem' },
+                                width: '33rem',
+                                borderRadius: '10px',
+                                padding: '2rem',
+                                backgroundColor: '#fff'
+                            }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
                     </Grid>
-                    <Grid item xs={4} md={4} lg={4}>
+                    <Grid
+                        item
+                        xs={4} md={4} lg={4}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
                         <TopCard
                             title='Transaction Fee'
                             text='tx 5 seconds, with all time average ledger speed at 5.19s'
-                            boxStyling={{ boxShadow: 1, height: { xl: '8rem', lg: '10rem' }, width: { xl: '35rem', lg: '27rem' }, borderRadius: '10px', padding: '2rem', backgroundColor: '#fff' }}
+                            boxStyling={{
+                                boxShadow: 1,
+                                height: { xl: '8rem', lg: '10rem' },
+                                width: '33rem',
+                                borderRadius: '10px',
+                                padding: '2rem',
+                                backgroundColor: '#fff'
+                            }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
                     </Grid>
 
-                    <Grid item xs={4} md={4} lg={4}>
+                    <Grid
+                        item
+                        xs={4} md={4} lg={4}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
                         <TopCard
                             title='Transaction Fee'
                             text='tx 5 seconds, with all time average ledger speed at 5.19s'
-                            boxStyling={{ boxShadow: 1, height: { xl: '8rem', lg: '10rem' }, width: { xl: '35rem', lg: '27rem' }, borderRadius: '10px', padding: '2rem', backgroundColor: '#fff' }}
+                            boxStyling={{
+                                boxShadow: 1,
+                                height: { xl: '8rem', lg: '10rem' },
+                                width: '33rem',
+                                borderRadius: '10px',
+                                padding: '2rem',
+                                backgroundColor: '#fff'
+                            }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
                     </Grid>
 
-                    <Grid item xs={4} md={4} lg={4}>
+                    <Grid
+                        item
+                        xs={4} md={4} lg={4}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
                         <TopCard
                             title='Transaction Fee'
                             text='tx 5 seconds, with all time average ledger speed at 5.19s'
-                            boxStyling={{ boxShadow: 1, height: { xl: '8rem', lg: '10rem' }, width: { xl: '35rem', lg: '27rem' }, borderRadius: '10px', padding: '2rem', backgroundColor: '#fff' }}
+                            boxStyling={{
+                                boxShadow: 1,
+                                height: { xl: '8rem', lg: '10rem' },
+                                width: '33rem',
+                                borderRadius: '10px',
+                                padding: '2rem',
+                                backgroundColor: '#fff'
+                            }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
                     </Grid>
@@ -166,7 +398,7 @@ const HighlightsPage = () => {
 
             <Typography
                 sx={{
-                    marginLeft: { xl: '8rem', lg: '4rem' },
+                    marginLeft: '5.5rem',
                     marginTop: '3rem',
                     fontSize: '24px',
                     fontWeight: '600'
@@ -178,7 +410,8 @@ const HighlightsPage = () => {
 
             <Grid
                 container
-                spacing={matches ? 8 : 12}
+                // spacing={matches ? 8 : 12}
+                spacing={3}
                 sx={{
                     paddingY: '2rem',
                     paddingX: { xl: '8rem', lg: '4rem' }
@@ -187,7 +420,16 @@ const HighlightsPage = () => {
                 {mapper.map((item, index) => {
                     if (index % 8 < 4) {
                         return (
-                            <Grid item xs={12} md={12} lg={3} key={index}>
+                            <Grid
+                                item
+                                xs={12} md={12} lg={3}
+                                key={index}
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center'
+                                }}
+                            >
                                 <NewsCards
                                     titleShort='Crypto News'
                                     titleLong='Stellar initiates security audits for imminent Soroban smart contracts platform'
@@ -200,7 +442,16 @@ const HighlightsPage = () => {
                     }
                     else {
                         return (
-                            <Grid item xs={12} md={12} lg={3} key={index}>
+                            <Grid
+                                item
+                                xs={12} md={12} lg={3}
+                                key={index}
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center'
+                                }}
+                            >
                                 <NewsCards
                                     titleShort='Crypto News'
                                     titleLong='Stellar initiates security audits for imminent Soroban smart contracts platform'

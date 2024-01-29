@@ -6,8 +6,8 @@ import { useMediaQuery } from '@mui/material';
 
 export default function Footer() {
     const theme = useTheme();
-    const matches = useMediaQuery(theme.breakpoints.down('xl'));
-    const responsivePadding = matches ? '4rem' : '8rem';
+    const matches = useMediaQuery(theme.breakpoints.down('lg'));
+    const responsivePadding = matches ? '4rem' : '6rem';
 
     return (
         <footer className={s.footer} style={{ paddingLeft: responsivePadding, paddingRight: responsivePadding }}>

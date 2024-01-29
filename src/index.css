@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 
@@ -18,17 +18,31 @@ body {
   height: 100%;
 }
 
-.circles {
+.circles_light {
   height: 100%;
   margin: 0;
   padding: 0;
   background-image: url(./assets/circles/GalbenDr.svg), url(./assets/circles/GriSt.svg), url(./assets/circles/GriDr.svg), url(./assets/circles/GalbenSt.svg);
   background-repeat: no-repeat;
   background-position:
-    top right,
-    top left,
-    bottom right,
-    bottom left;
+    top 0px right -150px,
+    top 600px left -150px,
+    bottom 500px right -150px,
+    bottom -75px left -150px;
+  background-clip: content-box;
+}
+
+.circles_dark {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url(./assets/circles/DGalbenDr.svg), url(./assets/circles/DGriSt.svg), url(./assets/circles/DGriDr.svg), url(./assets/circles/DGalbenSt.svg);
+  background-repeat: no-repeat;
+  background-position:
+    top 0px right -150px,
+    top 600px left -150px,
+    bottom 500px right -150px,
+    bottom -75px left -150px;
   background-clip: content-box;
 }
 

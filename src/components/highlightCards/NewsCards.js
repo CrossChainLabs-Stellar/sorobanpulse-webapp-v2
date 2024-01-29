@@ -9,10 +9,10 @@ const NewsCards = ({ titleShort, titleLong, text, mainColor, secondaryColor }) =
             sx={{
                 backgroundColor: mainColor,
                 padding: '2rem',
-                width: { xl: '22rem', lg: '18rem', },
+                width: '23rem',
                 height: '25rem',
                 borderRadius: '5px',
-                boxShadow: 1
+                boxShadow: 12
             }}
         >
             <Stack direction='row' alignItems='center'>

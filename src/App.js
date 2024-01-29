@@ -33,7 +33,7 @@ function App() {
       <ThemeProvider theme={theme} >
         {/* <Circles mode={mode} /> */}
         <div
-          className='circles'
+          className={mode === 'light' ? 'circles_light' : 'circles_dark'}
         >
           <CssBaseline />
           <Header />

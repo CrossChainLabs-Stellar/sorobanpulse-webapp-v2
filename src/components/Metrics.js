@@ -16,9 +16,9 @@ export default function Metrics() {
     return (
         <Box sx={{
             marginX: {
-                xxl: '8rem',
-                xl: '8rem',
-                lg_xl: '6rem',
+                xxl: '5rem',
+                xl: '5rem',
+                lg_xl: '5rem',
                 lg: '4rem',
                 md: '4rem',
                 sm: '2rem',

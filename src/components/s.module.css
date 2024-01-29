@@ -24,7 +24,7 @@
 }
 
 .item:hover {
-    color: var(--theme-text);
+    color: #aaa;
 }
 
 .item:last-child {
