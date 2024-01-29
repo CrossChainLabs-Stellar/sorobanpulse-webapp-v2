@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  width: 100vw;
 }
 
 
@@ -17,6 +18,19 @@ body {
   height: 100%;
 }
 
+.circles {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url(./assets/circles/GalbenDr.svg), url(./assets/circles/GriSt.svg), url(./assets/circles/GriDr.svg), url(./assets/circles/GalbenSt.svg);
+  background-repeat: no-repeat;
+  background-position:
+    top right,
+    top left,
+    bottom right,
+    bottom left;
+  background-clip: content-box;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

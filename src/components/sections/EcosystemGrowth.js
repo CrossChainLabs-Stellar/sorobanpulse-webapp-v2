@@ -155,13 +155,13 @@ function EcosystemGrowth() {
                     </Stack>
                 }
             />
-            <Stack spacing={3.37} sx={{ p: 5, pt: 0, pr: 0, height: '25.25rem', marginTop: '-0.5rem', marginBottom: '0.5rem' }}>
+            <Stack spacing={3.37} sx={{ p: 5, pt: 0, pr: 0, height: '25.25rem', marginTop: '-0.5rem', marginBottom: '0.45rem' }}>
                 <Stack
                     direction="row"
                     sx={{
                         boxShadow: '0px 12px 24px -4px #0000001F',
                         width: '93%',
-                        height: { xl: '30rem', lg: '19rem' },
+                        height: { xl: '29.5rem', lg: '18.5rem' },
                         borderRadius: '10px',
                     }}
                 >
@@ -197,7 +197,7 @@ function EcosystemGrowth() {
                     sx={{
                         boxShadow: '0px 12px 24px -4px #0000001F',
                         width: '93%',
-                        height: { xl: '30rem', lg: '19rem' },
+                        height: { xl: '29.5rem', lg: '18.5rem' },
                         borderRadius: '10px',
                     }}
                 >
@@ -233,7 +233,7 @@ function EcosystemGrowth() {
                     sx={{
                         boxShadow: '0px 12px 24px -4px #0000001F',
                         width: '93%',
-                        height: { xl: '30rem', lg: '19rem' },
+                        height: { xl: '29.5rem', lg: '18.5rem' },
                         borderRadius: '10px',
                     }}
                 >

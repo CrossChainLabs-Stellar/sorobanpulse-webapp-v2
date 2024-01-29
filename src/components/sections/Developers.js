@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 import { Client } from '../../utils/client';
 
 
-const CHART_HEIGHT = 388;
+const CHART_HEIGHT = 389;
 const LEGEND_HEIGHT = 70;
 
 const ChartWrapperStyle = styled('div')(({ theme }) => ({

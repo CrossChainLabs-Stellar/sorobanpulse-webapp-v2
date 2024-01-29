@@ -1,5 +1,5 @@
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, Grid } from '@mui/material';
 import { useState } from 'react';
 
 import Header from "./components/Header";
@@ -12,6 +12,11 @@ import HighlightsPage from './components/HighlightsPage';
 import Metrics from './components/Metrics';
 
 import Circles from './components/Circles';
+
+import GriSt from './assets/circles/GriSt.svg';
+import GriDr from './assets/circles/GriDr.svg';
+import GalbenDr from './assets/circles/GalbenDr.svg';
+import GablenSt from './assets/circles/GalbenSt.svg';
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -27,14 +32,18 @@ function App() {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme} >
         {/* <Circles mode={mode} /> */}
-        <CssBaseline />
-        <Header />
-        <SorobanBox value={value} handleChange={handleChange} />
-        {value === 0 && <DAppsPage />}
-        {value === 1 && <HighlightsPage />}
-        {value === 2 && <Metrics />}
+        <div
+          className='circles'
+        >
+          <CssBaseline />
+          <Header />
+          <SorobanBox value={value} handleChange={handleChange} />
+          {value === 0 && <DAppsPage />}
+          {value === 1 && <HighlightsPage />}
+          {value === 2 && <Metrics />}
 
-        <Footer />
+          <Footer />
+        </div>
       </ThemeProvider>
     </StyledEngineProvider>
   );

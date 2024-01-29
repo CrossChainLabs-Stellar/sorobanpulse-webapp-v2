@@ -201,7 +201,7 @@ function TopDevelopers() {
                     }
                 }}
             />
-            <Stack spacing={5} sx={{ p: 5, pt: 3.5, pr: 0, height: '25.25rem', overflowY: 'scroll' }}>
+            <Stack spacing={5} sx={{ p: 5, pt: 3.5, pr: 0, height: '25.3rem', overflowY: 'scroll' }}>
                 {state.top_contributors?.map((item) => (
                     <ContributorItem key={item.dev_name} item={item} />
                 ))}
