@@ -43,7 +43,7 @@ const HighlightsPage = () => {
                             width: '33rem',
                             borderRadius: '10px',
                             padding: '2rem',
-                            backgroundColor: '#fff'
+                            backgroundColor: 'highlightCards.primary'
                         }}
                         textStyling={{ marginLeft: '2rem', marginTop: '2rem', }}
                     />
@@ -67,7 +67,7 @@ const HighlightsPage = () => {
                             width: '33rem',
                             borderRadius: '10px',
                             padding: '2rem',
-                            backgroundColor: '#fff'
+                            backgroundColor: 'highlightCards.primary'
                         }}
                         textStyling={{ marginLeft: '2rem', marginTop: '2rem' }}
                     />
@@ -91,7 +91,7 @@ const HighlightsPage = () => {
                             width: '33rem',
                             borderRadius: '10px',
                             padding: '2rem',
-                            backgroundColor: '#fff'
+                            backgroundColor: 'highlightCards.primary'
                         }}
                         textStyling={{ marginLeft: '2rem', marginTop: '2rem' }}
                     />
@@ -197,7 +197,7 @@ const HighlightsPage = () => {
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: '#fff'
+                                backgroundColor: 'highlightCards.primary'
                             }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
@@ -221,7 +221,7 @@ const HighlightsPage = () => {
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: '#fff'
+                                backgroundColor: 'highlightCards.primary'
                             }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
@@ -245,7 +245,7 @@ const HighlightsPage = () => {
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: '#fff'
+                                backgroundColor: 'highlightCards.primary'
                             }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
@@ -268,31 +268,7 @@ const HighlightsPage = () => {
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: '#fff'
-                            }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
-                        />
-                    </Grid>
-
-                    <Grid
-                        item
-                        xs={4} md={4} lg={4}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <TopCard
-                            title='Energy'
-                            text='tx 5 seconds, with all time average ledger speed at 5.19s'
-                            boxStyling={{
-                                boxShadow: 1,
-                                height: { xl: '8rem', lg: '10rem' },
-                                width: '33rem',
-                                borderRadius: '10px',
-                                padding: '2rem',
-                                backgroundColor: '#fff'
+                                backgroundColor: 'highlightCards.primary'
                             }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
@@ -316,7 +292,31 @@ const HighlightsPage = () => {
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: '#fff'
+                                backgroundColor: 'highlightCards.primary'
+                            }}
+                            textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
+                        />
+                    </Grid>
+
+                    <Grid
+                        item
+                        xs={4} md={4} lg={4}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
+                        <TopCard
+                            title='Energy'
+                            text='tx 5 seconds, with all time average ledger speed at 5.19s'
+                            boxStyling={{
+                                boxShadow: 1,
+                                height: { xl: '8rem', lg: '10rem' },
+                                width: '33rem',
+                                borderRadius: '10px',
+                                padding: '2rem',
+                                backgroundColor: 'highlightCards.primary'
                             }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
@@ -339,7 +339,7 @@ const HighlightsPage = () => {
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: '#fff'
+                                backgroundColor: 'highlightCards.primary'
                             }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
@@ -363,7 +363,7 @@ const HighlightsPage = () => {
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: '#fff'
+                                backgroundColor: 'highlightCards.primary'
                             }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />
@@ -387,7 +387,7 @@ const HighlightsPage = () => {
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: '#fff'
+                                backgroundColor: 'highlightCards.primary'
                             }}
                             textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
                         />

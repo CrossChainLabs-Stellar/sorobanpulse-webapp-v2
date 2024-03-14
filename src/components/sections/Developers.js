@@ -7,6 +7,7 @@ import { CustomChart } from '../chart'
 import { number } from '../../utils/format';
 import { useState, useEffect } from 'react';
 import { Client } from '../../utils/client';
+import { useTheme } from '@mui/material/styles';
 
 
 const CHART_HEIGHT = 389;
@@ -34,6 +35,8 @@ const ChartWrapperStyle = styled('div')(({ theme }) => ({
 function Developers() {
     const [state, setState] = useState({ loading: true, chartData: [0, 0] });
 
+    const theme = useTheme();
+
     useEffect(() => {
         const client = new Client();
         client.get('statistics').then((statistics) => {
@@ -45,13 +48,13 @@ function Developers() {
     }, [setState]);
 
     const chartOptions = merge(CustomChart(), {
-        colors: ["#FFDF42", "#3E3385"],
+        colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
         chart: {
             width: 500
         },
         labels: ['New', 'Active'],
         stroke: {
-            colors: ['#FFFFFF'],
+            colors: [theme.palette.chart.stroke],
             width: 10,
         },
         legend: { floating: true, horizontalAlign: 'center' },
@@ -89,6 +92,7 @@ function Developers() {
             sx={{
                 marginTop: '4rem',
                 boxShadow: '0px 4px 4px 0px #00000040',
+                backgroundColor: theme.palette.tableColor.card
             }}
         >
             <CardHeader

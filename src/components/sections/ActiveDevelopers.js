@@ -6,6 +6,7 @@ import { Card, CardHeader, Box, Typography, Stack } from '@mui/material';
 import { CustomChart } from '../chart'
 import { Client } from '../../utils/client';
 import { number } from '../../utils/format';
+import { useTheme } from '@mui/material/styles';
 
 /**
  * Bar chart that displays the number of contributors for each month over the last year.
@@ -20,6 +21,8 @@ function ActiveDevelopers() {
             { name: 'Community ', data: [] }
         ]
     });
+
+    const theme = useTheme();
 
     useEffect(() => {
         const client = new Client();
@@ -62,12 +65,12 @@ function ActiveDevelopers() {
         xaxis: {
             categories: state.categories,
             lables: {
-                colors: ["#FFDF42", "#3E3385"],
+                colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
             },
         },
-        colors: ["#FFDF42", "#3E3385"],
+        colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
         fill: {
-            colors: ["#FFDF42", "#3E3385"],
+            colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
             //colors: ["#F2C1B0", "#F15A24"],
         },
         // stroke: {
@@ -83,6 +86,7 @@ function ActiveDevelopers() {
             sx={{
                 marginTop: '4rem',
                 boxShadow: '0px 4px 4px 0px #00000040',
+                backgroundColor: theme.palette.tableColor.card
             }}
         >
             <CardHeader

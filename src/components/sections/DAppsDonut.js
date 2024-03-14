@@ -7,9 +7,10 @@ import { CustomChart } from '../chart'
 import { number } from '../../utils/format';
 import { useState, useEffect } from 'react';
 import { Client } from '../../utils/client';
+import { useTheme } from '@mui/material/styles';
 
 
-const CHART_HEIGHT = 388;
+const CHART_HEIGHT = 414;
 const LEGEND_HEIGHT = 70;
 
 const ChartWrapperStyle = styled('div')(({ theme }) => ({
@@ -33,6 +34,8 @@ const ChartWrapperStyle = styled('div')(({ theme }) => ({
 const DAppsDonut = () => {
     const [state, setState] = useState({ loading: true, chartData: [0, 0] });
 
+    const theme = useTheme();
+
     useEffect(() => {
         const client = new Client();
         client.get('statistics').then((statistics) => {
@@ -44,13 +47,13 @@ const DAppsDonut = () => {
     }, [setState]);
 
     const chartOptions = merge(CustomChart(), {
-        colors: ["#FDDA24", "#3E3385"],
+        colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
         chart: {
             width: 500
         },
         labels: ['Soroban', 'Stellar'],
         stroke: {
-            colors: ['#FFFFFF'],
+            colors: [theme.palette.chart.stroke],
             width: 10,
         },
         legend: { floating: true, horizontalAlign: 'center' },
@@ -87,6 +90,7 @@ const DAppsDonut = () => {
             sx={{
                 marginTop: '4rem',
                 boxShadow: '0px 4px 4px 0px #00000040',
+                backgroundColor: theme.palette.tableColor.card
             }}
         >
             <CardHeader
@@ -100,16 +104,6 @@ const DAppsDonut = () => {
                             }}
                         >
                             Developers
-                        </Typography>
-                        <Typography
-                            variant='caption'
-                            sx={{
-                                color: 'text.secondary',
-                                marginX: '1.4rem',
-                                fontSize: '15px',
-                            }}
-                        >
-                            last 30 days
                         </Typography>
                     </Stack>
                 }

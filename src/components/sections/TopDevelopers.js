@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Box, Stack, Card, Typography, CardHeader, Link, Select, MenuItem, InputBase } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Client } from '../../utils/client';
+import { useTheme } from '@mui/material/styles';
 
 const StyledInput = styled(InputBase)(({ theme }) => ({
     '& .MuiInputBase-input': {
@@ -47,7 +48,7 @@ function ContributorItem({ item }) {
                         color="inherit"
                         rel="noopener"
                         href={"https://github.com/" + dev_name}
-                        underline='yes'
+                        // underline='none'
                         fontSize={15}
                     >
                         {dev_name}
@@ -70,6 +71,8 @@ function TopDevelopers() {
         loading: true,
         top_contributors: []
     });
+
+    const theme = useTheme();
 
     const [selectedValue, setSelectedValue] = useState(3);
 
@@ -100,6 +103,7 @@ function TopDevelopers() {
             sx={{
                 marginTop: '4rem',
                 boxShadow: '0px 4px 4px 0px #00000040',
+                backgroundColor: theme.palette.tableColor.card
             }}
         >
             <CardHeader

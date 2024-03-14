@@ -48,7 +48,7 @@ const DAppsPage = () => {
                             flexDirection: 'column',
                             border: 1,
                             borderRadius: '8px',
-                            borderColor: '#C8C8C8',
+                            borderColor: 'tableColor.border',
                         }}
                     >
                         <TextField

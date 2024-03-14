@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { AppBar, Toolbar, Typography, Grid, Box } from '@mui/material';
+import { AppBar, Toolbar, Typography, Box } from '@mui/material';
 
 import logo from "../assets/logo.svg";
 
@@ -12,7 +12,7 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
 }));
 
 const TextTypography = styled(Typography)(({ theme }) => ({
-    color: "#000000",
+    color: theme.palette.text.primary,
     fontSize: theme.typography.h4.fontSize,
     fontWeight: 600,
     lineHeight: theme.typography.h3.lineHeight,

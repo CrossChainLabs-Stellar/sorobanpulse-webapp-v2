@@ -1,5 +1,5 @@
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
-import { CssBaseline, Grid } from '@mui/material';
+import { CssBaseline } from '@mui/material';
 import { useState } from 'react';
 
 import Header from "./components/Header";
@@ -11,12 +11,6 @@ import DAppsPage from './components/DAppsPage';
 import HighlightsPage from './components/HighlightsPage';
 import Metrics from './components/Metrics';
 
-import Circles from './components/Circles';
-
-import GriSt from './assets/circles/GriSt.svg';
-import GriDr from './assets/circles/GriDr.svg';
-import GalbenDr from './assets/circles/GalbenDr.svg';
-import GablenSt from './assets/circles/GalbenSt.svg';
 
 function App() {
   const [mode, setMode] = useState('light');

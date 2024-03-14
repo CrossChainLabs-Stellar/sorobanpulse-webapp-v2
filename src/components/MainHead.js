@@ -159,7 +159,7 @@ export default function MainHead({ paramsCallback }) {
                                 fontWeight: 500,
                                 fontSize: 17,
                                 marginRight: '0.35rem',
-                                color: '#002E5D'
+                                color: 'tableColor.headerText'
                             }}
                         >
                             #
@@ -209,7 +209,7 @@ export default function MainHead({ paramsCallback }) {
                                 fontWeight: 500,
                                 fontSize: 17,
                                 marginRight: '0.35rem',
-                                color: '#002E5D'
+                                color: 'tableColor.headerText'
                             }}
                         >
                             Dapp Name
@@ -259,7 +259,7 @@ export default function MainHead({ paramsCallback }) {
                                 fontWeight: 500,
                                 fontSize: 17,
                                 marginRight: '0.35rem',
-                                color: '#002E5D'
+                                color: 'tableColor.headerText'
                             }}
                         >
                             Ecosystem
@@ -295,7 +295,7 @@ export default function MainHead({ paramsCallback }) {
                             sx={{
                                 fontWeight: 500,
                                 fontSize: 17,
-                                color: '#002E5D',
+                                color: 'tableColor.headerText',
                                 marginRight: '0.35rem',
                             }}
                         >
@@ -345,7 +345,7 @@ export default function MainHead({ paramsCallback }) {
                             sx={{
                                 fontWeight: 500,
                                 fontSize: 17,
-                                color: '#002E5D',
+                                color: 'tableColor.headerText',
                                 marginRight: '0.35rem',
                             }}
                         >
@@ -398,7 +398,7 @@ export default function MainHead({ paramsCallback }) {
                                 fontWeight: 500,
                                 fontSize: 17,
                                 marginRight: '0.35rem',
-                                color: '#002E5D'
+                                color: 'tableColor.headerText'
                             }}
                         >
                             Development
@@ -425,7 +425,7 @@ export default function MainHead({ paramsCallback }) {
                             fontWeight: 450,
                             marginTop: 0,
                             fontSize: 13,
-                            color: '#002E5D'
+                            color: 'tableColor.headerText'
                         }}
                     >
                         activity (12m)
@@ -459,7 +459,7 @@ export default function MainHead({ paramsCallback }) {
                                 fontWeight: 500,
                                 fontSize: 17,
                                 marginRight: '0.35rem',
-                                color: '#002E5D'
+                                color: 'tableColor.headerText'
                             }}
                         >
                             State Expiration
@@ -511,7 +511,7 @@ export default function MainHead({ paramsCallback }) {
                                 fontWeight: 500,
                                 fontSize: 17,
                                 marginRight: '0.35rem',
-                                color: '#002E5D'
+                                color: 'tableColor.headerText'
                             }}
                         >
                             Expiration date
@@ -557,7 +557,7 @@ export default function MainHead({ paramsCallback }) {
                                 fontWeight: 500,
                                 fontSize: 17,
                                 marginRight: '0.35rem',
-                                color: '#002E5D'
+                                color: 'tableColor.headerText'
                             }}
                         >
                             X / Twitter

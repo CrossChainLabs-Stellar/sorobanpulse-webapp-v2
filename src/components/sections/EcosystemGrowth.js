@@ -4,6 +4,7 @@ import { Stack, Card, Typography, CardHeader } from '@mui/material';
 import TinyCircle from '../TinyCircle';
 import { Client } from '../../utils/client';
 import { number } from '../../utils/format';
+import { useTheme } from '@mui/material/styles';
 
 
 function EcosystemGrowth() {
@@ -16,6 +17,8 @@ function EcosystemGrowth() {
         ecosystem_growth_commits_value: 0,
         ecosystem_growth_commits_percentage: 0
     });
+
+    const theme = useTheme();
 
     async function fetchData() {
         try {
@@ -128,6 +131,7 @@ function EcosystemGrowth() {
             sx={{
                 marginTop: '4rem',
                 boxShadow: '0px 4px 4px 0px #00000040',
+                backgroundColor: theme.palette.tableColor.card
             }}
         >
             <CardHeader
@@ -163,6 +167,7 @@ function EcosystemGrowth() {
                         width: '93%',
                         height: { xl: '29.5rem', lg: '18.5rem' },
                         borderRadius: '10px',
+                        backgroundColor: '#fff'
                     }}
                 >
                     <TinyCircle fillColor={state.ecosystem_growth_projects_value >= 0 ? "#00AB55" : "#EB5757"} innerProcent={number(state.ecosystem_growth_projects_percentage)} />
@@ -175,6 +180,7 @@ function EcosystemGrowth() {
                                 fontWeight: 600,
                                 fontSize: '20px',
                                 marginTop: 'auto',
+                                color: '#333333'
                             }}
                         >
                             {state.ecosystem_growth_projects_value > 0 ? '+' : ''}{number(state.ecosystem_growth_projects_value)}
@@ -199,6 +205,7 @@ function EcosystemGrowth() {
                         width: '93%',
                         height: { xl: '29.5rem', lg: '18.5rem' },
                         borderRadius: '10px',
+                        backgroundColor: '#fff'
                     }}
                 >
                     <TinyCircle fillColor={state.ecosystem_growth_developers_value >= 0 ? "#00AB55" : "#EB5757"} innerProcent={number(state.ecosystem_growth_developers_percentage)} />
@@ -210,7 +217,8 @@ function EcosystemGrowth() {
                             sx={{
                                 fontWeight: 600,
                                 fontSize: '20px',
-                                marginTop: 'auto'
+                                marginTop: 'auto',
+                                color: '#333333'
                             }}
                         >
                             {state.ecosystem_growth_developers_value > 0 ? '+' : ''}{number(state.ecosystem_growth_developers_value)}
@@ -235,6 +243,7 @@ function EcosystemGrowth() {
                         width: '93%',
                         height: { xl: '29.5rem', lg: '18.5rem' },
                         borderRadius: '10px',
+                        backgroundColor: '#fff'
                     }}
                 >
                     <TinyCircle fillColor={state.ecosystem_growth_commits_value >= 0 ? "#00AB55" : "#EB5757"} innerProcent={number(state.ecosystem_growth_commits_percentage)} />
@@ -247,7 +256,8 @@ function EcosystemGrowth() {
                             sx={{
                                 fontWeight: 600,
                                 fontSize: '20px',
-                                marginTop: 'auto'
+                                marginTop: 'auto',
+                                color: '#333333'
                             }}
                         >
                             {state.ecosystem_growth_commits_value > 0 ? '+' : ''}{number(state.ecosystem_growth_commits_value)}

@@ -6,6 +6,7 @@ import { Card, CardHeader, Box, Typography, Stack } from '@mui/material';
 import { CustomChart } from '../chart'
 import { Client } from '../../utils/client';
 import { number } from '../../utils/format';
+import { useTheme } from '@mui/material/styles';
 
 
 const DAppsBar = () => {
@@ -18,6 +19,8 @@ const DAppsBar = () => {
             { name: 'Stellar ', data: [] }
         ]
     });
+
+    const theme = useTheme();
 
     useEffect(() => {
         const client = new Client();
@@ -63,7 +66,7 @@ const DAppsBar = () => {
         xaxis: {
             categories: state.categories,
             lables: {
-                colors: ["#FDDA24", "#3E3385"],
+                colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
             },
         },
         colors: ["#FDDA24", "#3E3385"],
@@ -90,6 +93,7 @@ const DAppsBar = () => {
             sx={{
                 marginTop: '4rem',
                 boxShadow: '0px 4px 4px 0px #00000040',
+                backgroundColor: theme.palette.tableColor.card
             }}
         >
             <CardHeader

@@ -1,7 +1,8 @@
 import { Box, Tab, Tabs } from '@mui/material'
+import { useTheme } from '@mui/material/styles';
 
 export default function SorobanBox({ value, handleChange }) {
-
+    const theme = useTheme();
 
     return (
         <Box
@@ -15,10 +16,48 @@ export default function SorobanBox({ value, handleChange }) {
                 boxShadow: 0,
             }}
         >
-            <Tabs value={value} onChange={handleChange} sx={{ marginLeft: '4rem' }}>
-                <Tab label="DApps" sx={{ textTransform: 'none' }} />
-                <Tab label="Stellar Highlights" sx={{ textTransform: 'none' }} />
-                <Tab label="Soroban Metrics" sx={{ textTransform: 'none' }} />
+            <Tabs
+                value={value}
+                onChange={handleChange}
+                sx={{
+                    marginLeft: '4rem',
+                    '& .MuiTabs-indicator': {
+                        backgroundColor: theme.palette.tabsColors.selected,
+                    },
+
+                }}
+
+            >
+                <Tab
+                    label="DApps"
+                    sx={{
+                        textTransform: 'none',
+                        color: theme.palette.tabsColors.main,
+                        '&.Mui-selected': {
+                            color: theme.palette.tabsColors.selected,
+                        }
+                    }}
+                />
+                <Tab
+                    label="Stellar Highlights"
+                    sx={{
+                        textTransform: 'none',
+                        color: theme.palette.tabsColors.main,
+                        '&.Mui-selected': {
+                            color: theme.palette.tabsColors.selected,
+                        }
+                    }}
+                />
+                <Tab
+                    label="Soroban Metrics"
+                    sx={{
+                        textTransform: 'none',
+                        color: theme.palette.tabsColors.main,
+                        '&.Mui-selected': {
+                            color: theme.palette.tabsColors.selected,
+                        }
+                    }}
+                />
             </Tabs>
         </Box>
     )

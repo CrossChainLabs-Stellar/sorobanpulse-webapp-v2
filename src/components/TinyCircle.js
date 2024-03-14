@@ -62,7 +62,8 @@ function TinyCircle({ fillColor, innerProcent }) {
                         fontWeight: 600,
                         formatter: function (val) {
                             return (100 - val) + '%';
-                        }
+                        },
+                        color: '#000'
                     },
                 },
                 track: {
