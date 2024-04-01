@@ -432,7 +432,7 @@ export default function MainHead({ paramsCallback }) {
                     </Typography>
                 </TableCell>
 
-                <TableCell
+                {/*<TableCell
                     align="left"
                     component="th"
                     scope="row"
@@ -532,7 +532,7 @@ export default function MainHead({ paramsCallback }) {
                             />
                         </IconButton>
                     </Stack>
-                </TableCell>
+                        </TableCell>*/}
 
                 <TableCell
                     align="left"

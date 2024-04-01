@@ -11,7 +11,8 @@ import {
     Typography,
     TableContainer,
     Paper,
-    Link
+    Link,
+    Avatar
 } from '@mui/material';
 
 import styled from '@emotion/styled';
@@ -56,7 +57,7 @@ export default function MainTable({ search }) {
     const [state, setState] = useState({
         loading: true,
         total: 0,
-        projects: []
+        dapps: []
     });
     const [params, setParams] = useState({});
     const [offset, setOffset] = useState(0);
@@ -78,18 +79,18 @@ export default function MainTable({ search }) {
 
         console.log(params);
 
-        client.get('projects', params).then((response) => {
+        client.get('dapps', params).then((response) => {
             if (params.offset > 0) {
                 setState({
                     loading: false,
                     total: response?.total,
-                    projects: [...state.projects, ...response.list],
+                    dapps: [...state.dapps, ...response.list],
                 });
             } else {
                 setState({
                     loading: false,
                     total: response?.total,
-                    projects: response?.list,
+                    dapps: response?.list,
                 });
             }
 
@@ -169,7 +170,7 @@ export default function MainTable({ search }) {
         setState({
             loading: true,
             total: 0,
-            projects: []
+            dapps: []
         });
         new_params.offset = 0;
         setOffset(0);
@@ -207,16 +208,16 @@ export default function MainTable({ search }) {
                     <MainHead paramsCallback={paramsCallback} />
 
                     <TableBody>
-                        {state.projects?.map((item, id) => {
+                        {state.dapps?.map((item, id) => {
                             const {
-                                name,
-                                is_core_project,
-                                active_contributors,
+                                rank,
+                                dapp,
+                                url,
                                 contributions,
                                 developers,
-                                active_contributors_percentage,
                                 activity_growth,
-                                commits
+                                commits,
+                                icon_data
                             } = item;
 
                             let activity = [];
@@ -267,7 +268,7 @@ export default function MainTable({ search }) {
                                                     textOverflow: 'ellipsis',
                                                 }}
                                             >
-                                                1
+                                                {rank}
                                             </Typography>
                                         </TableCell>
 
@@ -283,7 +284,41 @@ export default function MainTable({ search }) {
                                             }}
                                         >
                                             <Stack direction='row' alignItems='center'>
-                                                <img src={App1} alt="app1" style={{ marginRight: '1rem' }} />
+                                                <Avatar
+                                                    key={id}
+                                                    src={icon_data}
+                                                    alt=' '
+                                                    sx={{
+                                                        marginRight: {
+                                                            xs: '0.5rem',
+                                                            sm: '1rem',
+                                                            md: '1rem',
+                                                            lg: '1rem',
+                                                            xl: '1rem',
+                                                        },
+                                                        marginTop: {
+                                                            xs: '0.4rem',
+                                                            sm: '0.2rem',
+                                                            md: '0.2rem',
+                                                            lg: '0.2rem',
+                                                            xl: '0.2rem',
+                                                        },
+                                                        width: {
+                                                            xs: '2rem',
+                                                            sm: '2.5rem',
+                                                            md: '2.5rem',
+                                                            lg: '2.5rem',
+                                                            xl: '2.5rem',
+                                                        },
+                                                        height: {
+                                                            xs: '2rem',
+                                                            sm: '2.5rem',
+                                                            md: '2.5rem',
+                                                            lg: '2.5rem',
+                                                            xl: '2.5rem',
+                                                        },
+                                                    }}
+                                                />
                                                 <Typography
                                                     variant="subtitle2"
                                                     noWrap
@@ -304,10 +339,10 @@ export default function MainTable({ search }) {
                                                     <Link
                                                         target="_blank"
                                                         rel="noopener"
-                                                        href={"https://github.com/" + name}
+                                                        href={url}
                                                         color="inherit"
                                                     >
-                                                        {name}
+                                                        {dapp}
                                                     </Link>
                                                 </Typography>
                                             </Stack>
@@ -371,7 +406,7 @@ export default function MainTable({ search }) {
                                                     textOverflow: 'ellipsis',
                                                 }}
                                             >
-                                                {fNumber(developers)}
+                                                {fNumber(contributions)}
                                             </Typography>
                                         </TableCell>
 
@@ -400,6 +435,7 @@ export default function MainTable({ search }) {
                                             />
                                         </TableCell>
 
+                                        {/*
                                         <TableCell
                                             align="left"
                                             component="th"
@@ -411,7 +447,7 @@ export default function MainTable({ search }) {
                                             }}
                                         >
                                             <Typography variant="subtitle2" noWrap>
-                                                {fNumber(contributions)} days
+                                                {fNumber(days_until_expiration)} days
                                             </Typography>
                                         </TableCell>
 
@@ -431,6 +467,7 @@ export default function MainTable({ search }) {
                                                 01/05/2024
                                             </Typography>
                                         </TableCell>
+                                        */}
 
                                         <TableCell
                                             align="left"
