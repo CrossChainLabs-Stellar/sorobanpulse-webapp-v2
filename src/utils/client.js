@@ -1,5 +1,5 @@
-const axios = require('axios');
-const { API } = require ('../config');
+import axios from 'axios';
+import { API } from '../config';
 
 axios.default.timeout = 30000;
 

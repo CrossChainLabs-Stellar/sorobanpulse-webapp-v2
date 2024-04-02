@@ -6,7 +6,7 @@ import DAppsBar from './sections/DAppsBar';
 import DAppsDonut from './sections/DAppsDonut';
 import MainTable from './MainTable';
 
-import Iconify from './Iconify';
+import Iconify from './Iconify.jsx';
 
 
 

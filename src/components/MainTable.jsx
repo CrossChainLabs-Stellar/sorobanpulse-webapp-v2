@@ -77,9 +77,10 @@ export default function MainTable({ search }) {
             setOffset(0);
         }
 
-        console.log(params);
+        console.log('client.get[dapps]');
 
         client.get('dapps', params).then((response) => {
+            console.log('client.get[dapps]', response?.total);
             if (params.offset > 0) {
                 setState({
                     loading: false,
