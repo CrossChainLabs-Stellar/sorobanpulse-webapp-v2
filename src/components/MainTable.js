@@ -221,10 +221,25 @@ export default function MainTable({ search }) {
                             } = item;
 
                             let activity = [];
-                            if (commits?.length) {
-                                for (const c of commits) {
-                                    activity.push(parseInt(c.commits));
+                            let noActivity = true;
+
+                            try {
+                                let activityItems = JSON.parse(commits);
+                                if (activityItems?.length) {
+                                    for (const a of activityItems) {
+                                        if (a.commits > 0) {
+                                            noActivity = false;
+                                        }
+
+                                        activity.push(parseInt(a.commits));
+                                    }
                                 }
+
+                                if (noActivity) {
+                                    activity = [];
+                                }
+                            } catch (error) {
+                                
                             }
 
                             let growth_trend = true;
@@ -382,7 +397,7 @@ export default function MainTable({ search }) {
                                                     textOverflow: 'ellipsis',
                                                 }}
                                             >
-                                                {fNumber(developers)}
+                                                {developers ? fNumber(developers) : ''}
                                             </Typography>
                                         </TableCell>
 
@@ -406,7 +421,7 @@ export default function MainTable({ search }) {
                                                     textOverflow: 'ellipsis',
                                                 }}
                                             >
-                                                {fNumber(contributions)}
+                                                {contributions ? fNumber(contributions) : ''}
                                             </Typography>
                                         </TableCell>
 
@@ -421,7 +436,7 @@ export default function MainTable({ search }) {
                                                 backgroundColor: 'tableColor.main'
                                             }}
                                         >
-                                            <ReactApexChart
+                                            {activity?.length > 0 && <ReactApexChart
                                                 type="line"
                                                 series={[
                                                     {
@@ -432,7 +447,7 @@ export default function MainTable({ search }) {
                                                 options={growth_trend ? chartOptionsVerde : chartOptionsRosu}
                                                 height={75}
                                                 width={125}
-                                            />
+                                            />}
                                         </TableCell>
 
                                         {/*
