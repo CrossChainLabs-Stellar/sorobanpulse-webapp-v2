@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 
 import { useTheme } from '@mui/material/styles';
@@ -6,11 +6,25 @@ import { useMediaQuery } from '@mui/material';
 
 import TopCard from "./highlightCards/TopCard";
 import NewsCards from "./highlightCards/NewsCards";
+import { Client } from '../utils/client';
 
 const HighlightsPage = () => {
     const mapper = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('xl'));
+
+    const [news, setNews] = useState([]);
+
+    useEffect(() => {
+        const client = new Client();
+
+        client.get('news').then((response) => {
+            if (response?.length > 0) {
+                setNews(response);
+            }
+        });
+    }, [setNews]);
+
     return (
         <Box sx={{
             marginBottom: '5rem',
@@ -417,7 +431,16 @@ const HighlightsPage = () => {
                     paddingX: { xl: '8rem', lg: '4rem' }
                 }}
             >
-                {mapper.map((item, index) => {
+                {news.map((item, index) => {
+                    const {
+                        url,
+                        article_title,
+                        pub_date,
+                        source,
+                        icon_data,
+                        article_image_data,
+                    } = item;
+
                     if (index % 8 < 4) {
                         return (
                             <Grid
@@ -431,9 +454,10 @@ const HighlightsPage = () => {
                                 }}
                             >
                                 <NewsCards
-                                    titleShort='Crypto News'
-                                    titleLong='Stellar initiates security audits for imminent Soroban smart contracts platform'
-                                    text='The Stellar Development Foundation is set to enhance its blockchain offerings with Soroban, a new smart contract platform, currently in...'
+                                    titleShort={source}
+                                    titleLong={article_title}
+                                    iconData={icon_data}
+                                    articleImageData={article_image_data}
                                     mainColor='#000'
                                     secondaryColor='#fff'
                                 />
@@ -453,9 +477,10 @@ const HighlightsPage = () => {
                                 }}
                             >
                                 <NewsCards
-                                    titleShort='Crypto News'
-                                    titleLong='Stellar initiates security audits for imminent Soroban smart contracts platform'
-                                    text='The Stellar Development Foundation is set to enhance its blockchain offerings with Soroban, a new smart contract platform, currently in...'
+                                    titleShort={source}
+                                    titleLong={article_title}
+                                    iconData={icon_data}
+                                    articleImageData={article_image_data}
                                     mainColor='#fff'
                                     secondaryColor='#000'
                                 />

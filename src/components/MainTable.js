@@ -30,7 +30,7 @@ import mockData from '../mock/mockData';
 // assets
 import App1 from "../assets/placeholderAppsLogos/App1.svg";
 import EcosystemLogo1 from "../assets/ecosystems/EcosystemLogo1.svg";
-
+//import EcosystemLogo2 from "../assets/ecosystems/EcosystemLogo2.svg";
 
 import { fNumber } from '../utils/format';
 import { Client } from '../utils/client';
@@ -217,6 +217,7 @@ export default function MainTable({ search }) {
                                 developers,
                                 activity_growth,
                                 commits,
+                                soroban,
                                 icon_data
                             } = item;
 
@@ -374,7 +375,7 @@ export default function MainTable({ search }) {
                                             }}
                                         >
 
-                                            <img src={EcosystemLogo1} alt="app1" style={{ width: '2rem' }} />
+                                            {soroban == 'true' && <img src={EcosystemLogo1} alt="app1" style={{ width: '2rem' }} />}
                                         </TableCell>
 
                                         <TableCell

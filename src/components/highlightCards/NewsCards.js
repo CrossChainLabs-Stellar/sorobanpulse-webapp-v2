@@ -3,7 +3,7 @@ import { Box, Stack, Typography } from "@mui/material"
 import CardLogo from '../../assets/placeholderAppsLogos/CardLogo.svg';
 
 
-const NewsCards = ({ titleShort, titleLong, text, mainColor, secondaryColor }) => {
+const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColor, secondaryColor }) => {
     return (
         <Box
             sx={{
@@ -16,7 +16,7 @@ const NewsCards = ({ titleShort, titleLong, text, mainColor, secondaryColor }) =
             }}
         >
             <Stack direction='row' alignItems='center'>
-                <img src={CardLogo} alt='logo' style={{ width: '2rem' }} />
+                <img src={iconData} alt='logo' style={{ width: '2rem' }} />
                 <Typography sx={{ color: secondaryColor, marginLeft: '1rem' }}>
                     {titleShort}
                 </Typography>
@@ -31,9 +31,11 @@ const NewsCards = ({ titleShort, titleLong, text, mainColor, secondaryColor }) =
                     boxShadow: 1
                 }}
             >
-                <Typography sx={{ color: mainColor }}>
-                    {text}
-                </Typography>
+                <img
+                    src={articleImageData}
+                    alt=''
+                    className='newsImage'
+                />
             </Box>
         </Box>
     )
