@@ -98,7 +98,7 @@ const HighlightsPage = () => {
                 >
                     <TopCard
                         title='Affordable for Developers'
-                        text='The Stellar network performs transactions for a fraction of a US penny, with the average transaction cost = .000002 XLM.'
+                        text='The Stellar network performs transactions for a fraction of a US penny, with the average transaction cost = 0.00005 XLM.'
                         boxStyling={{
                             boxShadow: 12,
                             height: { xl: '12rem', lg: '15rem' },
@@ -204,7 +204,7 @@ const HighlightsPage = () => {
                     >
                         <TopCard
                             title='Speed'
-                            text='tx 5 seconds, with all time average ledger speed at 5.19s'
+                            text='tx 600 seconds'
                             boxStyling={{
                                 boxShadow: 1,
                                 height: { xl: '8rem', lg: '10rem' },
@@ -228,7 +228,7 @@ const HighlightsPage = () => {
                     >
                         <TopCard
                             title='Speed'
-                            text='tx 5 seconds, with all time average ledger speed at 5.19s'
+                            text='tx 5 seconds'
                             boxStyling={{
                                 boxShadow: 1,
                                 height: { xl: '8rem', lg: '10rem' },
@@ -252,7 +252,7 @@ const HighlightsPage = () => {
                     >
                         <TopCard
                             title='Speed'
-                            text='tx 5 seconds, with all time average ledger speed at 5.19s'
+                            text='tx 12 seconds'
                             boxStyling={{
                                 boxShadow: 1,
                                 height: { xl: '8rem', lg: '10rem' },
@@ -275,31 +275,7 @@ const HighlightsPage = () => {
                     >
                         <TopCard
                             title='Energy'
-                            text='tx 5 seconds, with all time average ledger speed at 5.19s'
-                            boxStyling={{
-                                boxShadow: 1,
-                                height: { xl: '8rem', lg: '10rem' },
-                                width: '33rem',
-                                borderRadius: '10px',
-                                padding: '2rem',
-                                backgroundColor: 'highlightCards.primary'
-                            }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
-                        />
-                    </Grid>
-
-                    <Grid
-                        item
-                        xs={4} md={4} lg={4}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <TopCard
-                            title='Energy'
-                            text='tx 5 seconds, with all time average ledger speed at 5.19s'
+                            text='1201090 Wh/txn electricity consumed per transaction'
                             boxStyling={{
                                 boxShadow: 1,
                                 height: { xl: '8rem', lg: '10rem' },
@@ -323,7 +299,31 @@ const HighlightsPage = () => {
                     >
                         <TopCard
                             title='Energy'
-                            text='tx 5 seconds, with all time average ledger speed at 5.19s'
+                            text='0.173 Wh/txn electricity consumed per transaction'
+                            boxStyling={{
+                                boxShadow: 1,
+                                height: { xl: '8rem', lg: '10rem' },
+                                width: '33rem',
+                                borderRadius: '10px',
+                                padding: '2rem',
+                                backgroundColor: 'highlightCards.primary'
+                            }}
+                            textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
+                        />
+                    </Grid>
+
+                    <Grid
+                        item
+                        xs={4} md={4} lg={4}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
+                        <TopCard
+                            title='Energy'
+                            text='30 Wh/txn electricity consumed per transaction'
                             boxStyling={{
                                 boxShadow: 1,
                                 height: { xl: '8rem', lg: '10rem' },
@@ -346,7 +346,7 @@ const HighlightsPage = () => {
                     >
                         <TopCard
                             title='Transaction Fee'
-                            text='tx 5 seconds, with all time average ledger speed at 5.19s'
+                            text='$6.12'
                             boxStyling={{
                                 boxShadow: 1,
                                 height: { xl: '8rem', lg: '10rem' },
@@ -370,7 +370,7 @@ const HighlightsPage = () => {
                     >
                         <TopCard
                             title='Transaction Fee'
-                            text='tx 5 seconds, with all time average ledger speed at 5.19s'
+                            text='$0.0000065'
                             boxStyling={{
                                 boxShadow: 1,
                                 height: { xl: '8rem', lg: '10rem' },
@@ -394,7 +394,7 @@ const HighlightsPage = () => {
                     >
                         <TopCard
                             title='Transaction Fee'
-                            text='tx 5 seconds, with all time average ledger speed at 5.19s'
+                            text='$1.55'
                             boxStyling={{
                                 boxShadow: 1,
                                 height: { xl: '8rem', lg: '10rem' },
