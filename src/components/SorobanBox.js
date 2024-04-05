@@ -1,7 +1,10 @@
-import { Box, Tab, Tabs } from '@mui/material'
+import { Box, Tab, Tabs, IconButton } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 
-export default function SorobanBox({ value, handleChange }) {
+import LightBtn from '../assets/LightBtn.svg';
+import DarkBtn from '../assets/DarkBtn.svg';
+
+export default function SorobanBox({ value, handleChange, mode, setMode }) {
     const theme = useTheme();
 
     return (
@@ -20,7 +23,14 @@ export default function SorobanBox({ value, handleChange }) {
                 value={value}
                 onChange={handleChange}
                 sx={{
-                    marginLeft: '4rem',
+                    marginLeft: {
+                        xxl: '14rem',
+                        xl: '7rem',
+                        lg_xl: '7rem',
+                        lg: '4rem',
+                        md: '4rem',
+                        sm: '4rem',
+                    },
                     '& .MuiTabs-indicator': {
                         backgroundColor: theme.palette.tabsColors.selected,
                     },
@@ -59,6 +69,35 @@ export default function SorobanBox({ value, handleChange }) {
                     }}
                 />
             </Tabs>
+            <IconButton
+                sx={{
+                    padding: 0,
+                    marginRight: {
+                        xxl: '16rem',
+                        xl: '8rem',
+                        lg_xl: '8rem',
+                        lg: '5rem',
+                        md: '5rem',
+                        sm: '5rem',
+                    },
+                    marginLeft: 'auto'
+                }}
+                onClick={() => setMode((prevState) => {
+                    if (prevState === 'light') {
+                        return 'dark';
+                    }
+                    return 'light';
+                })}
+            >
+                <img
+                    src={mode === 'light' ? DarkBtn : LightBtn}
+                    style={{
+                        width: '1.3rem',
+                        height: '1.3rem',
+                    }}
+                    alt='switchTheme'
+                />
+            </IconButton>
         </Box>
     )
 }

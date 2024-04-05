@@ -31,7 +31,7 @@ function App() {
         >
           <CssBaseline />
           <Header />
-          <SorobanBox value={value} handleChange={handleChange} />
+          <SorobanBox value={value} handleChange={handleChange} mode={mode} setMode={setMode} />
           {value === 0 && <DAppsPage />}
           {value === 1 && <HighlightsPage />}
           {value === 2 && <Metrics />}

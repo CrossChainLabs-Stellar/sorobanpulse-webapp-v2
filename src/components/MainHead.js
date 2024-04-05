@@ -195,7 +195,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '20%',
                         //     md: '7.5rem'
                         // },
-                        // width: '12%',
+                        width: '25%',
                         backgroundColor: "#FDDA24",
                     }}
                 >
@@ -432,7 +432,7 @@ export default function MainHead({ paramsCallback }) {
                     </Typography>
                 </TableCell>
 
-                {/*<TableCell
+                {/* <TableCell
                     align="left"
                     component="th"
                     scope="row"
@@ -532,7 +532,7 @@ export default function MainHead({ paramsCallback }) {
                             />
                         </IconButton>
                     </Stack>
-                        </TableCell>*/}
+                </TableCell> */}
 
                 <TableCell
                     align="left"

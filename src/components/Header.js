@@ -32,7 +32,14 @@ export default function Header() {
                     sx={{
                         maxWidth: 45,
                         marginRight: '0.7rem',
-                        marginLeft: '5.5rem'
+                        marginLeft: {
+                            xxl: '15.5rem',
+                            xl: '8rem',
+                            lg_xl: '8rem',
+                            lg: '5.5rem',
+                            md: '5.5rem',
+                            sm: '5.5rem',
+                        },
                     }}
                 />
                 <TextTypography>SorobanPulse</TextTypography>

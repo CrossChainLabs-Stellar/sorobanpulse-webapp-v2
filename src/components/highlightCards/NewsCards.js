@@ -12,7 +12,9 @@ const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColo
                 width: '23rem',
                 height: '25rem',
                 borderRadius: '5px',
-                boxShadow: 12
+                boxShadow: 12,
+                display: 'flex',
+                flexDirection: 'column'
             }}
         >
             <Stack direction='row' alignItems='center'>
@@ -24,19 +26,16 @@ const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColo
             <Typography sx={{ color: secondaryColor, marginY: '1rem' }}>
                 {titleLong}
             </Typography>
-            <Box
-                sx={{
-                    backgroundColor: secondaryColor,
-                    padding: '1rem',
-                    boxShadow: 1
+            <img
+                src={articleImageData}
+                alt=''
+                className='newsImage'
+                style={{
+                    marginTop: 'auto',
+                    width: '100%',
+                    height: '10rem'
                 }}
-            >
-                <img
-                    src={articleImageData}
-                    alt=''
-                    className='newsImage'
-                />
-            </Box>
+            />
         </Box>
     )
 }

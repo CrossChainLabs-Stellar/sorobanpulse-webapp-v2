@@ -30,6 +30,7 @@ import mockData from '../mock/mockData';
 // assets
 import App1 from "../assets/placeholderAppsLogos/App1.svg";
 import EcosystemLogo1 from "../assets/ecosystems/EcosystemLogo1.svg";
+import GitHubLogo from '../assets/github-mark.svg';
 //import EcosystemLogo2 from "../assets/ecosystems/EcosystemLogo2.svg";
 
 import { fNumber } from '../utils/format';
@@ -220,7 +221,6 @@ export default function MainTable({ search }) {
                                 soroban,
                                 icon_data
                             } = item;
-
                             let activity = [];
                             let noActivity = true;
 
@@ -240,7 +240,7 @@ export default function MainTable({ search }) {
                                     activity = [];
                                 }
                             } catch (error) {
-                                
+
                             }
 
                             let growth_trend = true;
@@ -302,7 +302,7 @@ export default function MainTable({ search }) {
                                             <Stack direction='row' alignItems='center'>
                                                 <Avatar
                                                     key={id}
-                                                    src={icon_data}
+                                                    src={icon_data ? icon_data : GitHubLogo}
                                                     alt=' '
                                                     sx={{
                                                         marginRight: {

@@ -34,8 +34,13 @@ const HighlightsPage = () => {
                 container
                 spacing={3}
                 sx={{
-                    paddingY: '2rem',
-                    paddingX: { xl: '8rem', lg: '4rem' },
+                    paddingY: '4rem',
+                    paddingX: {
+                        xxl: '4.5rem',
+                        xl: '8rem',
+                        lg_xl: '8rem',
+                        lg: '4rem',
+                    },
                 }}
             >
 
@@ -127,7 +132,12 @@ const HighlightsPage = () => {
                     spacing={3}
                     sx={{
                         paddingY: '2rem',
-                        paddingX: { xl: '6rem', lg: '2rem' }
+                        paddingX: {
+                            xxl: '3rem',
+                            xl: '6rem',
+                            lg_xl: '6rem',
+                            lg: '2rem',
+                        }
                     }}
                 >
                     <Grid
@@ -412,7 +422,14 @@ const HighlightsPage = () => {
 
             <Typography
                 sx={{
-                    marginLeft: '5.5rem',
+                    marginLeft: {
+                        xxl: '15.75rem',
+                        xl: '8rem',
+                        lg_xl: '8rem',
+                        lg: '5.5rem',
+                        md: '5.5rem',
+                        sm: '5.5rem',
+                    },
                     marginTop: '3rem',
                     fontSize: '24px',
                     fontWeight: '600'
@@ -428,7 +445,12 @@ const HighlightsPage = () => {
                 spacing={3}
                 sx={{
                     paddingY: '2rem',
-                    paddingX: { xl: '8rem', lg: '4rem' }
+                    paddingX: {
+                        xxl: '8.25rem',
+                        xl: '8rem',
+                        lg_xl: '7.5rem',
+                        lg: '4rem',
+                    }
                 }}
             >
                 {news.map((item, index) => {
