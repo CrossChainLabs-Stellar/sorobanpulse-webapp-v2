@@ -25,7 +25,7 @@ const DAppsBar = () => {
     useEffect(() => {
         const client = new Client();
 
-        client.get('active_contributors').then((response) => {
+        client.get('dapps_chart').then((response) => {
             let contributors = response;
             contributors.pop();
             if (contributors.length > 12) {
@@ -34,7 +34,7 @@ const DAppsBar = () => {
 
             let total = 0;
             if (contributors.length > 0) {
-                total = parseInt(contributors[contributors.length - 1].active_contributors_core) + parseInt(contributors[contributors.length - 1].active_contributors_ecosystem);
+                total = parseInt(contributors[contributors.length - 1].soroban) + parseInt(contributors[contributors.length - 1].stellar);
             }
 
             let coreData = [];
@@ -42,9 +42,9 @@ const DAppsBar = () => {
             let categories = [];
 
             contributors.forEach(item => {
-                coreData.push(item.active_contributors_core ? item.active_contributors_core : 0);
-                ecosystemData.push(item.active_contributors_ecosystem ? item.active_contributors_ecosystem : 0);
-                categories.push(item.display_month.slice(0, -3));
+                coreData.push(item.soroban ? item.soroban : 0);
+                ecosystemData.push(item.stellar ? item.stellar : 0);
+                categories.push(item.month.slice(0, -3));
             });
 
             setState({
@@ -106,7 +106,7 @@ const DAppsBar = () => {
                                 fontSize: '20px',
                             }}
                         >
-                            Soroban Smart Contracts
+                            DApps
                         </Typography>
                     </Stack>
                 }

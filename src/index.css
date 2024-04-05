@@ -75,3 +75,10 @@ code {
   box-shadow: 0px 4px 4px 0px #00000026;
   height: 1530px;
 }
+
+.newsImage {
+  width: 200px;
+  height: 125px;
+  object-fit: cover;
+  flex-shrink: 0;
+}

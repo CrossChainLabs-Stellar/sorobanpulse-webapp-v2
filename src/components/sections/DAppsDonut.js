@@ -38,11 +38,11 @@ const DAppsDonut = () => {
 
     useEffect(() => {
         const client = new Client();
-        client.get('statistics').then((statistics) => {
-            let new_contributors = parseInt((statistics?.new_contributors) ? statistics?.new_contributors : 0);
-            let active_contributors = parseInt((statistics?.active_contributors) ? statistics?.active_contributors : 0);
+        client.get('dapps_statistics').then((statistics) => {
+            let stellar = parseInt((statistics?.stellar) ? statistics?.stellar : 0);
+            let soroban = parseInt((statistics?.soroban) ? statistics?.soroban : 0);
 
-            setState({ loading: false, chartData: [new_contributors, active_contributors] });
+            setState({ loading: false, chartData: [stellar, soroban] });
         });
     }, [setState]);
 
@@ -103,7 +103,7 @@ const DAppsDonut = () => {
                                 fontSize: '20px',
                             }}
                         >
-                            Developers
+                            DApps
                         </Typography>
                     </Stack>
                 }

@@ -54,6 +54,7 @@ export default function Metrics() {
                     <Contributions />
                 </Grid>
 
+                {/*
                 <Grid item xs={12} md={12} lg={4}>
                     <SmartContracts />
                 </Grid>
@@ -61,6 +62,7 @@ export default function Metrics() {
                 <Grid item xs={12} md={12} lg={8}>
                     <SmartContractsBar />
                 </Grid>
+                */}
 
             </Grid>
 
