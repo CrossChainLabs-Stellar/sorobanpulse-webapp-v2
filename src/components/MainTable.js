@@ -66,27 +66,28 @@ export default function MainTable({ search }) {
 
     useEffect(() => {
         const client = new Client();
-        params.offset = offset;
+        let tempParams = params;
+        tempParams.offset = offset;
 
         if (!search) {
-            params.search = undefined;
+            tempParams.search = undefined;
         }
         else if (params.search != search) {
-            params.search = search;
-            params.offset = 0;
+            tempParams.search = search;
+            tempParams.offset = 0;
 
             setOffset(0);
         }
 
-        console.log(params);
+        console.log('tempParams', tempParams);
 
-        client.get('dapps', params).then((response) => {
-            if (params.offset > 0) {
-                setState({
+        client.get('dapps', tempParams).then((response) => {
+            if (tempParams.offset > 0) {
+                setState(prevState => ({
                     loading: false,
                     total: response?.total,
-                    dapps: [...state.dapps, ...response.list],
-                });
+                    dapps: [...prevState.dapps, ...response?.list],
+                }));
             } else {
                 setState({
                     loading: false,
@@ -97,7 +98,9 @@ export default function MainTable({ search }) {
 
             setNotFound(response.list.length === 0 && search);
         });
-    }, [search, params, offset, setState]);
+
+        setParams(tempParams);
+    }, [search, offset]);
 
     const chartOptionsVerde = merge(CustomChart(), {
         xaxis: {

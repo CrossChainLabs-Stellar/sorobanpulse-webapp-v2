@@ -17,8 +17,8 @@ import {
 
 // assets
 import x from '../assets/x.svg';
-import Community from '../assets/Community.svg';
-import Core from '../assets/Core.svg';
+import Stellar from '../assets/Community.svg';
+import Soroban from '../assets/Core.svg';
 import clearFilter from '../assets/clearFilter.svg';
 import triunghi from '../assets/triunghi.svg';
 
@@ -123,11 +123,11 @@ export default function EcosystemTriangle({ paramsCallback }) {
                                     backgroundColor: '#FFFFFF',
                                     height: '3rem',
                                 }}
-                                onClick={() => handleFilterClose('community')}
+                                onClick={() => handleFilterClose('stellar')}
                             >
                                 <img
-                                    src={Community}
-                                    alt="Community"
+                                    src={Stellar}
+                                    alt="Stellar"
                                 />
                             </MenuItem>
                             
@@ -136,11 +136,11 @@ export default function EcosystemTriangle({ paramsCallback }) {
                                     backgroundColor: '#FFFFFF',
                                     height: '3rem',
                                 }}
-                                onClick={() => handleFilterClose('core')}
+                                onClick={() => handleFilterClose('soroban')}
                             >
                                 <img
-                                    src={Core}
-                                    alt="Core"
+                                    src={Soroban}
+                                    alt="Soroban"
                                 />
                             </MenuItem>
                         </List>

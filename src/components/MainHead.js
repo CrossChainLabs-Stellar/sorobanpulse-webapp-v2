@@ -20,12 +20,17 @@ import triunghi from '../assets/triunghi.svg';
 
 
 export default function MainHead({ paramsCallback }) {
+    const [isDescRank, setIsDescRank] = useState(true);
     const [isDescName, setIsDescName] = useState(true);
     const [isDescDevelopers, setIsDescDevelopers] = useState(true);
-    const [isDescActiveDevs, setIsDescActiveDevs] = useState(true);
     const [isDescContributions, setIsDescContributions] = useState(true);
     const [isDescActivityGr, setIsDescActivityGr] = useState(true);
-    const [isDescActivity, setIsDescActivity] = useState(true);
+    const [isDescFollowers, setIsDescFollowers] = useState(true);
+
+    const styleRank = {
+        transform: !isDescRank ? 'rotate(180deg)' : '',
+        transition: 'transform 150ms ease', // smooth transition
+    }
 
     const styleName = {
         transform: !isDescName ? 'rotate(180deg)' : '',
@@ -34,11 +39,6 @@ export default function MainHead({ paramsCallback }) {
 
     const styleDevelopers = {
         transform: !isDescDevelopers ? 'rotate(180deg)' : '',
-        transition: 'transform 150ms ease', // smooth transition
-    }
-
-    const styleActiveDevs = {
-        transform: !isDescActiveDevs ? 'rotate(180deg)' : '',
         transition: 'transform 150ms ease', // smooth transition
     }
 
@@ -52,75 +52,75 @@ export default function MainHead({ paramsCallback }) {
         transition: 'transform 150ms ease', // smooth transition
     }
 
-    const styleActivity = {
-        transform: !isDescActivity ? 'rotate(180deg)' : '',
+    const styleFollowers = {
+        transform: !isDescFollowers ? 'rotate(180deg)' : '',
         transition: 'transform 150ms ease', // smooth transition
+    }
+
+    const handleSortRank = () => {
+        paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+
+        setIsDescRank(!isDescRank);
+        setIsDescName(true);
+        setIsDescDevelopers(true);
+        setIsDescContributions(true);
+        setIsDescActivityGr(true);
+        setIsDescFollowers(true);
     }
 
     const handleSortName = () => {
         paramsCallback({ sortBy: 'name', sortType: isDescName ? 'asc' : 'desc' });
 
+        setIsDescRank(true);
         setIsDescName(!isDescName);
         setIsDescDevelopers(true);
-        setIsDescActiveDevs(true);
         setIsDescContributions(true);
         setIsDescActivityGr(true);
-        setIsDescActivity(true);
+        setIsDescFollowers(true);
     }
 
     const handleSortDevelopers = () => {
         paramsCallback({ sortBy: 'developers', sortType: isDescDevelopers ? 'asc' : 'desc' });
 
+        setIsDescRank(true);
         setIsDescName(true);
         setIsDescDevelopers(!isDescDevelopers);
-        setIsDescActiveDevs(true);
         setIsDescContributions(true);
         setIsDescActivityGr(true);
-        setIsDescActivity(true);
-    }
-
-    const handleSortActiveDevs = () => {
-        paramsCallback({ sortBy: 'active_contributors_percentage', sortType: isDescActiveDevs ? 'asc' : 'desc' });
-
-        setIsDescName(true);
-        setIsDescDevelopers(true);
-        setIsDescActiveDevs(!isDescActiveDevs);
-        setIsDescContributions(true);
-        setIsDescActivityGr(true);
-        setIsDescActivity(true);
+        setIsDescFollowers(true);
     }
 
     const handleSortContributions = () => {
         paramsCallback({ sortBy: 'contributions', sortType: isDescContributions ? 'asc' : 'desc' });
 
+        setIsDescRank(true);
         setIsDescName(true);
         setIsDescDevelopers(true);
-        setIsDescActiveDevs(true);
         setIsDescContributions(!isDescContributions);
         setIsDescActivityGr(true);
-        setIsDescActivity(true);
+        setIsDescFollowers(true);
     }
 
     const handleSortActivityGr = () => {
         paramsCallback({ sortBy: 'activity_growth', sortType: isDescActivityGr ? 'asc' : 'desc' });
 
+        setIsDescRank(true);
         setIsDescName(true);
         setIsDescDevelopers(true);
-        setIsDescActiveDevs(true);
         setIsDescContributions(true);
         setIsDescActivityGr(!isDescActivityGr);
-        setIsDescActivity(true);
+        setIsDescFollowers(true);
     }
 
-    const handleSortActivity = () => {
-        paramsCallback({ sortBy: 'activity_growth', sortType: isDescActivity ? 'asc' : 'desc' });
+    const handleSortFollowers = () => {
+        paramsCallback({ sortBy: 'followers', sortType: isDescFollowers ? 'asc' : 'desc' });
 
+        setIsDescRank(true);
         setIsDescName(true);
         setIsDescDevelopers(true);
-        setIsDescActiveDevs(true);
         setIsDescContributions(true);
         setIsDescActivityGr(true);
-        setIsDescActivity(!isDescActivity);
+        setIsDescFollowers(!isDescFollowers);
     }
 
     return (
@@ -167,7 +167,7 @@ export default function MainHead({ paramsCallback }) {
 
                         <IconButton
                             id="basic-button"
-                            onClick={handleSortName}
+                            onClick={handleSortRank}
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem'
@@ -176,7 +176,7 @@ export default function MainHead({ paramsCallback }) {
                             <img
                                 src={triunghi}
                                 alt='triunghi'
-                                style={styleName}
+                                style={styleRank}
                             />
                         </IconButton>
                     </Stack>
@@ -354,7 +354,7 @@ export default function MainHead({ paramsCallback }) {
 
                         <IconButton
                             id="basic-button"
-                            onClick={handleSortDevelopers}
+                            onClick={handleSortContributions}
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem'
@@ -363,7 +363,7 @@ export default function MainHead({ paramsCallback }) {
                             <img
                                 src={triunghi}
                                 alt='triunghi'
-                                style={styleDevelopers}
+                                style={styleContributions}
                             />
                         </IconButton>
                     </Stack>
@@ -406,7 +406,7 @@ export default function MainHead({ paramsCallback }) {
 
                         <IconButton
                             id="basic-button"
-                            onClick={handleSortActiveDevs}
+                            onClick={handleSortActivityGr}
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem'
@@ -415,7 +415,7 @@ export default function MainHead({ paramsCallback }) {
                             <img
                                 src={triunghi}
                                 alt='triunghi'
-                                style={styleActiveDevs}
+                                style={styleActivityGr}
                             />
                         </IconButton>
                     </Stack>
@@ -565,7 +565,7 @@ export default function MainHead({ paramsCallback }) {
 
                         <IconButton
                             id="basic-button"
-                            onClick={handleSortActivity}
+                            onClick={handleSortFollowers}
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem'
@@ -574,7 +574,7 @@ export default function MainHead({ paramsCallback }) {
                             <img
                                 src={triunghi}
                                 alt='triunghi'
-                                style={styleActivity}
+                                style={styleFollowers}
                             />
                         </IconButton>
                     </Stack>

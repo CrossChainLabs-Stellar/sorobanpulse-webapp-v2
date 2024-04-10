@@ -82,7 +82,7 @@ const DAppsPage = () => {
                                     </InputAdornment>,
                             }}
                         />
-                        <MainTable />
+                        <MainTable search={search} />
                     </Box>
                 </Grid>
 
