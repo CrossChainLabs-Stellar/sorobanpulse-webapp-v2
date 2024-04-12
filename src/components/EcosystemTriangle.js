@@ -20,7 +20,7 @@ import x from '../assets/x.svg';
 import Stellar from '../assets/ecosystems/EcosystemLogoStellar.svg';
 import Soroban from '../assets/ecosystems/EcosystemLogoSoroban.svg';
 import clearFilter from '../assets/clearFilter.svg';
-import triunghi from '../assets/triunghi.svg';
+import filter from '../assets/bara.svg';
 
 
 
@@ -54,7 +54,7 @@ export default function EcosystemTriangle({ paramsCallback }) {
                     marginTop: '0.15rem'
                 }}
             >
-                <img src={triunghi} alt='triunghi' />
+                <img src={filter} alt='filter' />
             </IconButton>
             {isSorted ?
                 <IconButton
@@ -109,7 +109,7 @@ export default function EcosystemTriangle({ paramsCallback }) {
                             <img src={x} alt='x' />
                         </IconButton>
                     </Stack>
-                    
+
                     <Paper
                         sx={{
                             backgroundColor: "#fff",
@@ -128,9 +128,16 @@ export default function EcosystemTriangle({ paramsCallback }) {
                                 <img
                                     src={Stellar}
                                     alt="Stellar"
+                                    style={{
+                                        width: '2rem',
+                                        marginRight: '0.75rem'
+                                    }}
                                 />
+                                <Typography>
+                                    Stellar
+                                </Typography>
                             </MenuItem>
-                            
+
                             <MenuItem
                                 sx={{
                                     backgroundColor: '#FFFFFF',
@@ -141,7 +148,14 @@ export default function EcosystemTriangle({ paramsCallback }) {
                                 <img
                                     src={Soroban}
                                     alt="Soroban"
+                                    style={{
+                                        width: '2rem',
+                                        marginRight: '0.75rem'
+                                    }}
                                 />
+                                <Typography>
+                                    Soroban
+                                </Typography>
                             </MenuItem>
                         </List>
                     </Paper>

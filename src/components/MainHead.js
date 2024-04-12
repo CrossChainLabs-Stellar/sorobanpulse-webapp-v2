@@ -16,6 +16,7 @@ import EcosystemTriangle from './EcosystemTriangle';
 // assets
 import triunghi from '../assets/triunghi.svg';
 
+
 // ----------------------------------------------------------------------
 
 
@@ -26,6 +27,7 @@ export default function MainHead({ paramsCallback }) {
     const [isDescContributions, setIsDescContributions] = useState(true);
     const [isDescActivityGr, setIsDescActivityGr] = useState(true);
     const [isDescFollowers, setIsDescFollowers] = useState(true);
+    const [sortArray, setSortArray] = useState(new Array(6).fill(0));
 
     const styleRank = {
         transform: !isDescRank ? 'rotate(180deg)' : '',
@@ -55,6 +57,12 @@ export default function MainHead({ paramsCallback }) {
     const styleFollowers = {
         transform: !isDescFollowers ? 'rotate(180deg)' : '',
         transition: 'transform 150ms ease', // smooth transition
+    }
+
+    const handleChangeSort = (newSort) => {
+        const newArray = new Array(6).fill(0);
+        newArray[newSort] = 1;
+        setSortArray(newArray);
     }
 
     const handleSortRank = () => {
@@ -148,6 +156,7 @@ export default function MainHead({ paramsCallback }) {
                         borderTopLeftRadius: '10px',
                         borderBottomLeftRadius: '10px',
                     }}
+                    onClick={() => handleChangeSort(0)}
                 >
                     <Stack
                         direction="row"
@@ -165,7 +174,7 @@ export default function MainHead({ paramsCallback }) {
                             #
                         </Typography>
 
-                        <IconButton
+                        {sortArray[0] !== 0 && <IconButton
                             id="basic-button"
                             onClick={handleSortRank}
                             sx={{
@@ -178,7 +187,8 @@ export default function MainHead({ paramsCallback }) {
                                 alt='triunghi'
                                 style={styleRank}
                             />
-                        </IconButton>
+                        </IconButton>}
+
                     </Stack>
                 </TableCell>
 
@@ -198,6 +208,7 @@ export default function MainHead({ paramsCallback }) {
                         width: '25%',
                         backgroundColor: "#FDDA24",
                     }}
+                    onClick={() => handleChangeSort(1)}
                 >
                     <Stack
                         direction="row"
@@ -215,7 +226,7 @@ export default function MainHead({ paramsCallback }) {
                             Dapp Name
                         </Typography>
 
-                        <IconButton
+                        {sortArray[1] !== 0 && <IconButton
                             id="basic-button"
                             onClick={handleSortName}
                             sx={{
@@ -228,7 +239,8 @@ export default function MainHead({ paramsCallback }) {
                                 alt='triunghi'
                                 style={styleName}
                             />
-                        </IconButton>
+                        </IconButton>}
+
                     </Stack>
                 </TableCell>
 
@@ -285,6 +297,7 @@ export default function MainHead({ paramsCallback }) {
                         // width: '11%',
                         backgroundColor: "#FDDA24"
                     }}
+                    onClick={() => handleChangeSort(2)}
                 >
                     <Stack
                         direction="row"
@@ -301,8 +314,7 @@ export default function MainHead({ paramsCallback }) {
                         >
                             Developers
                         </Typography>
-
-                        <IconButton
+                        {sortArray[2] !== 0 && <IconButton
                             id="basic-button"
                             onClick={handleSortDevelopers}
                             sx={{
@@ -315,7 +327,8 @@ export default function MainHead({ paramsCallback }) {
                                 alt='triunghi'
                                 style={styleDevelopers}
                             />
-                        </IconButton>
+                        </IconButton>}
+
                     </Stack>
                 </TableCell>
 
@@ -335,6 +348,7 @@ export default function MainHead({ paramsCallback }) {
                         // width: '11%',
                         backgroundColor: "#FDDA24"
                     }}
+                    onClick={() => handleChangeSort(3)}
                 >
                     <Stack
                         direction="row"
@@ -351,8 +365,7 @@ export default function MainHead({ paramsCallback }) {
                         >
                             Contributions
                         </Typography>
-
-                        <IconButton
+                        {sortArray[3] !== 0 && <IconButton
                             id="basic-button"
                             onClick={handleSortContributions}
                             sx={{
@@ -365,7 +378,8 @@ export default function MainHead({ paramsCallback }) {
                                 alt='triunghi'
                                 style={styleContributions}
                             />
-                        </IconButton>
+                        </IconButton>}
+
                     </Stack>
                 </TableCell>
 
@@ -385,6 +399,7 @@ export default function MainHead({ paramsCallback }) {
                         // width: '11%',
                         backgroundColor: "#FDDA24",
                     }}
+                    onClick={() => handleChangeSort(4)}
                 >
                     <Stack
                         direction="row"
@@ -403,8 +418,7 @@ export default function MainHead({ paramsCallback }) {
                         >
                             Development
                         </Typography>
-
-                        <IconButton
+                        {sortArray[4] !== 0 && <IconButton
                             id="basic-button"
                             onClick={handleSortActivityGr}
                             sx={{
@@ -417,7 +431,8 @@ export default function MainHead({ paramsCallback }) {
                                 alt='triunghi'
                                 style={styleActivityGr}
                             />
-                        </IconButton>
+                        </IconButton>}
+
                     </Stack>
                     <Typography
                         noWrap
@@ -545,6 +560,7 @@ export default function MainHead({ paramsCallback }) {
                         backgroundColor: "#FDDA24",
                         paddingRight: '3rem',
                     }}
+                    onClick={() => handleChangeSort(5)}
                 >
                     <Stack
                         direction="row"
@@ -562,8 +578,7 @@ export default function MainHead({ paramsCallback }) {
                         >
                             X / Twitter
                         </Typography>
-
-                        <IconButton
+                        {sortArray[5] !== 0 && <IconButton
                             id="basic-button"
                             onClick={handleSortFollowers}
                             sx={{
@@ -576,7 +591,8 @@ export default function MainHead({ paramsCallback }) {
                                 alt='triunghi'
                                 style={styleFollowers}
                             />
-                        </IconButton>
+                        </IconButton>}
+
                     </Stack>
                 </TableCell>
 
