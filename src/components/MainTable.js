@@ -29,9 +29,10 @@ import mockData from '../mock/mockData';
 
 // assets
 import App1 from "../assets/placeholderAppsLogos/App1.svg";
-import EcosystemLogo1 from "../assets/ecosystems/EcosystemLogo1.svg";
+import EcosystemLogoSoroban from "../assets/ecosystems/EcosystemLogoSoroban.svg";
+import EcosystemLogoStellar from "../assets/ecosystems/EcosystemLogoStellar.svg";
 import GitHubLogo from '../assets/github-mark.svg';
-//import EcosystemLogo2 from "../assets/ecosystems/EcosystemLogo2.svg";
+
 
 import { fNumber } from '../utils/format';
 import { Client } from '../utils/client';
@@ -53,6 +54,23 @@ function SearchNotFound({ searchQuery = '', ...other }) {
     );
 }
 
+
+function formatFollowers(followers) {
+    if (followers >= 1000000) {
+        return `${(followers / 1000000).toFixed(1)}M`;
+    } else if (followers >= 1000) {
+        return `${(followers / 1000).toFixed(1)}K`;
+    }
+
+    const thresholds = [900, 800, 700, 600, 500, 400, 300, 200, 100, 50, 10, 5];
+    for (let threshold of thresholds) {
+        if (followers > threshold) {
+            return `${threshold}+`;
+        }
+    }
+
+    return undefined;
+}
 
 export default function MainTable({ search }) {
     const [state, setState] = useState({
@@ -217,6 +235,7 @@ export default function MainTable({ search }) {
                                 rank,
                                 dapp,
                                 url,
+                                followers,
                                 contributions,
                                 developers,
                                 activity_growth,
@@ -226,6 +245,7 @@ export default function MainTable({ search }) {
                             } = item;
                             let activity = [];
                             let noActivity = true;
+                            let followersValue = formatFollowers(followers);
 
                             try {
                                 let activityItems = JSON.parse(commits);
@@ -378,7 +398,8 @@ export default function MainTable({ search }) {
                                             }}
                                         >
 
-                                            {soroban == 'true' && <img src={EcosystemLogo1} alt="app1" style={{ width: '2rem' }} />}
+                                            {soroban == 'true' && <img src={EcosystemLogoSoroban} alt="app1" style={{ width: '2rem' }} />}
+                                            {soroban !== 'true' && <img src={EcosystemLogoStellar} alt="app1" style={{ width: '2rem' }} />}
                                         </TableCell>
 
                                         <TableCell
@@ -499,7 +520,7 @@ export default function MainTable({ search }) {
                                             }}
                                         >
                                             <Typography variant="subtitle2" noWrap>
-                                                2 followers
+                                                {followersValue && `${followersValue} followers`}
                                             </Typography>
                                         </TableCell>
 

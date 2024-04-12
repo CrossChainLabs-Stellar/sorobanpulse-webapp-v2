@@ -17,8 +17,8 @@ import {
 
 // assets
 import x from '../assets/x.svg';
-import Stellar from '../assets/Community.svg';
-import Soroban from '../assets/Core.svg';
+import Stellar from '../assets/ecosystems/EcosystemLogoStellar.svg';
+import Soroban from '../assets/ecosystems/EcosystemLogoSoroban.svg';
 import clearFilter from '../assets/clearFilter.svg';
 import triunghi from '../assets/triunghi.svg';
 
