@@ -114,7 +114,7 @@ export default function MainTable({ search }) {
                 });
             }
 
-            setNotFound(response.list.length === 0 && search);
+            setNotFound(response?.total == 0 && search);
         });
 
         setParams(tempParams);
