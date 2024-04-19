@@ -1,11 +1,12 @@
-import { Box, Stack, Typography } from "@mui/material"
+import { Box, Stack, Typography, Link } from "@mui/material"
 
 import CardLogo from '../../assets/placeholderAppsLogos/CardLogo.svg';
 
 
-const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColor, secondaryColor }) => {
+const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColor, secondaryColor, link }) => {
     return (
-        <Box
+        <Link
+            underline="none"
             sx={{
                 backgroundColor: mainColor,
                 padding: '2rem',
@@ -14,8 +15,12 @@ const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColo
                 borderRadius: '5px',
                 boxShadow: 12,
                 display: 'flex',
-                flexDirection: 'column'
+                flexDirection: 'column',
+                cursor: 'pointer'
             }}
+            href={link}
+            target="_blank"
+            rel="noopener"
         >
             <Stack direction='row' alignItems='center'>
                 <img src={iconData} alt='logo' style={{ width: '2rem' }} />
@@ -36,7 +41,7 @@ const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColo
                     height: '10rem'
                 }}
             />
-        </Box>
+        </Link>
     )
 }
 export default NewsCards

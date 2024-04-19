@@ -53,7 +53,7 @@ const DAppsDonut = () => {
         },
         labels: ['Soroban', 'Stellar'],
         stroke: {
-            colors: [theme.palette.chart.stroke],
+            colors: 'transparent',
             width: 10,
         },
         legend: { floating: true, horizontalAlign: 'center' },

@@ -58,13 +58,16 @@ const HighlightsPage = () => {
                         text='The Stellar network transactions are confirmed within 5 seconds, with all time average ledger speed at 5.19s'
                         boxStyling={{
                             boxShadow: 12,
-                            height: { xl: '12rem', lg: '15rem' },
+                            height: { xl: '15rem', lg: '18rem' },
                             width: '33rem',
                             borderRadius: '10px',
                             padding: '2rem',
-                            backgroundColor: 'highlightCards.primary'
+                            backgroundColor: 'highlightCards.primary',
+                            cursor: 'pointer'
                         }}
-                        textStyling={{ marginLeft: '2rem', marginTop: '2rem', }}
+                        textStyling={{ marginLeft: '2rem', marginTop: '2rem', color: 'text.primary' }}
+                        isRightImage={true}
+                        link='https://mui.com/material-ui/react-link/'
                     />
                 </Grid>
 
@@ -82,13 +85,16 @@ const HighlightsPage = () => {
                         text='Research showed the Stellar network’s footprint is the equivalent to the greenhouse gas emissions from 33.7 US homes’ electricity use for one year.'
                         boxStyling={{
                             boxShadow: 12,
-                            height: { xl: '12rem', lg: '15rem' },
+                            height: { xl: '15rem', lg: '18rem' },
                             width: '33rem',
                             borderRadius: '10px',
                             padding: '2rem',
-                            backgroundColor: 'highlightCards.primary'
+                            backgroundColor: 'highlightCards.primary',
+                            cursor: 'pointer'
                         }}
-                        textStyling={{ marginLeft: '2rem', marginTop: '2rem' }}
+                        textStyling={{ marginLeft: '2rem', marginTop: '2rem', color: 'text.primary' }}
+                        isRightImage={true}
+                        link='https://mui.com/material-ui/react-link/'
                     />
                 </Grid>
 
@@ -106,13 +112,16 @@ const HighlightsPage = () => {
                         text='The Stellar network performs transactions for a fraction of a US penny, with the average transaction cost = 0.00005 XLM.'
                         boxStyling={{
                             boxShadow: 12,
-                            height: { xl: '12rem', lg: '15rem' },
+                            height: { xl: '15rem', lg: '18rem' },
                             width: '33rem',
                             borderRadius: '10px',
                             padding: '2rem',
-                            backgroundColor: 'highlightCards.primary'
+                            backgroundColor: 'highlightCards.primary',
+                            cursor: 'pointer'
                         }}
-                        textStyling={{ marginLeft: '2rem', marginTop: '2rem' }}
+                        textStyling={{ marginLeft: '2rem', marginTop: '2rem', color: 'text.primary' }}
+                        isRightImage={true}
+                        link='https://mui.com/material-ui/react-link/'
                     />
                 </Grid>
 
@@ -121,7 +130,7 @@ const HighlightsPage = () => {
             <Box
                 sx={{
                     backgroundColor: '#2A2A2A',
-                    height: { xl: '40rem', lg: '45rem' },
+                    height: { xl: '45rem', lg: '50rem' },
                     opacity: theme.palette.mode === 'light' ? '0.9' : 1,
                     padding: '2rem'
                 }}
@@ -217,13 +226,15 @@ const HighlightsPage = () => {
                             text='tx 600 seconds'
                             boxStyling={{
                                 boxShadow: 1,
-                                height: { xl: '8rem', lg: '10rem' },
+                                height: { xl: '10rem', lg: '12rem' },
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: 'highlightCards.primary'
+                                backgroundColor: 'highlightCards.primary',
+                                cursor: 'pointer'
                             }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
+                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                            link='https://mui.com/material-ui/react-link/'
                         />
                     </Grid>
 
@@ -241,13 +252,15 @@ const HighlightsPage = () => {
                             text='tx 5 seconds'
                             boxStyling={{
                                 boxShadow: 1,
-                                height: { xl: '8rem', lg: '10rem' },
+                                height: { xl: '10rem', lg: '12rem' },
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: 'highlightCards.primary'
+                                backgroundColor: 'highlightCards.primary',
+                                cursor: 'pointer'
                             }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
+                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                            link='https://mui.com/material-ui/react-link/'
                         />
                     </Grid>
 
@@ -265,13 +278,15 @@ const HighlightsPage = () => {
                             text='tx 12 seconds'
                             boxStyling={{
                                 boxShadow: 1,
-                                height: { xl: '8rem', lg: '10rem' },
+                                height: { xl: '10rem', lg: '12rem' },
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: 'highlightCards.primary'
+                                backgroundColor: 'highlightCards.primary',
+                                cursor: 'pointer'
                             }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
+                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                            link='https://mui.com/material-ui/react-link/'
                         />
                     </Grid>
                     <Grid
@@ -288,13 +303,15 @@ const HighlightsPage = () => {
                             text='1201090 Wh/txn electricity consumed per transaction'
                             boxStyling={{
                                 boxShadow: 1,
-                                height: { xl: '8rem', lg: '10rem' },
+                                height: { xl: '10rem', lg: '12rem' },
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: 'highlightCards.primary'
+                                backgroundColor: 'highlightCards.primary',
+                                cursor: 'pointer'
                             }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
+                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                            link='https://mui.com/material-ui/react-link/'
                         />
                     </Grid>
 
@@ -312,13 +329,15 @@ const HighlightsPage = () => {
                             text='0.173 Wh/txn electricity consumed per transaction'
                             boxStyling={{
                                 boxShadow: 1,
-                                height: { xl: '8rem', lg: '10rem' },
+                                height: { xl: '10rem', lg: '12rem' },
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: 'highlightCards.primary'
+                                backgroundColor: 'highlightCards.primary',
+                                cursor: 'pointer'
                             }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
+                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                            link='https://mui.com/material-ui/react-link/'
                         />
                     </Grid>
 
@@ -336,13 +355,15 @@ const HighlightsPage = () => {
                             text='30 Wh/txn electricity consumed per transaction'
                             boxStyling={{
                                 boxShadow: 1,
-                                height: { xl: '8rem', lg: '10rem' },
+                                height: { xl: '10rem', lg: '12rem' },
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: 'highlightCards.primary'
+                                backgroundColor: 'highlightCards.primary',
+                                cursor: 'pointer'
                             }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
+                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                            link='https://mui.com/material-ui/react-link/'
                         />
                     </Grid>
                     <Grid
@@ -359,13 +380,15 @@ const HighlightsPage = () => {
                             text='$6.12'
                             boxStyling={{
                                 boxShadow: 1,
-                                height: { xl: '8rem', lg: '10rem' },
+                                height: { xl: '10rem', lg: '12rem' },
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: 'highlightCards.primary'
+                                backgroundColor: 'highlightCards.primary',
+                                cursor: 'pointer'
                             }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
+                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                            link='https://mui.com/material-ui/react-link/'
                         />
                     </Grid>
 
@@ -383,13 +406,15 @@ const HighlightsPage = () => {
                             text='$0.0000065'
                             boxStyling={{
                                 boxShadow: 1,
-                                height: { xl: '8rem', lg: '10rem' },
+                                height: { xl: '10rem', lg: '12rem' },
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: 'highlightCards.primary'
+                                backgroundColor: 'highlightCards.primary',
+                                cursor: 'pointer'
                             }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
+                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                            link='https://mui.com/material-ui/react-link/'
                         />
                     </Grid>
 
@@ -407,13 +432,15 @@ const HighlightsPage = () => {
                             text='$1.55'
                             boxStyling={{
                                 boxShadow: 1,
-                                height: { xl: '8rem', lg: '10rem' },
+                                height: { xl: '10rem', lg: '12rem' },
                                 width: '33rem',
                                 borderRadius: '10px',
                                 padding: '2rem',
-                                backgroundColor: 'highlightCards.primary'
+                                backgroundColor: 'highlightCards.primary',
+                                cursor: 'pointer'
                             }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem' }}
+                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                            link='https://mui.com/material-ui/react-link/'
                         />
                     </Grid>
 
@@ -482,6 +509,7 @@ const HighlightsPage = () => {
                                     articleImageData={article_image_data}
                                     mainColor='#000'
                                     secondaryColor='#fff'
+                                    link='https://mui.com/material-ui/react-link/'
                                 />
                             </Grid>
                         )
@@ -505,6 +533,7 @@ const HighlightsPage = () => {
                                     articleImageData={article_image_data}
                                     mainColor='#fff'
                                     secondaryColor='#000'
+                                    link='https://mui.com/material-ui/react-link/'
                                 />
                             </Grid>
                         )

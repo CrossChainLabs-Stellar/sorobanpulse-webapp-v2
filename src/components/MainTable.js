@@ -273,6 +273,8 @@ export default function MainTable({ search }) {
                                 }
                             }
 
+
+
                             return (
                                 <React.Fragment key={id}>
                                     <TableRow
@@ -326,7 +328,7 @@ export default function MainTable({ search }) {
                                                 <Avatar
                                                     key={id}
                                                     src={icon_data ? icon_data : GitHubLogo}
-                                                    alt=' '
+                                                    alt='logo'
                                                     sx={{
                                                         marginRight: {
                                                             xs: '0.5rem',
