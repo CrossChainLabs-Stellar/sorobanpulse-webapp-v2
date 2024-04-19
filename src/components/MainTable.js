@@ -71,7 +71,6 @@ function formatFollowers(followers) {
 
     return undefined;
 }
-
 export default function MainTable({ search }) {
     const [state, setState] = useState({
         loading: true,
@@ -84,40 +83,36 @@ export default function MainTable({ search }) {
 
     useEffect(() => {
         const client = new Client();
-        let tempParams = params;
-        tempParams.offset = offset;
+        let newParams = {
+            ...params,
+            offset: offset,
+            search: search || undefined 
+        };
 
-        if (!search) {
-            tempParams.search = undefined;
-        }
-        else if (params.search != search) {
-            tempParams.search = search;
-            tempParams.offset = 0;
-
+        if (search !== params.search && search) {
+            newParams = { ...newParams, search: search, offset: 0 };
             setOffset(0);
         }
 
-        console.log('tempParams', tempParams);
-
-        client.get('dapps', tempParams).then((response) => {
-            if (tempParams.offset > 0) {
+        client.get('dapps', newParams).then((response) => {
+            if (newParams.offset > 0) {
                 setState(prevState => ({
                     loading: false,
                     total: response?.total,
-                    dapps: [...prevState.dapps, ...response?.list],
+                    dapps: [...prevState.dapps, ...(response?.list || [])],
                 }));
             } else {
                 setState({
                     loading: false,
                     total: response?.total,
-                    dapps: response?.list,
+                    dapps: response?.list || [],
                 });
             }
 
-            setNotFound(response?.total == 0 && search);
+            setNotFound(response?.total === 0 && search);
         });
 
-        setParams(tempParams);
+        setParams(newParams);
     }, [search, offset]);
 
     const chartOptionsVerde = merge(CustomChart(), {
