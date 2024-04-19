@@ -25,9 +25,8 @@ const ChartWrapperStyle = styled('div')(({ theme }) => ({
  * Pie chart that displays the number of issues.
  */
 function TinyCircle({ fillColor, innerProcent }) {
-
     const chartOptions = merge(CustomChart(), {
-        colors: ["#E9EBEE"],
+        colors: [fillColor],
         chart: {
             // width: 10,
             type: 'radialBar',
@@ -61,14 +60,14 @@ function TinyCircle({ fillColor, innerProcent }) {
                         fontSize: '18px',
                         fontWeight: 600,
                         formatter: function (val) {
-                            return (100 - val) + '%';
+                            return val + '%';
                         },
                         color: '#000'
                     },
                 },
                 track: {
                     show: true,
-                    background: fillColor,
+                    background: "#E9EBEE",
                 },
             },
         },
@@ -79,7 +78,7 @@ function TinyCircle({ fillColor, innerProcent }) {
             {/* <ReactApexChart type="donut" series={state.chartData} options={chartOptions} height={310} /> */}
             <ReactApexChart
                 type="radialBar"
-                series={[100 - innerProcent]}
+                series={[Math.abs(innerProcent)]}
                 options={chartOptions}
                 height={145}
             />

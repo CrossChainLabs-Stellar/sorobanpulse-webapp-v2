@@ -25,7 +25,6 @@ function App() {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme} >
-        {/* <Circles mode={mode} /> */}
         <div
           className={mode === 'light' ? 'circles_light' : 'circles_dark'}
         >

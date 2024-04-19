@@ -125,7 +125,6 @@ function EcosystemGrowth() {
             });
         });
     }, [setState]);
-
     return (
         <Card
             sx={{
