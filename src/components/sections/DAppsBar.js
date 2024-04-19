@@ -77,7 +77,7 @@ const DAppsBar = () => {
         plotOptions: {
             bar: {
                 horizontal: false,
-                borderRadius: 0,
+                borderRadius: 3,
             },
         },
         // stroke: {

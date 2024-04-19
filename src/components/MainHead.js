@@ -156,6 +156,7 @@ export default function MainHead({ paramsCallback }) {
                         paddingLeft: { xl: '3rem', lg: '1.5rem' },
                         borderTopLeftRadius: '10px',
                         borderBottomLeftRadius: '10px',
+                        cursor: 'pointer'
                     }}
                     onClick={() => handleChangeSort(0, handleSortRank)}
                 >
@@ -210,6 +211,7 @@ export default function MainHead({ paramsCallback }) {
                         // },
                         width: '25%',
                         backgroundColor: "#FDDA24",
+                        cursor: 'pointer'
                     }}
                     onClick={() => handleChangeSort(1, handleSortName)}
                 >
@@ -262,7 +264,8 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '10rem',
                         // },
                         // width: '11%',
-                        backgroundColor: "#FDDA24"
+                        backgroundColor: "#FDDA24",
+                        cursor: 'pointer'
                     }}
                 >
                     <Stack
@@ -299,7 +302,8 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '10rem',
                         // },
                         // width: '11%',
-                        backgroundColor: "#FDDA24"
+                        backgroundColor: "#FDDA24",
+                        cursor: 'pointer'
                     }}
                     onClick={() => handleChangeSort(2, handleSortDevelopers)}
                 >
@@ -351,7 +355,8 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '10rem',
                         // },
                         // width: '11%',
-                        backgroundColor: "#FDDA24"
+                        backgroundColor: "#FDDA24",
+                        cursor: 'pointer'
                     }}
                     onClick={() => handleChangeSort(3, handleSortContributions)}
                 >
@@ -404,6 +409,7 @@ export default function MainHead({ paramsCallback }) {
                         // },
                         // width: '11%',
                         backgroundColor: "#FDDA24",
+                        cursor: 'pointer'
                     }}
                     onClick={() => handleChangeSort(4, handleSortActivityGr)}
                 >
@@ -566,6 +572,7 @@ export default function MainHead({ paramsCallback }) {
                         borderBottomRightRadius: '10px',
                         backgroundColor: "#FDDA24",
                         paddingRight: '3rem',
+                        cursor: 'pointer'
                     }}
                     onClick={() => handleChangeSort(5, handleSortFollowers)}
                 >

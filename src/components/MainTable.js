@@ -422,7 +422,7 @@ export default function MainTable({ search }) {
                                                     textOverflow: 'ellipsis',
                                                 }}
                                             >
-                                                {developers ? fNumber(developers) : ''}
+                                                {developers ? fNumber(developers) : 'N/A'}
                                             </Typography>
                                         </TableCell>
 
@@ -446,7 +446,7 @@ export default function MainTable({ search }) {
                                                     textOverflow: 'ellipsis',
                                                 }}
                                             >
-                                                {contributions ? fNumber(contributions) : ''}
+                                                {contributions ? fNumber(contributions) : 'N/A'}
                                             </Typography>
                                         </TableCell>
 
@@ -520,7 +520,7 @@ export default function MainTable({ search }) {
                                             }}
                                         >
                                             <Typography variant="subtitle2" noWrap>
-                                                {followersValue && `${followersValue} followers`}
+                                                {followersValue ? `${followersValue} followers` : 'N/A'}
                                             </Typography>
                                         </TableCell>
 
