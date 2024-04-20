@@ -80,6 +80,9 @@ const DAppsBar = () => {
                 borderRadius: 3,
             },
         },
+        tooltip: {
+            theme: theme.palette.mode
+        }
         // stroke: {
         //   width: 2,
         //   colors: ["#F15A24", "#F2C1B0"],

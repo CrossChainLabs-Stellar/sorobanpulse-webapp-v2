@@ -86,7 +86,7 @@ export default function MainTable({ search }) {
         let newParams = {
             ...params,
             offset: offset,
-            search: search || undefined 
+            search: search || undefined
         };
 
         if (search !== params.search && search) {
@@ -353,6 +353,8 @@ export default function MainTable({ search }) {
                                                             lg: '2.5rem',
                                                             xl: '2.5rem',
                                                         },
+                                                        border: '0.05px solid #000',
+                                                        backgroundColor: '#d5d5d5'
                                                     }}
                                                 />
                                                 <Typography

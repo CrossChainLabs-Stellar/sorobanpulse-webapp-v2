@@ -2,7 +2,7 @@
 import merge from 'lodash/merge';
 import { useState, useEffect } from 'react';
 import ReactApexChart from 'react-apexcharts';
-import { Card, CardHeader, Box, Typography, Stack } from '@mui/material';
+import { Card, CardHeader, Box, Typography, Stack, tooltipClasses } from '@mui/material';
 import { CustomChart } from '../chart'
 import { Client } from '../../utils/client';
 import { number } from '../../utils/format';
@@ -75,6 +75,9 @@ function Contributions() {
             colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
             strokeColors: [theme.palette.chart.primary, theme.palette.chart.secondary],
         },
+        tooltip: {
+            theme: theme.palette.mode
+        }
     });
 
     return (

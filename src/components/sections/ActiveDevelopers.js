@@ -73,6 +73,9 @@ function ActiveDevelopers() {
             colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
             //colors: ["#F2C1B0", "#F15A24"],
         },
+        tooltip: {
+            theme: theme.palette.mode
+        }
         // stroke: {
         //   width: 2,
         //   colors: ["#F15A24", "#F2C1B0"],

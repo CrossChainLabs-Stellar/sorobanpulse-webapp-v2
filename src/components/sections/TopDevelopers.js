@@ -143,19 +143,19 @@ function TopDevelopers() {
                         MenuProps={{
                             sx: {
                                 "&& .Mui-selected": {
-                                    backgroundColor: '#ffffff',
+                                    backgroundColor: 'tableColor.card',
                                     '&:hover': {
-                                        backgroundColor: '#ffffff',
+                                        backgroundColor: 'tableColor.card',
                                     },
                                     '&:active': {
-                                        backgroundColor: '#ffffff',
+                                        backgroundColor: 'tableColor.card',
                                     },
                                     '&:focus': {
-                                        backgroundColor: '#ffffff',
+                                        backgroundColor: 'tableColor.card',
                                     },
                                 },
                                 "&& .MuiList-root": {
-                                    backgroundColor: '#ffffff',
+                                    backgroundColor: 'tableColor.card',
                                 }
                             }
                         }}
@@ -163,9 +163,9 @@ function TopDevelopers() {
                         <MenuItem
                             value={1}
                             sx={{
-                                backgroundColor: '#ffffff',
+                                backgroundColor: 'tableColor.card',
                                 '&:hover': {
-                                    backgroundColor: '#ffffff',
+                                    backgroundColor: 'tableColor.card',
                                 },
                                 fontSize: '15px',
                             }}
@@ -175,9 +175,9 @@ function TopDevelopers() {
                         <MenuItem
                             value={2}
                             sx={{
-                                backgroundColor: '#ffffff',
+                                backgroundColor: 'tableColor.card',
                                 '&:hover': {
-                                    backgroundColor: '#ffffff',
+                                    backgroundColor: 'tableColor.card',
                                 },
                                 fontSize: '15px',
                             }}
@@ -187,9 +187,9 @@ function TopDevelopers() {
                         <MenuItem
                             value={3}
                             sx={{
-                                backgroundColor: '#ffffff',
+                                backgroundColor: 'tableColor.card',
                                 '&:hover': {
-                                    backgroundColor: '#ffffff',
+                                    backgroundColor: 'tableColor.card',
                                 },
                                 fontSize: '15px',
                             }}

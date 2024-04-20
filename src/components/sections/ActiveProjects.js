@@ -6,6 +6,8 @@ import { Card, CardHeader, Box, Typography, Stack } from '@mui/material';
 import { CustomChart } from '../chart'
 import { Client } from '../../utils/client';
 import { number } from '../../utils/format';
+import { useTheme } from '@mui/material/styles';
+
 
 /**
  * Line chart that displays the number of active developers and active repositories for each month over the last year.
@@ -20,6 +22,8 @@ function ActiveProjects() {
             { name: 'Community ', data: [] }
         ]
     });
+
+    const theme = useTheme();
 
     useEffect(() => {
         const client = new Client();
@@ -71,6 +75,9 @@ function ActiveProjects() {
             colors: ["#FDDA24", "#002E5D"],
             strokeColors: ["#FDDA24", "#002E5D"],
         },
+        tooltip: {
+            theme: theme.palette.mode
+        }
     });
 
     return (
