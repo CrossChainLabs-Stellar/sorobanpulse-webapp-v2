@@ -42,7 +42,7 @@ const DAppsPage = () => {
                 <Grid item xs={12} lg={12} >
                     <Box
                         sx={{
-                            backgroundColor: 'tableColor.main',
+                            backgroundColor: 'tableColor.main1',
                             padding: 0,
                             display: 'flex',
                             flexDirection: 'column',

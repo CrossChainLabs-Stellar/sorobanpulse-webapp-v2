@@ -27,7 +27,7 @@ export default function MainHead({ paramsCallback }) {
     const [isDescContributions, setIsDescContributions] = useState(true);
     const [isDescActivityGr, setIsDescActivityGr] = useState(false);
     const [isDescFollowers, setIsDescFollowers] = useState(false);
-    const [sortArray, setSortArray] = useState(new Array(6).fill(0));
+    const [sortArray, setSortArray] = useState(new Array(8).fill(0));
 
     const styleRank = {
         transform: !isDescRank ? 'rotate(180deg)' : '',
@@ -60,7 +60,7 @@ export default function MainHead({ paramsCallback }) {
     }
 
     const handleChangeSort = (newSort, handleSort) => {
-        const newArray = new Array(6).fill(0);
+        const newArray = new Array(8).fill(0);
         newArray[newSort] = 1;
         setSortArray(newArray);
         handleSort();
@@ -476,6 +476,7 @@ export default function MainHead({ paramsCallback }) {
                         // width: '11%',
                         backgroundColor: "#FDDA24",
                     }}
+                    onClick={() => handleChangeSort(5, handleSortFollowers)}
                 >
                     <Stack
                         direction="row"
@@ -498,7 +499,8 @@ export default function MainHead({ paramsCallback }) {
                             onClick={handleSortContributions}
                             sx={{
                                 padding: 0,
-                                marginTop: '0.15rem'
+                                marginTop: '0.15rem',
+                                visibility: sortArray[5] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img
@@ -527,6 +529,7 @@ export default function MainHead({ paramsCallback }) {
                         // width: '11%',
                         backgroundColor: "#FDDA24",
                     }}
+                    onClick={() => handleChangeSort(6, handleSortFollowers)}
                 >
                     <Stack
                         direction="row"
@@ -550,7 +553,8 @@ export default function MainHead({ paramsCallback }) {
                             onClick={handleSortActivityGr}
                             sx={{
                                 padding: 0,
-                                marginTop: '0.15rem'
+                                marginTop: '0.15rem',
+                                visibility: sortArray[6] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img
@@ -574,7 +578,7 @@ export default function MainHead({ paramsCallback }) {
                         paddingRight: '3rem',
                         cursor: 'pointer'
                     }}
-                    onClick={() => handleChangeSort(5, handleSortFollowers)}
+                    onClick={() => handleChangeSort(7, handleSortFollowers)}
                 >
                     <Stack
                         direction="row"
@@ -598,7 +602,7 @@ export default function MainHead({ paramsCallback }) {
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem',
-                                visibility: sortArray[5] !== 0 ? 'visible' : 'hidden'
+                                visibility: sortArray[7] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img

@@ -285,7 +285,8 @@ export default function MainTable({ search }) {
                                                 height: '5rem',
                                                 paddingLeft: { xl: '3rem', lg: '1.5rem' },
                                                 border: 'none',
-                                                backgroundColor: 'tableColor.main'
+                                                // backgroundColor: 'tableColor.main'
+                                                backgroundColor: id % 2 == 0 ? 'tableColor.main2' : 'tableColor.main1'
                                             }}
                                         >
                                             <Typography
@@ -316,7 +317,7 @@ export default function MainTable({ search }) {
                                             sx={{
                                                 height: '5rem',
                                                 border: 'none',
-                                                backgroundColor: 'tableColor.main'
+                                                backgroundColor: id % 2 == 0 ? 'tableColor.main2' : 'tableColor.main1'
                                             }}
                                         >
                                             <Stack direction='row' alignItems='center'>
@@ -393,7 +394,7 @@ export default function MainTable({ search }) {
                                             padding="none"
                                             sx={{
                                                 border: 'none',
-                                                backgroundColor: 'tableColor.main'
+                                                backgroundColor: id % 2 == 0 ? 'tableColor.main2' : 'tableColor.main1'
                                             }}
                                         >
 
@@ -408,7 +409,7 @@ export default function MainTable({ search }) {
                                             padding="none"
                                             sx={{
                                                 border: 'none',
-                                                backgroundColor: 'tableColor.main'
+                                                backgroundColor: id % 2 == 0 ? 'tableColor.main2' : 'tableColor.main1'
                                             }}
                                         >
                                             <Typography
@@ -432,7 +433,7 @@ export default function MainTable({ search }) {
                                             padding="none"
                                             sx={{
                                                 border: 'none',
-                                                backgroundColor: 'tableColor.main'
+                                                backgroundColor: id % 2 == 0 ? 'tableColor.main2' : 'tableColor.main1'
                                             }}
                                         >
                                             <Typography
@@ -457,7 +458,7 @@ export default function MainTable({ search }) {
                                             sx={{
                                                 border: 'none',
                                                 paddingRight: '3rem',
-                                                backgroundColor: 'tableColor.main'
+                                                backgroundColor: id % 2 == 0 ? 'tableColor.main2' : 'tableColor.main1'
                                             }}
                                         >
                                             {activity?.length > 0 && <ReactApexChart
@@ -482,7 +483,7 @@ export default function MainTable({ search }) {
                                             padding="none"
                                             sx={{
                                                 border: 'none',
-                                                backgroundColor: 'tableColor.main'
+                                                backgroundColor: id % 2 == 0 ? 'tableColor.main2' : 'tableColor.main1'
                                             }}
                                         >
                                             <Typography variant="subtitle2" noWrap>
@@ -500,7 +501,7 @@ export default function MainTable({ search }) {
                                             padding="none"
                                             sx={{
                                                 border: 'none',
-                                                backgroundColor: 'tableColor.main'
+                                                backgroundColor: id % 2 == 0 ? 'tableColor.main2' : 'tableColor.main1'
                                             }}
                                         >
                                             <Typography variant="subtitle2" noWrap>
@@ -516,7 +517,7 @@ export default function MainTable({ search }) {
                                             padding="none"
                                             sx={{
                                                 border: 'none',
-                                                backgroundColor: 'tableColor.main'
+                                                backgroundColor: id % 2 == 0 ? 'tableColor.main2' : 'tableColor.main1'
                                             }}
                                         >
                                             <Typography variant="subtitle2" noWrap>

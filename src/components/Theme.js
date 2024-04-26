@@ -25,7 +25,8 @@ const getPallete = (mode) => {
             selected: '#fff',
         },
         tableColor: {
-            main: '#fff',
+            main1: '#fff',
+            main2: '#f3f3f3',
             border: '#C8C8C8',
             headerText: '#002E5D',
             card: '#fff',
@@ -70,7 +71,8 @@ const getPallete = (mode) => {
             selected: '#fff',
         },
         tableColor: {
-            main: '#333333',
+            main1: '#333333',
+            main2: '#222222',
             border: '#000',
             headerText: '#000',
             card: '#121212',
