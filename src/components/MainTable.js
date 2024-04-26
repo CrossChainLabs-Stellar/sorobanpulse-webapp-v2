@@ -474,7 +474,7 @@ export default function MainTable({ search }) {
                                             />}
                                         </TableCell>
 
-                                        {/*
+
                                         <TableCell
                                             align="left"
                                             component="th"
@@ -486,7 +486,8 @@ export default function MainTable({ search }) {
                                             }}
                                         >
                                             <Typography variant="subtitle2" noWrap>
-                                                {fNumber(days_until_expiration)} days
+                                                {/* {fNumber(days_until_expiration)} days */}
+                                                N/A
                                             </Typography>
                                         </TableCell>
 
@@ -503,10 +504,10 @@ export default function MainTable({ search }) {
                                             }}
                                         >
                                             <Typography variant="subtitle2" noWrap>
-                                                01/05/2024
+                                                N/A
                                             </Typography>
                                         </TableCell>
-                                        */}
+
 
                                         <TableCell
                                             align="left"
