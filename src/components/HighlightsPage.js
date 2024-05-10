@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
+import { Waypoint } from 'react-waypoint';
 
 import TopCard from "./highlightCards/TopCard";
 import NewsCards from "./highlightCards/NewsCards";
@@ -13,17 +15,36 @@ const HighlightsPage = () => {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('xl'));
 
-    const [news, setNews] = useState([]);
+    //const [news, setNews] = useState([]);
+    const [offset, setOffset] = useState(0);
+    const [state, setState] = useState({
+        total: 0,
+        news: []
+    });
 
     useEffect(() => {
         const client = new Client();
 
-        client.get('news').then((response) => {
-            if (response?.length > 0) {
-                setNews(response);
+        client.get('news', {offset: offset}).then((response) => {
+            if (offset > 0) {
+                setState(prevState => ({
+                    total: response?.total,
+                    news: [...prevState.news, ...(response?.list || [])],
+                }));
+            } else {
+                setState({
+                    total: response?.total,
+                    news: response?.list || [],
+                });
             }
         });
-    }, [setNews]);
+    }, [offset]);
+
+    const handleWaypointEnter = () => {
+        if (offset < state.total) {
+            setOffset(offset + 20);
+        }
+    };
 
     return (
         <Box sx={{
@@ -480,7 +501,7 @@ const HighlightsPage = () => {
                     }
                 }}
             >
-                {news.map((item, index) => {
+                {state.news.map((item, index) => {
                     const {
                         url,
                         article_title,
@@ -492,6 +513,7 @@ const HighlightsPage = () => {
 
                     if (index % 8 < 4) {
                         return (
+                            <React.Fragment key={index}>
                             <Grid
                                 item
                                 xs={12} md={12} lg={3}
@@ -512,10 +534,13 @@ const HighlightsPage = () => {
                                     link='https://mui.com/material-ui/react-link/'
                                 />
                             </Grid>
+                            <Waypoint onEnter={handleWaypointEnter} />
+                            </React.Fragment>
                         )
                     }
                     else {
                         return (
+                            <React.Fragment key={index}>
                             <Grid
                                 item
                                 xs={12} md={12} lg={3}
@@ -536,6 +561,8 @@ const HighlightsPage = () => {
                                     link='https://mui.com/material-ui/react-link/'
                                 />
                             </Grid>
+                            <Waypoint onEnter={handleWaypointEnter} />
+                            </React.Fragment>
                         )
                     }
 
