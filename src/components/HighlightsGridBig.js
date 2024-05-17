@@ -3,7 +3,7 @@ import { Grid, Typography } from "@mui/material"
 import TopCard from "./highlightCards/TopCard"
 
 
-const HightlightsGridBig = () => {
+const HighlightsGridBig = () => {
     return (
         <Grid
             container
@@ -316,4 +316,4 @@ const HightlightsGridBig = () => {
         </Grid>
     )
 }
-export default HightlightsGridBig
+export default HighlightsGridBig;

@@ -39,6 +39,7 @@ export default function Header() {
                             lg: '5.5rem',
                             md: '5.5rem',
                             sm: '5.5rem',
+                            xs: '2rem',
                         },
                     }}
                 />

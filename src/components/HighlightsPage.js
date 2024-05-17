@@ -6,7 +6,8 @@ import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 import { Waypoint } from 'react-waypoint';
 
-import HightlightsGridBig from "./HightlightsGridBig";
+import HighlightsGridBig from "./HighlightsGridBig";
+import HighlightsGridSmall from "./HighlightsGridSmall";
 import TopCard from "./highlightCards/TopCard";
 import NewsCards from "./highlightCards/NewsCards";
 import { Client } from '../utils/client';
@@ -62,6 +63,9 @@ const HighlightsPage = () => {
                         xl: '8rem',
                         lg_xl: '8rem',
                         lg: '4rem',
+                        md: '4rem',
+                        sm: '2rem',
+                        xs: '2rem'
                     },
                 }}
             >
@@ -157,7 +161,8 @@ const HighlightsPage = () => {
                     padding: '2rem'
                 }}
             >
-                <HightlightsGridBig />
+                {matches ? <HighlightsGridSmall /> : <HighlightsGridBig />}
+
             </Box>
 
             <Typography
@@ -169,6 +174,7 @@ const HighlightsPage = () => {
                         lg: '5.5rem',
                         md: '5.5rem',
                         sm: '5.5rem',
+                        xs: '2rem'
                     },
                     marginTop: '3rem',
                     fontSize: '24px',

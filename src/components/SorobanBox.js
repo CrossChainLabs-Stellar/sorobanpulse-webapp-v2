@@ -1,4 +1,4 @@
-import { Box, Tab, Tabs, IconButton } from '@mui/material'
+import { Box, Tab, Tabs, IconButton, Toolbar } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 
 import LightBtn from '../assets/LightBtn.svg';
@@ -10,7 +10,15 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
     return (
         <Box
             sx={{
-                marginTop: '5rem',
+                marginTop: {
+                    xs: '5.75rem',
+                    sm: '5rem',
+                    md: '5rem',
+                    lg: '5rem',
+                    lg_xl: '5rem',
+                    xl: '5rem',
+                    xxl: '5rem'
+                },
                 height: '3rem',
                 backgroundColor: "#2A2A2A",
                 // width: '100%',
@@ -30,6 +38,7 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                         lg: '4rem',
                         md: '4rem',
                         sm: '4rem',
+                        xs: '1rem',
                     },
                     '& .MuiTabs-indicator': {
                         backgroundColor: theme.palette.tabsColors.selected,
@@ -79,6 +88,7 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                         lg: '5rem',
                         md: '5rem',
                         sm: '5rem',
+                        xs: '1rem'
                     },
                     marginLeft: 'auto'
                 }}
