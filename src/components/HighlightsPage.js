@@ -6,6 +6,7 @@ import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 import { Waypoint } from 'react-waypoint';
 
+import HightlightsGridBig from "./HightlightsGridBig";
 import TopCard from "./highlightCards/TopCard";
 import NewsCards from "./highlightCards/NewsCards";
 import { Client } from '../utils/client';
@@ -13,7 +14,7 @@ import { Client } from '../utils/client';
 const HighlightsPage = () => {
     const mapper = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     const theme = useTheme();
-    const matches = useMediaQuery(theme.breakpoints.down('xl'));
+    const matches = useMediaQuery(theme.breakpoints.down('md'));
 
     //const [news, setNews] = useState([]);
     const [offset, setOffset] = useState(0);
@@ -25,7 +26,7 @@ const HighlightsPage = () => {
     useEffect(() => {
         const client = new Client();
 
-        client.get('news', {offset: offset}).then((response) => {
+        client.get('news', { offset: offset }).then((response) => {
             if (offset > 0) {
                 setState(prevState => ({
                     total: response?.total,
@@ -156,316 +157,7 @@ const HighlightsPage = () => {
                     padding: '2rem'
                 }}
             >
-
-                <Grid
-                    container
-                    spacing={3}
-                    sx={{
-                        paddingY: '2rem',
-                        paddingX: {
-                            xxl: '3rem',
-                            xl: '6rem',
-                            lg_xl: '6rem',
-                            lg: '2rem',
-                        }
-                    }}
-                >
-                    <Grid
-                        item
-                        xs={4} md={4} lg={4}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <Typography
-                            sx={{
-                                color: '#fff',
-                                width: '33rem',
-                                fontWeight: '600'
-                            }}
-                            align="center"
-                        >
-                            BTC
-                        </Typography>
-                    </Grid>
-
-                    <Grid
-                        item
-                        xs={4} md={4} lg={4}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <Typography
-                            sx={{
-                                color: '#fff',
-                                width: '33rem',
-                                fontWeight: '600'
-                            }}
-                            align="center"
-                        >
-                            XML
-                        </Typography >
-                    </Grid>
-
-                    <Grid
-                        item
-                        xs={4} md={4} lg={4}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <Typography
-                            sx={{
-                                color: '#fff',
-                                width: '33rem',
-                                fontWeight: '600'
-                            }}
-                            align="center"
-                        >
-                            ETH
-                        </Typography>
-                    </Grid>
-
-                    <Grid
-                        item
-                        xs={4} md={4} lg={4}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <TopCard
-                            title='Speed'
-                            text='tx 600 seconds'
-                            boxStyling={{
-                                boxShadow: 1,
-                                height: { xl: '10rem', lg: '12rem' },
-                                width: '33rem',
-                                borderRadius: '10px',
-                                padding: '2rem',
-                                backgroundColor: 'highlightCards.primary',
-                                cursor: 'pointer'
-                            }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
-                            link='https://mui.com/material-ui/react-link/'
-                        />
-                    </Grid>
-
-                    <Grid
-                        item
-                        xs={4} md={4} lg={4}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <TopCard
-                            title='Speed'
-                            text='tx 5 seconds'
-                            boxStyling={{
-                                boxShadow: 1,
-                                height: { xl: '10rem', lg: '12rem' },
-                                width: '33rem',
-                                borderRadius: '10px',
-                                padding: '2rem',
-                                backgroundColor: 'highlightCards.primary',
-                                cursor: 'pointer'
-                            }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
-                            link='https://mui.com/material-ui/react-link/'
-                        />
-                    </Grid>
-
-                    <Grid
-                        item
-                        xs={4} md={4} lg={4}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <TopCard
-                            title='Speed'
-                            text='tx 12 seconds'
-                            boxStyling={{
-                                boxShadow: 1,
-                                height: { xl: '10rem', lg: '12rem' },
-                                width: '33rem',
-                                borderRadius: '10px',
-                                padding: '2rem',
-                                backgroundColor: 'highlightCards.primary',
-                                cursor: 'pointer'
-                            }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
-                            link='https://mui.com/material-ui/react-link/'
-                        />
-                    </Grid>
-                    <Grid
-                        item
-                        xs={4} md={4} lg={4}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <TopCard
-                            title='Energy'
-                            text='1201090 Wh/txn electricity consumed per transaction'
-                            boxStyling={{
-                                boxShadow: 1,
-                                height: { xl: '10rem', lg: '12rem' },
-                                width: '33rem',
-                                borderRadius: '10px',
-                                padding: '2rem',
-                                backgroundColor: 'highlightCards.primary',
-                                cursor: 'pointer'
-                            }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
-                            link='https://mui.com/material-ui/react-link/'
-                        />
-                    </Grid>
-
-                    <Grid
-                        item
-                        xs={4} md={4} lg={4}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <TopCard
-                            title='Energy'
-                            text='0.173 Wh/txn electricity consumed per transaction'
-                            boxStyling={{
-                                boxShadow: 1,
-                                height: { xl: '10rem', lg: '12rem' },
-                                width: '33rem',
-                                borderRadius: '10px',
-                                padding: '2rem',
-                                backgroundColor: 'highlightCards.primary',
-                                cursor: 'pointer'
-                            }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
-                            link='https://mui.com/material-ui/react-link/'
-                        />
-                    </Grid>
-
-                    <Grid
-                        item
-                        xs={4} md={4} lg={4}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <TopCard
-                            title='Energy'
-                            text='30 Wh/txn electricity consumed per transaction'
-                            boxStyling={{
-                                boxShadow: 1,
-                                height: { xl: '10rem', lg: '12rem' },
-                                width: '33rem',
-                                borderRadius: '10px',
-                                padding: '2rem',
-                                backgroundColor: 'highlightCards.primary',
-                                cursor: 'pointer'
-                            }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
-                            link='https://mui.com/material-ui/react-link/'
-                        />
-                    </Grid>
-                    <Grid
-                        item
-                        xs={4} md={4} lg={4}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <TopCard
-                            title='Transaction Fee'
-                            text='$6.12'
-                            boxStyling={{
-                                boxShadow: 1,
-                                height: { xl: '10rem', lg: '12rem' },
-                                width: '33rem',
-                                borderRadius: '10px',
-                                padding: '2rem',
-                                backgroundColor: 'highlightCards.primary',
-                                cursor: 'pointer'
-                            }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
-                            link='https://mui.com/material-ui/react-link/'
-                        />
-                    </Grid>
-
-                    <Grid
-                        item
-                        xs={4} md={4} lg={4}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <TopCard
-                            title='Transaction Fee'
-                            text='$0.0000065'
-                            boxStyling={{
-                                boxShadow: 1,
-                                height: { xl: '10rem', lg: '12rem' },
-                                width: '33rem',
-                                borderRadius: '10px',
-                                padding: '2rem',
-                                backgroundColor: 'highlightCards.primary',
-                                cursor: 'pointer'
-                            }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
-                            link='https://mui.com/material-ui/react-link/'
-                        />
-                    </Grid>
-
-                    <Grid
-                        item
-                        xs={4} md={4} lg={4}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <TopCard
-                            title='Transaction Fee'
-                            text='$1.55'
-                            boxStyling={{
-                                boxShadow: 1,
-                                height: { xl: '10rem', lg: '12rem' },
-                                width: '33rem',
-                                borderRadius: '10px',
-                                padding: '2rem',
-                                backgroundColor: 'highlightCards.primary',
-                                cursor: 'pointer'
-                            }}
-                            textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
-                            link='https://mui.com/material-ui/react-link/'
-                        />
-                    </Grid>
-
-                </Grid>
+                <HightlightsGridBig />
             </Box>
 
             <Typography
@@ -510,58 +202,65 @@ const HighlightsPage = () => {
                         icon_data,
                         article_image_data,
                     } = item;
-
-                    if (index % 8 < 4) {
+                    let ok;
+                    if (matches) {
+                        ok = index % 2;
+                    }
+                    else {
+                        ok = index % 8 < 4;
+                    }
+                    // pt 3 => /3 %2
+                    if (ok) {
                         return (
                             <React.Fragment key={index}>
-                            <Grid
-                                item
-                                xs={12} md={12} lg={3}
-                                key={index}
-                                sx={{
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center'
-                                }}
-                            >
-                                <NewsCards
-                                    titleShort={source}
-                                    titleLong={article_title}
-                                    iconData={icon_data}
-                                    articleImageData={article_image_data}
-                                    mainColor='#000'
-                                    secondaryColor='#fff'
-                                    link='https://mui.com/material-ui/react-link/'
-                                />
-                            </Grid>
-                            <Waypoint onEnter={handleWaypointEnter} />
+                                <Grid
+                                    item
+                                    xs={12} md={12} lg={3}
+                                    key={index}
+                                    sx={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center'
+                                    }}
+                                >
+                                    <NewsCards
+                                        titleShort={source}
+                                        titleLong={article_title}
+                                        iconData={icon_data}
+                                        articleImageData={article_image_data}
+                                        mainColor='#000'
+                                        secondaryColor='#fff'
+                                        link='https://mui.com/material-ui/react-link/'
+                                    />
+                                </Grid>
+                                <Waypoint onEnter={handleWaypointEnter} />
                             </React.Fragment>
                         )
                     }
                     else {
                         return (
                             <React.Fragment key={index}>
-                            <Grid
-                                item
-                                xs={12} md={12} lg={3}
-                                key={index}
-                                sx={{
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center'
-                                }}
-                            >
-                                <NewsCards
-                                    titleShort={source}
-                                    titleLong={article_title}
-                                    iconData={icon_data}
-                                    articleImageData={article_image_data}
-                                    mainColor='#fff'
-                                    secondaryColor='#000'
-                                    link='https://mui.com/material-ui/react-link/'
-                                />
-                            </Grid>
-                            <Waypoint onEnter={handleWaypointEnter} />
+                                <Grid
+                                    item
+                                    xs={12} md={12} lg={3}
+                                    key={index}
+                                    sx={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center'
+                                    }}
+                                >
+                                    <NewsCards
+                                        titleShort={source}
+                                        titleLong={article_title}
+                                        iconData={icon_data}
+                                        articleImageData={article_image_data}
+                                        mainColor='#fff'
+                                        secondaryColor='#000'
+                                        link='https://mui.com/material-ui/react-link/'
+                                    />
+                                </Grid>
+                                <Waypoint onEnter={handleWaypointEnter} />
                             </React.Fragment>
                         )
                     }
