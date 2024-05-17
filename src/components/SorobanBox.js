@@ -39,16 +39,6 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
 
             >
                 <Tab
-                    label="DApps"
-                    sx={{
-                        textTransform: 'none',
-                        color: theme.palette.tabsColors.main,
-                        '&.Mui-selected': {
-                            color: theme.palette.tabsColors.selected,
-                        }
-                    }}
-                />
-                <Tab
                     label="Stellar Highlights"
                     sx={{
                         textTransform: 'none',
@@ -60,6 +50,16 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                 />
                 <Tab
                     label="Soroban Metrics"
+                    sx={{
+                        textTransform: 'none',
+                        color: theme.palette.tabsColors.main,
+                        '&.Mui-selected': {
+                            color: theme.palette.tabsColors.selected,
+                        }
+                    }}
+                />
+                <Tab
+                    label="DApps"
                     sx={{
                         textTransform: 'none',
                         color: theme.palette.tabsColors.main,

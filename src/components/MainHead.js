@@ -22,7 +22,7 @@ import triunghi from '../assets/triunghi.svg';
 
 export default function MainHead({ paramsCallback }) {
     const [isDescRank, setIsDescRank] = useState(false);
-    const [isDescName, setIsDescName] = useState(false);
+    const [isDescName, setIsDescName] = useState(true);
     const [isDescDevelopers, setIsDescDevelopers] = useState(false);
     const [isDescContributions, setIsDescContributions] = useState(true);
     const [isDescActivityGr, setIsDescActivityGr] = useState(false);
@@ -35,7 +35,7 @@ export default function MainHead({ paramsCallback }) {
     }
 
     const styleName = {
-        transform: !isDescName ? 'rotate(180deg)' : '',
+        transform: !isDescName ? '' : 'rotate(180deg)',
         transition: 'transform 150ms ease', // smooth transition
     }
 
@@ -70,7 +70,7 @@ export default function MainHead({ paramsCallback }) {
         paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
 
         setIsDescRank(!isDescRank);
-        setIsDescName(false);
+        setIsDescName(true);
         setIsDescDevelopers(false);
         setIsDescContributions(false);
         setIsDescActivityGr(false);
@@ -92,7 +92,7 @@ export default function MainHead({ paramsCallback }) {
         paramsCallback({ sortBy: 'developers', sortType: isDescDevelopers ? 'asc' : 'desc' });
 
         setIsDescRank(false);
-        setIsDescName(false);
+        setIsDescName(true);
         setIsDescDevelopers(!isDescDevelopers);
         setIsDescContributions(false);
         setIsDescActivityGr(false);
@@ -103,7 +103,7 @@ export default function MainHead({ paramsCallback }) {
         paramsCallback({ sortBy: 'contributions', sortType: isDescContributions ? 'asc' : 'desc' });
 
         setIsDescRank(false);
-        setIsDescName(false);
+        setIsDescName(true);
         setIsDescDevelopers(false);
         setIsDescContributions(!isDescContributions);
         setIsDescActivityGr(false);
@@ -114,7 +114,7 @@ export default function MainHead({ paramsCallback }) {
         paramsCallback({ sortBy: 'activity_growth', sortType: isDescActivityGr ? 'asc' : 'desc' });
 
         setIsDescRank(false);
-        setIsDescName(false);
+        setIsDescName(true);
         setIsDescDevelopers(false);
         setIsDescContributions(false);
         setIsDescActivityGr(!isDescActivityGr);
@@ -125,7 +125,7 @@ export default function MainHead({ paramsCallback }) {
         paramsCallback({ sortBy: 'followers', sortType: isDescFollowers ? 'asc' : 'desc' });
 
         setIsDescRank(false);
-        setIsDescName(false);
+        setIsDescName(true);
         setIsDescDevelopers(false);
         setIsDescContributions(true);
         setIsDescActivityGr(false);
@@ -475,6 +475,7 @@ export default function MainHead({ paramsCallback }) {
                         // },
                         // width: '11%',
                         backgroundColor: "#FDDA24",
+                        cursor: 'pointer'
                     }}
                     onClick={() => handleChangeSort(5, handleSortFollowers)}
                 >
@@ -528,6 +529,7 @@ export default function MainHead({ paramsCallback }) {
                         // },
                         // width: '11%',
                         backgroundColor: "#FDDA24",
+                        cursor: 'pointer'
                     }}
                     onClick={() => handleChangeSort(6, handleSortFollowers)}
                 >
