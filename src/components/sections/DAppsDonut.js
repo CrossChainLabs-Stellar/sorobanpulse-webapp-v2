@@ -42,7 +42,7 @@ const DAppsDonut = () => {
             let stellar = parseInt((statistics?.stellar) ? statistics?.stellar : 0);
             let soroban = parseInt((statistics?.soroban) ? statistics?.soroban : 0);
 
-            setState({ loading: false, chartData: [stellar, soroban] });
+            setState({ loading: false, chartData: [soroban, stellar] });
         });
     }, [setState]);
 
