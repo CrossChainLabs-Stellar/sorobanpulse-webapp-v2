@@ -14,17 +14,10 @@ import SmartContractsBar from './sections/SmartContractsBar';
 export default function Metrics() {
 
     return (
-        <Box sx={{
-            marginX: {
-                xxl: '15rem',
-                xl: '8rem',
-                lg_xl: '8rem',
-                lg: '4rem',
-                md: '4rem',
-                sm: '2rem',
-            },
-            marginBottom: '5rem'
-        }}
+        <Box
+            sx={{
+                marginBottom: '5rem'
+            }}
         >
             <Grid container spacing={5}>
 

@@ -70,15 +70,6 @@ const HighlightsPage = () => {
                 spacing={3}
                 sx={{
                     paddingY: '4rem',
-                    // paddingX: {
-                    //     xxl: '4.5rem',
-                    //     xl: '8rem',
-                    //     lg_xl: '8rem',
-                    //     lg: '4rem',
-                    //     md: '4rem',
-                    //     sm: '2rem',
-                    //     xs: '2rem'
-                    // },
                 }}
             >
 
@@ -227,6 +218,7 @@ const HighlightsPage = () => {
                         article_image_data,
                     } = item;
                     let ok;
+                    let alignment = 'center';
                     if (matches) {
                         ok = index % 2;
                     }
@@ -234,6 +226,12 @@ const HighlightsPage = () => {
                         ok = index % 8 < 4;
                     }
                     // pt 3 => /3 %2
+                    if (index % 4 === 0) {
+                        alignment = 'flex-start'
+                    }
+                    if (index % 4 === 3) {
+                        alignment = 'flex-end'
+                    }
                     if (ok) {
                         return (
                             <React.Fragment key={index}>
@@ -243,8 +241,8 @@ const HighlightsPage = () => {
                                     key={index}
                                     sx={{
                                         display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center'
+                                        justifyContent: alignment,
+                                        alignItems: alignment,
                                     }}
                                 >
                                     <NewsCards
@@ -270,8 +268,8 @@ const HighlightsPage = () => {
                                     key={index}
                                     sx={{
                                         display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center'
+                                        justifyContent: alignment,
+                                        alignItems: alignment,
                                     }}
                                 >
                                     <NewsCards

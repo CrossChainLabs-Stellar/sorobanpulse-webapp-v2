@@ -17,15 +17,6 @@ const DAppsPage = () => {
     }
     return (
         <Box sx={{
-            marginX: {
-                xxl: '15rem',
-                xl: '8rem',
-                lg_xl: '8rem',
-                lg: '4rem',
-                md: '4rem',
-                sm: '2rem',
-            },
-            // marginX: '5rem',
             marginBottom: '5rem'
         }}
         >

@@ -156,7 +156,7 @@ export default function MainHead({ paramsCallback }) {
                         paddingLeft: { xl: '3rem', lg: '1.5rem' },
                         borderTopLeftRadius: '10px',
                         borderBottomLeftRadius: '10px',
-                        cursor: 'pointer'
+                        cursor: 'pointer',
                     }}
                     onClick={() => handleChangeSort(0, handleSortRank)}
                 >
@@ -170,7 +170,8 @@ export default function MainHead({ paramsCallback }) {
                                 fontWeight: 500,
                                 fontSize: 17,
                                 marginRight: '0.35rem',
-                                color: 'tableColor.headerText'
+                                color: 'tableColor.headerText',
+
                             }}
                         >
                             #

@@ -52,8 +52,8 @@ const DAppsBar = () => {
                 categories: categories,
                 total: total,
                 data: [
+                    { name: 'Stellar', data: ecosystemData },
                     { name: 'Soroban', data: coreData },
-                    { name: 'Stellar', data: ecosystemData }
                 ]
             });
         });
@@ -69,9 +69,9 @@ const DAppsBar = () => {
                 colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
             },
         },
-        colors: ["#FDDA24", "#3E3385"],
+        colors: ["#3E3385", "#FDDA24"],
         fill: {
-            colors: ["#FDDA24", "#3E3385"],
+            colors: ["#3E3385", "#FDDA24"],
             //colors: ["#F2C1B0", "#F15A24"],
         },
         plotOptions: {
