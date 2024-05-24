@@ -144,6 +144,9 @@ export default function MainTable({ search }) {
             show: false
         },
         colors: ["#67A161"],
+        stroke: {
+            width: 1
+        },
         tooltip: {
             enabled: false,
         },
@@ -178,6 +181,9 @@ export default function MainTable({ search }) {
             show: false
         },
         colors: ["#CA1A0D"],
+        stroke: {
+            width: 1
+        },
         tooltip: {
             enabled: false,
         },

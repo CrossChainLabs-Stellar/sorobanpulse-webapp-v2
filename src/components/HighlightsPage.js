@@ -17,6 +17,18 @@ const HighlightsPage = () => {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('md'));
 
+    const topCardStyling = {
+        boxShadow: 12,
+        height: '13rem',
+        width: '33rem',
+        borderRadius: '10px',
+        padding: '2rem',
+        backgroundColor: 'highlightCards.primary',
+        cursor: 'pointer',
+        display: 'flex',
+        alignItems: 'center'
+    };
+
     //const [news, setNews] = useState([]);
     const [offset, setOffset] = useState(0);
     const [state, setState] = useState({
@@ -58,15 +70,15 @@ const HighlightsPage = () => {
                 spacing={3}
                 sx={{
                     paddingY: '4rem',
-                    paddingX: {
-                        xxl: '4.5rem',
-                        xl: '8rem',
-                        lg_xl: '8rem',
-                        lg: '4rem',
-                        md: '4rem',
-                        sm: '2rem',
-                        xs: '2rem'
-                    },
+                    // paddingX: {
+                    //     xxl: '4.5rem',
+                    //     xl: '8rem',
+                    //     lg_xl: '8rem',
+                    //     lg: '4rem',
+                    //     md: '4rem',
+                    //     sm: '2rem',
+                    //     xs: '2rem'
+                    // },
                 }}
             >
 
@@ -75,24 +87,31 @@ const HighlightsPage = () => {
                     xs={12} md={12} lg={4}
                     sx={{
                         display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center'
+                        justifyContent: {
+                            xxl: 'flex-start',
+                            xl: 'flex-start',
+                            lg_xl: 'flex-start',
+                            lg: 'flex-start',
+                            md: 'center',
+                            sm: 'center',
+                            xs: 'center'
+                        },
+                        alignItems: {
+                            xxl: 'flex-start',
+                            xl: 'flex-start',
+                            lg_xl: 'flex-start',
+                            lg: 'flex-start',
+                            md: 'center',
+                            sm: 'center',
+                            xs: 'center'
+                        },
                     }}
                 >
                     <TopCard
                         title='Fast to Finality'
                         text='The Stellar network transactions are confirmed within 5 seconds, with all time average ledger speed at 5.19s'
-                        boxStyling={{
-                            boxShadow: 12,
-                            height: { xl: '15rem', lg: '18rem' },
-                            width: '33rem',
-                            borderRadius: '10px',
-                            padding: '2rem',
-                            backgroundColor: 'highlightCards.primary',
-                            cursor: 'pointer'
-                        }}
-                        textStyling={{ marginLeft: '2rem', marginTop: '2rem', color: 'text.primary' }}
-                        isRightImage={true}
+                        boxStyling={topCardStyling}
+                        textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                         link='https://mui.com/material-ui/react-link/'
                     />
                 </Grid>
@@ -109,17 +128,8 @@ const HighlightsPage = () => {
                     <TopCard
                         title='Energy-Efficient Design'
                         text='Research showed the Stellar network’s footprint is the equivalent to the greenhouse gas emissions from 33.7 US homes’ electricity use for one year.'
-                        boxStyling={{
-                            boxShadow: 12,
-                            height: { xl: '15rem', lg: '18rem' },
-                            width: '33rem',
-                            borderRadius: '10px',
-                            padding: '2rem',
-                            backgroundColor: 'highlightCards.primary',
-                            cursor: 'pointer'
-                        }}
-                        textStyling={{ marginLeft: '2rem', marginTop: '2rem', color: 'text.primary' }}
-                        isRightImage={true}
+                        boxStyling={topCardStyling}
+                        textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                         link='https://mui.com/material-ui/react-link/'
                     />
                 </Grid>
@@ -129,24 +139,31 @@ const HighlightsPage = () => {
                     xs={12} md={12} lg={4}
                     sx={{
                         display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center'
+                        justifyContent: {
+                            xxl: 'flex-end',
+                            xl: 'flex-end',
+                            lg_xl: 'flex-end',
+                            lg: 'flex-end',
+                            md: 'center',
+                            sm: 'center',
+                            xs: 'center'
+                        },
+                        alignItems: {
+                            xxl: 'flex-end',
+                            xl: 'flex-end',
+                            lg_xl: 'flex-end',
+                            lg: 'flex-end',
+                            md: 'center',
+                            sm: 'center',
+                            xs: 'center'
+                        },
                     }}
                 >
                     <TopCard
                         title='Affordable for Developers'
                         text='The Stellar network performs transactions for a fraction of a US penny, with the average transaction cost = 0.00005 XLM.'
-                        boxStyling={{
-                            boxShadow: 12,
-                            height: { xl: '15rem', lg: '18rem' },
-                            width: '33rem',
-                            borderRadius: '10px',
-                            padding: '2rem',
-                            backgroundColor: 'highlightCards.primary',
-                            cursor: 'pointer'
-                        }}
-                        textStyling={{ marginLeft: '2rem', marginTop: '2rem', color: 'text.primary' }}
-                        isRightImage={true}
+                        boxStyling={topCardStyling}
+                        textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                         link='https://mui.com/material-ui/react-link/'
                     />
                 </Grid>
@@ -158,7 +175,8 @@ const HighlightsPage = () => {
                     backgroundColor: '#2A2A2A',
                     height: { xl: '45rem', lg: '50rem' },
                     opacity: theme.palette.mode === 'light' ? '0.9' : 1,
-                    padding: '2rem'
+                    padding: '2rem',
+                    borderRadius: '8px'
                 }}
             >
                 {matches ? <HighlightsGridSmall /> : <HighlightsGridBig />}
@@ -167,15 +185,15 @@ const HighlightsPage = () => {
 
             <Typography
                 sx={{
-                    marginLeft: {
-                        xxl: '15.75rem',
-                        xl: '8rem',
-                        lg_xl: '8rem',
-                        lg: '5.5rem',
-                        md: '5.5rem',
-                        sm: '5.5rem',
-                        xs: '2rem'
-                    },
+                    // marginLeft: {
+                    //     xxl: '15.75rem',
+                    //     xl: '8rem',
+                    //     lg_xl: '8rem',
+                    //     lg: '5.5rem',
+                    //     md: '5.5rem',
+                    //     sm: '5.5rem',
+                    //     xs: '2rem'
+                    // },
                     marginTop: '3rem',
                     fontSize: '24px',
                     fontWeight: '600'
@@ -191,12 +209,12 @@ const HighlightsPage = () => {
                 spacing={3}
                 sx={{
                     paddingY: '2rem',
-                    paddingX: {
-                        xxl: '8.25rem',
-                        xl: '8rem',
-                        lg_xl: '7.5rem',
-                        lg: '4rem',
-                    }
+                    // paddingX: {
+                    //     xxl: '8.25rem',
+                    //     xl: '8rem',
+                    //     lg_xl: '7.5rem',
+                    //     lg: '4rem',
+                    // }
                 }}
             >
                 {state.news.map((item, index) => {

@@ -4,6 +4,18 @@ import TopCard from "./highlightCards/TopCard"
 
 
 const HightlightsGridBig = () => {
+    const boxStyling = {
+        boxShadow: 1,
+        height: { xl: '10rem', lg: '12rem' },
+        width: '33rem',
+        borderRadius: '10px',
+        padding: '2rem',
+        backgroundColor: 'highlightCards.primary',
+        cursor: 'pointer',
+        display: 'flex',
+        alignItems: 'center'
+    };
+
     return (
         <Grid
             container
@@ -51,16 +63,8 @@ const HightlightsGridBig = () => {
                 <TopCard
                     title='Speed'
                     text='tx 600 seconds'
-                    boxStyling={{
-                        boxShadow: 1,
-                        height: { xl: '10rem', lg: '12rem' },
-                        width: '33rem',
-                        borderRadius: '10px',
-                        padding: '2rem',
-                        backgroundColor: 'highlightCards.primary',
-                        cursor: 'pointer'
-                    }}
-                    textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                    boxStyling={boxStyling}
+                    textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
                 />
             </Grid>
@@ -77,16 +81,8 @@ const HightlightsGridBig = () => {
                 <TopCard
                     title='Energy'
                     text='1201090 Wh/txn electricity consumed per transaction'
-                    boxStyling={{
-                        boxShadow: 1,
-                        height: { xl: '10rem', lg: '12rem' },
-                        width: '33rem',
-                        borderRadius: '10px',
-                        padding: '2rem',
-                        backgroundColor: 'highlightCards.primary',
-                        cursor: 'pointer'
-                    }}
-                    textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                    boxStyling={boxStyling}
+                    textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
                 />
             </Grid>
@@ -103,16 +99,8 @@ const HightlightsGridBig = () => {
                 <TopCard
                     title='Transaction Fee'
                     text='$6.12'
-                    boxStyling={{
-                        boxShadow: 1,
-                        height: { xl: '10rem', lg: '12rem' },
-                        width: '33rem',
-                        borderRadius: '10px',
-                        padding: '2rem',
-                        backgroundColor: 'highlightCards.primary',
-                        cursor: 'pointer'
-                    }}
-                    textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                    boxStyling={boxStyling}
+                    textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
                 />
             </Grid>
@@ -151,16 +139,8 @@ const HightlightsGridBig = () => {
                 <TopCard
                     title='Speed'
                     text='tx 5 seconds'
-                    boxStyling={{
-                        boxShadow: 1,
-                        height: { xl: '10rem', lg: '12rem' },
-                        width: '33rem',
-                        borderRadius: '10px',
-                        padding: '2rem',
-                        backgroundColor: 'highlightCards.primary',
-                        cursor: 'pointer'
-                    }}
-                    textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                    boxStyling={boxStyling}
+                    textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
                 />
             </Grid>
@@ -177,16 +157,8 @@ const HightlightsGridBig = () => {
                 <TopCard
                     title='Energy'
                     text='0.173 Wh/txn electricity consumed per transaction'
-                    boxStyling={{
-                        boxShadow: 1,
-                        height: { xl: '10rem', lg: '12rem' },
-                        width: '33rem',
-                        borderRadius: '10px',
-                        padding: '2rem',
-                        backgroundColor: 'highlightCards.primary',
-                        cursor: 'pointer'
-                    }}
-                    textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                    boxStyling={boxStyling}
+                    textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
                 />
             </Grid>
@@ -203,16 +175,8 @@ const HightlightsGridBig = () => {
                 <TopCard
                     title='Transaction Fee'
                     text='$0.0000065'
-                    boxStyling={{
-                        boxShadow: 1,
-                        height: { xl: '10rem', lg: '12rem' },
-                        width: '33rem',
-                        borderRadius: '10px',
-                        padding: '2rem',
-                        backgroundColor: 'highlightCards.primary',
-                        cursor: 'pointer'
-                    }}
-                    textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                    boxStyling={boxStyling}
+                    textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
                 />
             </Grid>
@@ -253,16 +217,8 @@ const HightlightsGridBig = () => {
                 <TopCard
                     title='Speed'
                     text='tx 12 seconds'
-                    boxStyling={{
-                        boxShadow: 1,
-                        height: { xl: '10rem', lg: '12rem' },
-                        width: '33rem',
-                        borderRadius: '10px',
-                        padding: '2rem',
-                        backgroundColor: 'highlightCards.primary',
-                        cursor: 'pointer'
-                    }}
-                    textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                    boxStyling={boxStyling}
+                    textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
                 />
             </Grid>
@@ -282,16 +238,8 @@ const HightlightsGridBig = () => {
                 <TopCard
                     title='Energy'
                     text='30 Wh/txn electricity consumed per transaction'
-                    boxStyling={{
-                        boxShadow: 1,
-                        height: { xl: '10rem', lg: '12rem' },
-                        width: '33rem',
-                        borderRadius: '10px',
-                        padding: '2rem',
-                        backgroundColor: 'highlightCards.primary',
-                        cursor: 'pointer'
-                    }}
-                    textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                    boxStyling={boxStyling}
+                    textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
                 />
             </Grid>
@@ -311,16 +259,8 @@ const HightlightsGridBig = () => {
                 <TopCard
                     title='Transaction Fee'
                     text='$1.55'
-                    boxStyling={{
-                        boxShadow: 1,
-                        height: { xl: '10rem', lg: '12rem' },
-                        width: '33rem',
-                        borderRadius: '10px',
-                        padding: '2rem',
-                        backgroundColor: 'highlightCards.primary',
-                        cursor: 'pointer'
-                    }}
-                    textStyling={{ marginLeft: '2rem', marginTop: '1rem', color: 'text.primary' }}
+                    boxStyling={boxStyling}
+                    textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
                 />
             </Grid>

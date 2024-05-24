@@ -21,7 +21,7 @@ export default function Footer() {
             >
                 Powered by CrossChain Labs
             </Link>
-            <img src={XLogoDark} alt='discord' style={{ width: '1.5rem' }} />
+            {/* <img src={XLogoDark} alt='discord' style={{ width: '1.5rem' }} /> */}
         </footer>
     );
 }

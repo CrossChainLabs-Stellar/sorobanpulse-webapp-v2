@@ -1,5 +1,5 @@
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, Box } from '@mui/material';
 import { useState } from 'react';
 
 import Header from "./components/Header";
@@ -31,10 +31,23 @@ function App() {
           <CssBaseline />
           <Header />
           <SorobanBox value={value} handleChange={handleChange} mode={mode} setMode={setMode} />
-          {value === 0 && <HighlightsPage />}
-          {value === 1 && <Metrics />}
-          {value === 2 && <DAppsPage />}
-
+          <Box
+            sx={{
+              paddingX: {
+                xxl: '4.5rem',
+                xl: '8rem',
+                lg_xl: '8rem',
+                lg: '4rem',
+                md: '4rem',
+                sm: '2rem',
+                xs: '2rem'
+              },
+            }}
+          >
+            {value === 0 && <HighlightsPage />}
+            {value === 1 && <Metrics />}
+            {value === 2 && <DAppsPage />}
+          </Box>
           <Footer />
         </div>
       </ThemeProvider>
