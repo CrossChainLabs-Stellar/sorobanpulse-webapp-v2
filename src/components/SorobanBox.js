@@ -31,14 +31,23 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                 value={value}
                 onChange={handleChange}
                 sx={{
+                    // marginLeft: {
+                    //     xxl: '14rem',
+                    //     xl: '7rem',
+                    //     lg_xl: '7rem',
+                    //     lg: '4rem',
+                    //     md: '4rem',
+                    //     sm: '4rem',
+                    //     xs: '1rem',
+                    // },
                     marginLeft: {
-                        xxl: '14rem',
-                        xl: '7rem',
-                        lg_xl: '7rem',
+                        xxl: '4.5rem',
+                        xl: '8rem',
+                        lg_xl: '8rem',
                         lg: '4rem',
                         md: '4rem',
-                        sm: '4rem',
-                        xs: '1rem',
+                        sm: '2rem',
+                        xs: '2rem'
                     },
                     '& .MuiTabs-indicator': {
                         backgroundColor: theme.palette.tabsColors.selected,
@@ -81,14 +90,23 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
             <IconButton
                 sx={{
                     padding: 0,
+                    // marginRight: {
+                    //     xxl: '16rem',
+                    //     xl: '8rem',
+                    //     lg_xl: '8rem',
+                    //     lg: '5rem',
+                    //     md: '5rem',
+                    //     sm: '5rem',
+                    //     xs: '1rem'
+                    // },
                     marginRight: {
-                        xxl: '16rem',
+                        xxl: '4.5rem',
                         xl: '8rem',
                         lg_xl: '8rem',
-                        lg: '5rem',
-                        md: '5rem',
-                        sm: '5rem',
-                        xs: '1rem'
+                        lg: '4rem',
+                        md: '4rem',
+                        sm: '2rem',
+                        xs: '2rem'
                     },
                     marginLeft: 'auto'
                 }}

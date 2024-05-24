@@ -6,7 +6,7 @@ import TopCard from "./highlightCards/TopCard"
 const HightlightsGridBig = () => {
     const boxStyling = {
         boxShadow: 1,
-        height: { xl: '10rem', lg: '12rem' },
+        height: '10rem',
         width: '33rem',
         borderRadius: '10px',
         padding: '2rem',

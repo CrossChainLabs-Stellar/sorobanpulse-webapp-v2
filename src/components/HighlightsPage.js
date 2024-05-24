@@ -19,7 +19,15 @@ const HighlightsPage = () => {
 
     const topCardStyling = {
         boxShadow: 12,
-        height: '13rem',
+        height: {
+            xxl: '13rem',
+            xl: '13rem',
+            lg_xl: '13rem',
+            lg: '13rem',
+            md: '13rem',
+            sm: '17rem',
+            xs: '17rem'
+        },
         width: '33rem',
         borderRadius: '10px',
         padding: '2rem',

@@ -27,9 +27,9 @@
     color: #aaa;
 }
 
-.item:last-child {
+/* .item:last-child {
     margin-right: 0;
-}
+} */
 
 .contact {
     user-select: all;

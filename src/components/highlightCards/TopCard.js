@@ -21,7 +21,7 @@ const TopCard = ({ title, text, boxStyling, textStyling, link, }) => {
                 <Stack
                     direction='column'
                 >
-                    <Typography sx={{ fontWeight: '600', fontSize: '20px', color: 'text.primary' }}>
+                    <Typography sx={{ fontWeight: 600, fontSize: '20px', color: 'text.primary' }}>
                         {title}
                     </Typography>
                     <Typography sx={textStyling}>
@@ -35,7 +35,7 @@ const TopCard = ({ title, text, boxStyling, textStyling, link, }) => {
                         width: '5rem',
                         height: '5rem',
                         marginLeft: 'auto',
-                        marginRight: '1rem',
+                        // marginRight: '1rem',
                         marginTop: 'auto',
                         marginBottom: 'auto'
                     }}
