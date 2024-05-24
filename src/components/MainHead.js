@@ -158,6 +158,7 @@ export default function MainHead({ paramsCallback }) {
                         borderBottomLeftRadius: '10px',
                         cursor: 'pointer',
                     }}
+                    className='parentHead'
                     onClick={() => handleChangeSort(0, handleSortRank)}
                 >
                     <Stack
@@ -173,6 +174,7 @@ export default function MainHead({ paramsCallback }) {
                                 color: 'tableColor.headerText',
 
                             }}
+                            className='childHead'
                         >
                             #
                         </Typography>
@@ -214,6 +216,7 @@ export default function MainHead({ paramsCallback }) {
                         backgroundColor: "#FDDA24",
                         cursor: 'pointer'
                     }}
+                    className='parentHead'
                     onClick={() => handleChangeSort(1, handleSortName)}
                 >
                     <Stack
@@ -228,6 +231,7 @@ export default function MainHead({ paramsCallback }) {
                                 marginRight: '0.35rem',
                                 color: 'tableColor.headerText'
                             }}
+                            className='childHead'
                         >
                             Dapp Name
                         </Typography>
@@ -268,6 +272,7 @@ export default function MainHead({ paramsCallback }) {
                         backgroundColor: "#FDDA24",
                         cursor: 'pointer'
                     }}
+                    className='parentHead'
                 >
                     <Stack
                         direction="row"
@@ -281,6 +286,7 @@ export default function MainHead({ paramsCallback }) {
                                 marginRight: '0.35rem',
                                 color: 'tableColor.headerText'
                             }}
+                            className='childHead'
                         >
                             Ecosystem
                         </Typography>
@@ -306,6 +312,7 @@ export default function MainHead({ paramsCallback }) {
                         backgroundColor: "#FDDA24",
                         cursor: 'pointer'
                     }}
+                    className='parentHead'
                     onClick={() => handleChangeSort(2, handleSortDevelopers)}
                 >
                     <Stack
@@ -320,6 +327,7 @@ export default function MainHead({ paramsCallback }) {
                                 color: 'tableColor.headerText',
                                 marginRight: '0.35rem',
                             }}
+                            className='childHead'
                         >
                             Developers
                         </Typography>
@@ -359,6 +367,7 @@ export default function MainHead({ paramsCallback }) {
                         backgroundColor: "#FDDA24",
                         cursor: 'pointer'
                     }}
+                    className='parentHead'
                     onClick={() => handleChangeSort(3, handleSortContributions)}
                 >
                     <Stack
@@ -373,6 +382,7 @@ export default function MainHead({ paramsCallback }) {
                                 color: 'tableColor.headerText',
                                 marginRight: '0.35rem',
                             }}
+                            className='childHead'
                         >
                             Contributions
                         </Typography>
@@ -412,6 +422,7 @@ export default function MainHead({ paramsCallback }) {
                         backgroundColor: "#FDDA24",
                         cursor: 'pointer'
                     }}
+                    className='parentHead'
                     onClick={() => handleChangeSort(4, handleSortActivityGr)}
                 >
                     <Stack
@@ -428,6 +439,7 @@ export default function MainHead({ paramsCallback }) {
                                 marginRight: '0.35rem',
                                 color: 'tableColor.headerText'
                             }}
+                            className='childHead'
                         >
                             Development
                         </Typography>
@@ -456,6 +468,7 @@ export default function MainHead({ paramsCallback }) {
                             fontSize: 13,
                             color: 'tableColor.headerText'
                         }}
+                        className='childHead'
                     >
                         activity (12m)
                     </Typography>
@@ -478,6 +491,7 @@ export default function MainHead({ paramsCallback }) {
                         backgroundColor: "#FDDA24",
                         cursor: 'pointer'
                     }}
+                    className='parentHead'
                     onClick={() => handleChangeSort(5, handleSortFollowers)}
                 >
                     <Stack
@@ -492,6 +506,7 @@ export default function MainHead({ paramsCallback }) {
                                 marginRight: '0.35rem',
                                 color: 'tableColor.headerText'
                             }}
+                            className='childHead'
                         >
                             State Expiration
                         </Typography>
@@ -532,6 +547,7 @@ export default function MainHead({ paramsCallback }) {
                         backgroundColor: "#FDDA24",
                         cursor: 'pointer'
                     }}
+                    className='parentHead'
                     onClick={() => handleChangeSort(6, handleSortFollowers)}
                 >
                     <Stack
@@ -547,6 +563,7 @@ export default function MainHead({ paramsCallback }) {
                                 marginRight: '0.35rem',
                                 color: 'tableColor.headerText'
                             }}
+                            className='childHead'
                         >
                             Expiration date
                         </Typography>
@@ -581,6 +598,7 @@ export default function MainHead({ paramsCallback }) {
                         paddingRight: '3rem',
                         cursor: 'pointer'
                     }}
+                    className='parentHead'
                     onClick={() => handleChangeSort(7, handleSortFollowers)}
                 >
                     <Stack
@@ -596,6 +614,7 @@ export default function MainHead({ paramsCallback }) {
                                 marginRight: '0.35rem',
                                 color: 'tableColor.headerText'
                             }}
+                            className='childHead'
                         >
                             X / Twitter
                         </Typography>

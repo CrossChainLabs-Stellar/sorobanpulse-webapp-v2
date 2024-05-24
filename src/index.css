@@ -82,3 +82,11 @@ code {
   object-fit: cover;
   flex-shrink: 0;
 }
+
+/* .parentHead {} */
+
+/* .childHead {} */
+
+.parentHead:hover .childHead {
+  font-weight: 600;
+}
