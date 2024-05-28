@@ -8,6 +8,12 @@ import { Client } from '../../utils/client';
 import { number } from '../../utils/format';
 import { useTheme } from '@mui/material/styles';
 
+function convertToMonthName(dateString) {
+    const date = new Date(dateString);
+    const monthName = date.toLocaleString('default', { month: 'short' });
+
+    return monthName;
+}
 
 /**
  * Line chart that displays the number of active developers and active repositories for each month over the last year.
@@ -47,7 +53,7 @@ function ActiveProjects() {
             repos.forEach(item => {
                 coreData.push(item.active_repos_core ? item.active_repos_core : 0);
                 ecosystemData.push(item.active_repos_ecosystem ? item.active_repos_ecosystem : 0);
-                categories.push(item.display_month.slice(0, -3));
+                categories.push(convertToMonthName(item.display_month.slice(0, -3)));
             });
 
             setState({

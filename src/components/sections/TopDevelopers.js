@@ -89,7 +89,7 @@ function TopDevelopers() {
             let top_contributors = response;
             setState({
                 loading: false,
-                top_contributors: top_contributors.slice(0, 10),
+                top_contributors: top_contributors?.slice(0, 10),
             });
         });
     }, [selectedValue, setState]);
@@ -206,7 +206,7 @@ function TopDevelopers() {
                 }}
             />
             <Stack spacing={5} sx={{ p: 5, pt: 3.5, pr: 0, height: '25.3rem', overflowY: 'scroll' }}>
-                {state.top_contributors?.map((item) => (
+                {state.top_contributors && state.top_contributors?.map((item) => (
                     <ContributorItem key={item.dev_name} item={item} />
                 ))}
             </Stack>

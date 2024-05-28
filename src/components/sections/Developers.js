@@ -40,8 +40,8 @@ function Developers() {
     useEffect(() => {
         const client = new Client();
         client.get('statistics').then((statistics) => {
-            let new_contributors = parseInt((statistics?.new_contributors) ? statistics?.new_contributors : 0);
-            let active_contributors = parseInt((statistics?.active_contributors) ? statistics?.active_contributors : 0);
+            let new_contributors = parseInt((statistics?.new_contributors_last_6_months) ? statistics?.new_contributors_last_6_months : 0);
+            let active_contributors = parseInt((statistics?.active_contributors_last_6_months) ? statistics?.active_contributors_last_6_months : 0);
 
             setState({ loading: false, chartData: [new_contributors, active_contributors] });
         });
@@ -115,7 +115,7 @@ function Developers() {
                                 fontSize: '15px',
                             }}
                         >
-                            last 30 days
+                            last 6 months
                         </Typography>
                     </Stack>
                 }

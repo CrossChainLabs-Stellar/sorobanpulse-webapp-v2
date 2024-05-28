@@ -23,80 +23,33 @@ function EcosystemGrowth() {
     async function fetchData() {
         try {
             const client = new Client();
+            let statistics = await client.get('statistics');
 
-            let contributors = await client.get('active_contributors');
-            contributors.pop();
-            if (contributors.length > 12) {
-                contributors.splice(0, contributors.length - 12);
-            }
 
-            let current_total_contributors = 0;
-            let previous_total_contributors = 0;
             let ecosystem_growth_developers_value = 0;
             let ecosystem_growth_developers_percentage = 0;
 
-            if (contributors.length >= 6) {
-                current_total_contributors =
-                    parseInt(contributors[contributors.length - 1].active_contributors_core) +
-                    parseInt(contributors[contributors.length - 1].active_contributors_ecosystem);
-
-                previous_total_contributors =
-                    parseInt(contributors[contributors.length - 6].active_contributors_core) +
-                    parseInt(contributors[contributors.length - 6].active_contributors_ecosystem);
-
-                ecosystem_growth_developers_value = current_total_contributors - previous_total_contributors;
-                ecosystem_growth_developers_percentage = (ecosystem_growth_developers_value / previous_total_contributors) * 100;
+            if (statistics?.new_contributors_last_6_months && statistics?.total_active_contributors_last_12_months) {
+                ecosystem_growth_developers_value = statistics?.new_contributors_last_6_months;
+                ecosystem_growth_developers_percentage = (ecosystem_growth_developers_value / statistics?.total_active_contributors_last_12_months) * 100;
             }
 
-            let active_repos = await client.get('active_repos');
 
-            active_repos.pop();
-            if (active_repos.length > 12) {
-                active_repos.splice(0, active_repos.length - 12);
-            }
-
-            let current_total_projects = 0;
-            let previous_total_projects = 0;
             let ecosystem_growth_projects_value = 0;
             let ecosystem_growth_projects_percentage = 0;
 
-            if (active_repos.length >= 6) {
-                current_total_projects =
-                    parseInt(active_repos[active_repos.length - 1].active_repos_core) +
-                    parseInt(active_repos[active_repos.length - 1].active_repos_ecosystem);
-
-                previous_total_projects =
-                    parseInt(active_repos[active_repos.length - 6].active_repos_core) +
-                    parseInt(active_repos[active_repos.length - 6].active_repos_ecosystem);
-
-                ecosystem_growth_projects_value = current_total_projects - previous_total_projects;
-                ecosystem_growth_projects_percentage = (ecosystem_growth_projects_value / previous_total_projects) * 100;
+            if (statistics?.new_repos_last_6_months && statistics?.new_repos_last_12_months) {
+                ecosystem_growth_projects_value = statistics?.new_repos_last_6_months;
+                ecosystem_growth_projects_percentage = (ecosystem_growth_projects_value / statistics?.new_repos_last_12_months) * 100;
             }
 
 
-            let commits = await client.get('commits');
-
-            commits.pop();
-            if (commits.length > 12) {
-                commits.splice(0, commits.length - 12);
-            }
-
-            let current_total_commits = 0;
-            let previous_total_commits = 0;
             let ecosystem_growth_commits_value = 0;
             let ecosystem_growth_commits_percentage = 0;
 
-            if (commits.length >= 6) {
-                current_total_commits =
-                    parseInt(commits[commits.length - 1].commits_core) +
-                    parseInt(commits[commits.length - 1].commits_ecosystem);
-
-                previous_total_commits =
-                    parseInt(commits[commits.length - 6].commits_core) +
-                    parseInt(commits[commits.length - 6].commits_ecosystem);
-
-                ecosystem_growth_commits_value = current_total_commits - previous_total_commits;
-                ecosystem_growth_commits_percentage = (ecosystem_growth_commits_value / previous_total_commits) * 100;
+            if (statistics?.new_commits_last_6_months && statistics?.new_commits_last_12_months) {
+                ecosystem_growth_commits_value = statistics?.new_commits_last_6_months;
+                ecosystem_growth_commits_percentage = (ecosystem_growth_commits_value / statistics?.new_commits_last_12_months) * 100;
             }
 
             return {
@@ -192,7 +145,7 @@ function EcosystemGrowth() {
                             }}
                             color="text.secondary"
                         >
-                            Monthly active projects
+                            New projects
                         </Typography>
                     </Stack>
 
@@ -230,7 +183,7 @@ function EcosystemGrowth() {
                             }}
                             color="text.secondary"
                         >
-                            Monthly active developers
+                            New developers
                         </Typography>
                     </Stack>
 
@@ -269,7 +222,7 @@ function EcosystemGrowth() {
                             }}
                             color="text.secondary"
                         >
-                            Monthly contributions
+                            Contributions
                         </Typography>
                     </Stack>
 
