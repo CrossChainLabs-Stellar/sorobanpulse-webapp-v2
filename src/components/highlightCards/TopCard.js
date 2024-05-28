@@ -1,9 +1,7 @@
-import { Typography, Link, Stack } from "@mui/material"
-import placeholder from '../../assets/affordable.svg'
+import { Typography, Link, Stack } from "@mui/material";
 
 
-
-const TopCard = ({ title, text, boxStyling, textStyling, link, }) => {
+const TopCard = ({ title, text, boxStyling, textStyling, link, image }) => {
     return (
         <Link
             sx={boxStyling}
@@ -29,7 +27,7 @@ const TopCard = ({ title, text, boxStyling, textStyling, link, }) => {
                     </Typography>
                 </Stack>
                 <img
-                    src={placeholder}
+                    src={image}
                     alt="img"
                     style={{
                         width: '5rem',

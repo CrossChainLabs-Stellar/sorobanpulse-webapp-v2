@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
@@ -11,6 +11,10 @@ import HighlightsGridSmall from "./HighlightsGridSmall";
 import TopCard from "./highlightCards/TopCard";
 import NewsCards from "./highlightCards/NewsCards";
 import { Client } from '../utils/client';
+
+import fast from '../assets/fast-to-finality.svg';
+import energy_efficient from '../assets/energy-efficient.svg';
+import affordable from '../assets/affordable.svg';
 
 const HighlightsPage = () => {
     const mapper = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
@@ -112,6 +116,7 @@ const HighlightsPage = () => {
                         boxStyling={topCardStyling}
                         textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                         link='https://mui.com/material-ui/react-link/'
+                        image={fast}
                     />
                 </Grid>
 
@@ -130,6 +135,7 @@ const HighlightsPage = () => {
                         boxStyling={topCardStyling}
                         textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                         link='https://mui.com/material-ui/react-link/'
+                        image={energy_efficient}
                     />
                 </Grid>
 
@@ -164,6 +170,7 @@ const HighlightsPage = () => {
                         boxStyling={topCardStyling}
                         textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                         link='https://mui.com/material-ui/react-link/'
+                        image={affordable}
                     />
                 </Grid>
 

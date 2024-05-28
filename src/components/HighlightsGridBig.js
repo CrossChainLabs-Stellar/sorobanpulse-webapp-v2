@@ -1,6 +1,10 @@
 import { Grid, Typography } from "@mui/material"
 
-import TopCard from "./highlightCards/TopCard"
+import TopCard from "./highlightCards/TopCard";
+
+import speed from '../assets/speed.svg';
+import fee from '../assets/fee.svg';
+import energy from '../assets/energy.svg';
 
 
 const HighlightsGridBig = () => {
@@ -109,6 +113,7 @@ const HighlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
+                    image={speed}
                 />
             </Grid>
 
@@ -127,6 +132,7 @@ const HighlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
+                    image={speed}
                 />
             </Grid>
 
@@ -145,6 +151,7 @@ const HighlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
+                    image={speed}
                 />
             </Grid>
             <Grid
@@ -162,6 +169,7 @@ const HighlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
+                    image={energy}
                 />
             </Grid>
 
@@ -180,6 +188,7 @@ const HighlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
+                    image={energy}
                 />
             </Grid>
 
@@ -198,6 +207,7 @@ const HighlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
+                    image={energy}
                 />
             </Grid>
             <Grid
@@ -215,6 +225,7 @@ const HighlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
+                    image={fee}
                 />
             </Grid>
 
@@ -233,6 +244,7 @@ const HighlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
+                    image={fee}
                 />
             </Grid>
 
@@ -251,6 +263,7 @@ const HighlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
+                    image={fee}
                 />
             </Grid>
 
