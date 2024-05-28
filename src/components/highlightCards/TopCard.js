@@ -1,5 +1,5 @@
 import { Typography, Link, Stack } from "@mui/material"
-import placeholder from '../../assets/box-placeholder.png'
+import placeholder from '../../assets/affordable.svg'
 
 
 

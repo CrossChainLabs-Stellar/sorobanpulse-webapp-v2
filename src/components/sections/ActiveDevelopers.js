@@ -112,7 +112,7 @@ function ActiveDevelopers() {
                                 fontSize: '16px',
                             }}
                         >
-                            There are now {number(state.total)} monthly active developers in the ecosystem
+                            {number(state.total)} active developers are now driving innovation in the ecosystem
                         </Typography>
                     </Stack>
                 }

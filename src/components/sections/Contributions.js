@@ -36,8 +36,10 @@ function Contributions() {
             }
 
             let total = 0;
+            let communityPercentage = 0;
             if (commits.length > 0) {
                 total = parseInt(commits[commits.length - 1].commits_core) + parseInt(commits[commits.length - 1].commits_ecosystem);
+                communityPercentage = (parseInt(commits[commits.length - 1].commits_ecosystem) / total) * 100;
             }
 
             let coreData = [];
@@ -54,6 +56,7 @@ function Contributions() {
                 loading: false,
                 categories: categories,
                 total: total,
+                communityPercentage : communityPercentage,
                 data: [
                     { name: 'Core', data: coreData },
                     { name: 'Community', data: ecosystemData }
@@ -107,7 +110,7 @@ function Contributions() {
                             fontSize: '16px',
                         }}
                     >
-                        There are now {number(state.total)} monthly contributions in the ecosystem
+                       {number(state.communityPercentage)}% of all contributions come from the ecosystem's vibrant community
                     </Typography>
                 </Stack>
             }
