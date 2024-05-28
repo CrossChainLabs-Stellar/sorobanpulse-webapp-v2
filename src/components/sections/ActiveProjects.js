@@ -112,7 +112,7 @@ function ActiveProjects() {
                             fontSize: '16px',
                         }}
                     >
-                        There are now {number(state.total)} monthly active projects in the ecosystem
+                        Soroban is now thriving with {number(state.total)} dynamic and actively growing projects
                     </Typography>
                 </Stack>
             } />
