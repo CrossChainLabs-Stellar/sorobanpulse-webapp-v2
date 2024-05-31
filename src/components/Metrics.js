@@ -26,7 +26,7 @@ export default function Metrics() {
                 </Grid>
 
                 <Grid item xs={12} md={12} lg={8}>
-                    <ActiveProjects />
+                    <ActiveDevelopers />
                 </Grid>
 
 
@@ -36,7 +36,7 @@ export default function Metrics() {
 
 
                 <Grid item xs={12} md={12} lg={8}>
-                    <ActiveDevelopers />
+                    <ActiveProjects />
                 </Grid>
 
                 <Grid item xs={12} md={12} lg={4}>

@@ -112,7 +112,7 @@ function ActiveProjects() {
             } />
             <Box sx={{ mt: 3, ml: 3, mr: 4, marginTop: '0rem', marginBottom: '1.5rem' }} dir="ltr">
                 <ReactApexChart
-                    type="line"
+                    type="bar"
                     series={state.data}
                     options={chartOptions}
                     height={363}

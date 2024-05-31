@@ -112,6 +112,44 @@ function EcosystemGrowth() {
                 }
             />
             <Stack spacing={3.37} sx={{ p: 5, pt: 0, pr: 0, height: '25.25rem', marginTop: '-0.5rem', marginBottom: '0.45rem' }}>
+            <Stack
+                    direction="row"
+                    sx={{
+                        boxShadow: '0px 12px 24px -4px #0000001F',
+                        width: '93%',
+                        height: { xl: '29.5rem', lg: '18.5rem' },
+                        borderRadius: '10px',
+                        backgroundColor: '#fff'
+                    }}
+                >
+                    <TinyCircle fillColor={state.ecosystem_growth_developers_value >= 0 ? "#00AB55" : "#EB5757"} innerProcent={number(state.ecosystem_growth_developers_percentage)} />
+                    <Stack
+                        direction="column"
+                        sx={{ marginLeft: '1rem' }}
+                    >
+                        <Typography
+                            sx={{
+                                fontWeight: 600,
+                                fontSize: '20px',
+                                marginTop: 'auto',
+                                color: '#333333'
+                            }}
+                        >
+                            {state.ecosystem_growth_developers_value > 0 ? '+' : ''}{number(state.ecosystem_growth_developers_value)}
+                        </Typography>
+                        <Typography
+                            variant='subtitle2'
+                            sx={{
+                                fontWeight: 600,
+                                marginBottom: 'auto'
+                            }}
+                            color="text.secondary"
+                        >
+                            New developers
+                        </Typography>
+                    </Stack>
+
+                </Stack>
                 <Stack
                     direction="row"
                     sx={{
@@ -150,44 +188,7 @@ function EcosystemGrowth() {
                     </Stack>
 
                 </Stack>
-                <Stack
-                    direction="row"
-                    sx={{
-                        boxShadow: '0px 12px 24px -4px #0000001F',
-                        width: '93%',
-                        height: { xl: '29.5rem', lg: '18.5rem' },
-                        borderRadius: '10px',
-                        backgroundColor: '#fff'
-                    }}
-                >
-                    <TinyCircle fillColor={state.ecosystem_growth_developers_value >= 0 ? "#00AB55" : "#EB5757"} innerProcent={number(state.ecosystem_growth_developers_percentage)} />
-                    <Stack
-                        direction="column"
-                        sx={{ marginLeft: '1rem' }}
-                    >
-                        <Typography
-                            sx={{
-                                fontWeight: 600,
-                                fontSize: '20px',
-                                marginTop: 'auto',
-                                color: '#333333'
-                            }}
-                        >
-                            {state.ecosystem_growth_developers_value > 0 ? '+' : ''}{number(state.ecosystem_growth_developers_value)}
-                        </Typography>
-                        <Typography
-                            variant='subtitle2'
-                            sx={{
-                                fontWeight: 600,
-                                marginBottom: 'auto'
-                            }}
-                            color="text.secondary"
-                        >
-                            New developers
-                        </Typography>
-                    </Stack>
 
-                </Stack>
                 <Stack
                     direction="row"
                     sx={{
