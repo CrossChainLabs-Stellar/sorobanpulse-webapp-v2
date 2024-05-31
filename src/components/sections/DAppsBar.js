@@ -112,6 +112,16 @@ const DAppsBar = () => {
                         >
                             DApps
                         </Typography>
+                        <Typography
+                        variant='caption'
+                        sx={{
+                            marginX: '1.4rem',
+                            color: 'text.secondary',
+                            fontSize: '16px',
+                        }}
+                    >
+                        Soroban is now thriving with {number(state.total)} dynamic and actively growing projects
+                    </Typography>
                     </Stack>
                 }
             />
