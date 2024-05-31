@@ -7,7 +7,7 @@ import { CustomChart } from '../chart'
 import { Client } from '../../utils/client';
 import { number } from '../../utils/format';
 import { useTheme } from '@mui/material/styles';
-import { convertToMonthName } from '../../utils/format'
+import { convertToMonthName } from '../../utils/format';
 
 /**
  * Bar chart that displays the number of contributors for each month over the last year.
