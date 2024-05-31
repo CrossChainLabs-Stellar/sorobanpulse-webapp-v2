@@ -66,12 +66,12 @@ function ActiveDevelopers() {
         xaxis: {
             categories: state.categories,
             lables: {
-                colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
+                colors: [theme.palette.chart.secondary, theme.palette.chart.primary],
             },
         },
-        colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
+        colors: [theme.palette.chart.secondary, theme.palette.chart.primary],
         fill: {
-            colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
+            colors: [theme.palette.chart.secondary, theme.palette.chart.primary],
             //colors: ["#F2C1B0", "#F15A24"],
         },
         tooltip: {

@@ -66,14 +66,14 @@ function ActiveProjects() {
         xaxis: {
             categories: state.categories,
         },
-        colors: ["#FDDA24", "#002E5D"],
+        colors: ["#002E5D", "#FDDA24"],
         // stroke: {
         //   width: 2,
         //   colors: ["#F15A24", '#F2C1B0'],
         // },
         markers: {
-            colors: ["#FDDA24", "#002E5D"],
-            strokeColors: ["#FDDA24", "#002E5D"],
+            colors: ["#002E5D", "#FDDA24"],
+            strokeColors: ["#002E5D", "#FDDA24"],
         },
         tooltip: {
             theme: theme.palette.mode

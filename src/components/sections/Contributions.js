@@ -56,7 +56,7 @@ function Contributions() {
                 loading: false,
                 categories: categories,
                 total: total,
-                communityPercentage : communityPercentage,
+                communityPercentage: communityPercentage,
                 data: [
                     { name: 'Core', data: coreData },
                     { name: 'Community', data: ecosystemData }
@@ -69,14 +69,14 @@ function Contributions() {
         xaxis: {
             categories: state.categories,
         },
-        colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
+        colors: [theme.palette.chart.secondary, theme.palette.chart.primary],
         // stroke: {
         //   width: 2,
         //   colors: ["#F15A24", '#F2C1B0'],
         // },
         markers: {
-            colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
-            strokeColors: [theme.palette.chart.primary, theme.palette.chart.secondary],
+            colors: [theme.palette.chart.secondary, theme.palette.chart.primary],
+            strokeColors: [theme.palette.chart.secondary, theme.palette.chart.primary],
         },
         tooltip: {
             theme: theme.palette.mode
@@ -110,7 +110,7 @@ function Contributions() {
                             fontSize: '16px',
                         }}
                     >
-                       {number(state.communityPercentage)}% of all contributions come from the ecosystem's vibrant community
+                        {number(state.communityPercentage)}% of all contributions come from the ecosystem's vibrant community
                     </Typography>
                 </Stack>
             }
