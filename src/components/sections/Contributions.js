@@ -7,13 +7,8 @@ import { CustomChart } from '../chart'
 import { Client } from '../../utils/client';
 import { number } from '../../utils/format';
 import { useTheme } from '@mui/material/styles';
+import { convertToMonthName } from '../../utils/format';
 
-function convertToMonthName(dateString) {
-    const date = new Date(dateString);
-    const monthName = date.toLocaleString('default', { month: 'short' });
-
-    return monthName;
-}
 /**
  * Line chart that displays the number of active developers and active repositories for each month over the last year.
  */

@@ -7,13 +7,7 @@ import { CustomChart } from '../chart'
 import { Client } from '../../utils/client';
 import { number } from '../../utils/format';
 import { useTheme } from '@mui/material/styles';
-
-function convertToMonthName(dateString) {
-    const date = new Date(dateString);
-    const monthName = date.toLocaleString('default', { month: 'short' });
-
-    return monthName;
-}
+import { convertToMonthName } from '../../utils/format'
 
 /**
  * Bar chart that displays the number of contributors for each month over the last year.

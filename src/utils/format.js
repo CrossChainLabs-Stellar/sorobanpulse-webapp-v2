@@ -41,3 +41,10 @@ export function fToNow(date) {
 export function fNumber(number) {
     return numeral(number).format();
 }
+
+export function convertToMonthName(dateString) {
+    const date = new Date(dateString);
+    const monthName = date.toLocaleString('default', { month: 'short' });
+
+    return monthName;
+}

@@ -7,6 +7,7 @@ import { CustomChart } from '../chart'
 import { Client } from '../../utils/client';
 import { number } from '../../utils/format';
 import { useTheme } from '@mui/material/styles';
+import { convertToMonthName } from '../../utils/format';
 
 
 const DAppsBar = () => {
@@ -44,7 +45,7 @@ const DAppsBar = () => {
             contributors.forEach(item => {
                 coreData.push(item.soroban ? item.soroban : 0);
                 ecosystemData.push(item.stellar ? item.stellar : 0);
-                categories.push(item.month.slice(0, -3));
+                categories.push(convertToMonthName(item.month.slice(0, -3)));
             });
 
             setState({
