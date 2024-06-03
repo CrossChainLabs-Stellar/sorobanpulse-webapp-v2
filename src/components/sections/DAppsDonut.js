@@ -42,16 +42,16 @@ const DAppsDonut = () => {
             let stellar = parseInt((statistics?.stellar) ? statistics?.stellar : 0);
             let soroban = parseInt((statistics?.soroban) ? statistics?.soroban : 0);
 
-            setState({ loading: false, chartData: [soroban, stellar] });
+            setState({ loading: false, chartData: [stellar, soroban] });
         });
     }, [setState]);
 
     const chartOptions = merge(CustomChart(), {
-        colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
+        colors: [theme.palette.chart.secondary, theme.palette.chart.primary],
         chart: {
             width: 500
         },
-        labels: ['Soroban', 'Stellar'],
+        labels: ['Stellar', 'Soroban'],
         stroke: {
             colors: 'transparent',
             width: 10,

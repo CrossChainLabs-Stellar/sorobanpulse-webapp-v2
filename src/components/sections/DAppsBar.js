@@ -113,15 +113,15 @@ const DAppsBar = () => {
                             dApps
                         </Typography>
                         <Typography
-                        variant='caption'
-                        sx={{
-                            marginX: '1.4rem',
-                            color: 'text.secondary',
-                            fontSize: '16px',
-                        }}
-                    >
-                        The ecosystem is now thriving with {number(state.total)} vibrant and actively growing projects
-                    </Typography>
+                            variant='caption'
+                            sx={{
+                                marginX: '1.4rem',
+                                color: 'text.secondary',
+                                fontSize: '16px',
+                            }}
+                        >
+                            The ecosystem is now thriving with {number(state.total)} vibrant and actively growing projects
+                        </Typography>
                     </Stack>
                 }
             />
