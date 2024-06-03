@@ -129,8 +129,8 @@ const HighlightsGridBig = () => {
                 <TopCard
                     title='Speed'
                     text='tx 5 seconds'
-                    boxStyling={boxStyling}
-                    textStyling={{ marginTop: '1rem', color: 'text.primary' }}
+                    boxStyling={{ ...boxStyling, backgroundColor: '#ffff00' }}
+                    textStyling={{ marginTop: '1rem', color: '#000' }}
                     link='https://stellar.org/sustainability'
                     image={speed}
                 />
@@ -185,8 +185,8 @@ const HighlightsGridBig = () => {
                 <TopCard
                     title='Energy'
                     text='0.173 Wh/txn electricity consumed per transaction'
-                    boxStyling={boxStyling}
-                    textStyling={{ marginTop: '1rem', color: 'text.primary' }}
+                    boxStyling={{ ...boxStyling, backgroundColor: '#ffff00' }}
+                    textStyling={{ marginTop: '1rem', color: '#000' }}
                     link='https://stellar.org/sustainability'
                     image={energy}
                 />
@@ -241,8 +241,8 @@ const HighlightsGridBig = () => {
                 <TopCard
                     title='Transaction Fee'
                     text='$0.0000065'
-                    boxStyling={boxStyling}
-                    textStyling={{ marginTop: '1rem', color: 'text.primary' }}
+                    boxStyling={{ ...boxStyling, backgroundColor: '#ffff00' }}
+                    textStyling={{ marginTop: '1rem', color: '#000' }}
                     link='https://stellar.org/learn/lumens'
                     image={fee}
                 />

@@ -19,7 +19,7 @@ const TopCard = ({ title, text, boxStyling, textStyling, link, image }) => {
                 <Stack
                     direction='column'
                 >
-                    <Typography sx={{ fontWeight: 600, fontSize: '20px', color: 'text.primary' }}>
+                    <Typography sx={{ fontWeight: 600, fontSize: '20px', color: textStyling.color }}>
                         {title}
                     </Typography>
                     <Typography sx={textStyling}>
