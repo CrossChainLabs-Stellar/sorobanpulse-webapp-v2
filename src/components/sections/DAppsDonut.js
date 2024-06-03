@@ -103,7 +103,7 @@ const DAppsDonut = () => {
                                 fontSize: '20px',
                             }}
                         >
-                            DApps
+                            dApps
                         </Typography>
                         <Typography
                             variant='caption'

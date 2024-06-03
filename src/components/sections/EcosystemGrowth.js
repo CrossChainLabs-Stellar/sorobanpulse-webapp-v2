@@ -183,7 +183,7 @@ function EcosystemGrowth() {
                             }}
                             color="text.secondary"
                         >
-                            New projects
+                            New repositories
                         </Typography>
                     </Stack>
 

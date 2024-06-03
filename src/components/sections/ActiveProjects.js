@@ -96,7 +96,7 @@ function ActiveProjects() {
                             fontSize: '20px',
                         }}
                     >
-                        Active projects
+                        Active repositories
                     </Typography>
                     <Typography
                         variant='caption'
@@ -106,7 +106,7 @@ function ActiveProjects() {
                             fontSize: '16px',
                         }}
                     >
-                        Soroban is now thriving with {number(state.total)} dynamic and actively growing projects
+                        Soroban is now thriving with {number(state.total)} dynamic and actively expanding repositories
                     </Typography>
                 </Stack>
             } />

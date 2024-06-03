@@ -43,7 +43,7 @@ const DAppsPage = () => {
                         }}
                     >
                         <TextField
-                            placeholder='DApps Name'
+                            placeholder='dApps Name'
                             variant="outlined"
                             sx={{
                                 marginLeft: "auto",

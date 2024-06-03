@@ -110,7 +110,7 @@ const DAppsBar = () => {
                                 fontSize: '20px',
                             }}
                         >
-                            DApps
+                            dApps
                         </Typography>
                         <Typography
                         variant='caption'
@@ -120,7 +120,7 @@ const DAppsBar = () => {
                             fontSize: '16px',
                         }}
                     >
-                        Soroban is now thriving with {number(state.total)} dynamic and actively growing projects
+                        The ecosystem is now thriving with {number(state.total)} vibrant and actively growing projects
                     </Typography>
                     </Stack>
                 }

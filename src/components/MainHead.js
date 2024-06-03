@@ -169,7 +169,7 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 17,
+                                fontSize: 16,
                                 marginRight: '0.35rem',
                                 color: 'tableColor.headerText',
 
@@ -227,13 +227,13 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 17,
+                                fontSize: 16,
                                 marginRight: '0.35rem',
                                 color: 'tableColor.headerText'
                             }}
                             className='childHead'
                         >
-                            Dapp Name
+                            dApp Name
                         </Typography>
 
                         <IconButton
@@ -282,7 +282,7 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 17,
+                                fontSize: 16,
                                 marginRight: '0.35rem',
                                 color: 'tableColor.headerText'
                             }}
@@ -323,7 +323,7 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 17,
+                                fontSize: 16,
                                 color: 'tableColor.headerText',
                                 marginRight: '0.35rem',
                             }}
@@ -378,7 +378,7 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 17,
+                                fontSize: 16,
                                 color: 'tableColor.headerText',
                                 marginRight: '0.35rem',
                             }}
@@ -428,20 +428,20 @@ export default function MainHead({ paramsCallback }) {
                     <Stack
                         direction="row"
                         alignItems="center"
-                        sx={{ marginTop: '1.2rem' }}
+                        // sx={{ marginTop: '1.2rem' }}
                     >
 
                         <Typography
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 17,
+                                fontSize: 16,
                                 marginRight: '0.35rem',
                                 color: 'tableColor.headerText'
                             }}
                             className='childHead'
                         >
-                            Development
+                            Activity (12m)
                         </Typography>
                         <IconButton
                             id="basic-button"
@@ -460,18 +460,6 @@ export default function MainHead({ paramsCallback }) {
                         </IconButton>
 
                     </Stack>
-                    <Typography
-                        noWrap
-                        sx={{
-                            fontWeight: 450,
-                            marginTop: 0,
-                            fontSize: 13,
-                            color: 'tableColor.headerText'
-                        }}
-                        className='childHead'
-                    >
-                        activity (12m)
-                    </Typography>
                 </TableCell>
 
                 <TableCell
@@ -502,7 +490,7 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 17,
+                                fontSize: 16,
                                 marginRight: '0.35rem',
                                 color: 'tableColor.headerText'
                             }}
@@ -559,7 +547,7 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 17,
+                                fontSize: 16,
                                 marginRight: '0.35rem',
                                 color: 'tableColor.headerText'
                             }}
@@ -610,13 +598,13 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 17,
+                                fontSize: 16,
                                 marginRight: '0.35rem',
                                 color: 'tableColor.headerText'
                             }}
                             className='childHead'
                         >
-                            X / Twitter
+                            Socials (X)
                         </Typography>
                         <IconButton
                             id="basic-button"
