@@ -43,16 +43,16 @@ function Developers() {
             let new_contributors = parseInt((statistics?.new_contributors_last_6_months) ? statistics?.new_contributors_last_6_months : 0);
             let active_contributors = parseInt((statistics?.active_contributors_last_6_months) ? statistics?.active_contributors_last_6_months : 0);
 
-            setState({ loading: false, chartData: [new_contributors, active_contributors] });
+            setState({ loading: false, chartData: [active_contributors, new_contributors] });
         });
     }, [setState]);
 
     const chartOptions = merge(CustomChart(), {
-        colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
+        colors: [theme.palette.chart.secondary, theme.palette.chart.primary],
         chart: {
             width: 500
         },
-        labels: ['New', 'Active'],
+        labels: ['Active', 'New'],
         stroke: {
             colors: [theme.palette.chart.stroke],
             width: 10,
