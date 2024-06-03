@@ -1,6 +1,8 @@
 import { styled } from '@mui/material/styles';
 import { AppBar, Toolbar, Typography, Box } from '@mui/material';
 
+import SorobanBox from './SorobanBox';
+
 import logo from "../assets/logo.svg";
 
 const HEIGHT = 92;
@@ -20,10 +22,10 @@ const TextTypography = styled(Typography)(({ theme }) => ({
 }));
 
 
-export default function Header() {
+export default function Header({ value, handleChange, mode, setMode }) {
 
     return (
-        <AppBar sx={{ boxShadow: 0, bgcolor: 'backgroundColor.main' }}>
+        <AppBar sx={{ boxShadow: 0, bgcolor: 'backgroundColor.main', }}>
             <ToolbarStyle disableGutters sx={{ height: '5em', padding: 0 }}>
                 <Box
                     component="img"
@@ -54,6 +56,7 @@ export default function Header() {
                 />
                 <TextTypography>SorobanPulse</TextTypography>
             </ToolbarStyle>
+            <SorobanBox value={value} handleChange={handleChange} mode={mode} setMode={setMode} />
         </AppBar>
     );
 }

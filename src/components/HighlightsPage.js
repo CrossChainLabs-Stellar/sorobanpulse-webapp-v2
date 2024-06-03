@@ -74,6 +74,7 @@ const HighlightsPage = () => {
 
     return (
         <Box sx={{
+            marginTop: '8rem',
             marginBottom: '5rem',
         }}
         >

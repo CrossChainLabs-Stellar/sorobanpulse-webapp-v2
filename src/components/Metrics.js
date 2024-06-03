@@ -16,6 +16,7 @@ export default function Metrics() {
     return (
         <Box
             sx={{
+                marginTop: '8rem',
                 marginBottom: '5rem'
             }}
         >

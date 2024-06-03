@@ -10,15 +10,15 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
     return (
         <Box
             sx={{
-                marginTop: {
-                    xs: '5.75rem',
-                    sm: '5rem',
-                    md: '5rem',
-                    lg: '5rem',
-                    lg_xl: '5rem',
-                    xl: '5rem',
-                    xxl: '5rem'
-                },
+                // marginTop: {
+                //     xs: '5.75rem',
+                //     sm: '5rem',
+                //     md: '5rem',
+                //     lg: '5rem',
+                //     lg_xl: '5rem',
+                //     xl: '5rem',
+                //     xxl: '5rem'
+                // },
                 height: '3rem',
                 backgroundColor: "#2A2A2A",
                 // width: '100%',
@@ -63,7 +63,8 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                         color: theme.palette.tabsColors.main,
                         '&.Mui-selected': {
                             color: theme.palette.tabsColors.selected,
-                        }
+                        },
+                        fontSize: '16px'
                     }}
                 />
                 <Tab
@@ -73,7 +74,8 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                         color: theme.palette.tabsColors.main,
                         '&.Mui-selected': {
                             color: theme.palette.tabsColors.selected,
-                        }
+                        },
+                        fontSize: '16px'
                     }}
                 />
                 <Tab
@@ -83,7 +85,8 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                         color: theme.palette.tabsColors.main,
                         '&.Mui-selected': {
                             color: theme.palette.tabsColors.selected,
-                        }
+                        },
+                        fontSize: '16px'
                     }}
                 />
             </Tabs>

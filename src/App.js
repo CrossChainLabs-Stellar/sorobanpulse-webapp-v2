@@ -3,7 +3,7 @@ import { CssBaseline, Box } from '@mui/material';
 import { useState } from 'react';
 
 import Header from "./components/Header";
-import SorobanBox from './components/SorobanBox';
+// import SorobanBox from './components/SorobanBox';
 import giveTheme from './components/Theme';
 import Footer from './components/Footer';
 
@@ -21,6 +21,7 @@ function App() {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    window.scrollTo(0, 0);
   };
   return (
     <StyledEngineProvider injectFirst>
@@ -29,8 +30,8 @@ function App() {
           className={mode === 'light' ? 'circles_light' : 'circles_dark'}
         >
           <CssBaseline />
-          <Header />
-          <SorobanBox value={value} handleChange={handleChange} mode={mode} setMode={setMode} />
+          <Header value={value} handleChange={handleChange} mode={mode} setMode={setMode} />
+          {/* <SorobanBox value={value} handleChange={handleChange} mode={mode} setMode={setMode} /> */}
           <Box
             sx={{
               paddingX: {
