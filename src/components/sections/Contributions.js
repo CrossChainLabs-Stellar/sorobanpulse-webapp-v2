@@ -58,8 +58,8 @@ function Contributions() {
                 total: total,
                 communityPercentage: communityPercentage,
                 data: [
+                    { name: 'Community', data: ecosystemData },
                     { name: 'Core', data: coreData },
-                    { name: 'Community', data: ecosystemData }
                 ]
             });
         });
