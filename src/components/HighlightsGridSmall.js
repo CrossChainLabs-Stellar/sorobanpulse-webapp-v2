@@ -1,10 +1,16 @@
-import { Grid, Typography } from "@mui/material"
+import { Grid, Typography } from "@mui/material";
+
+
+import { useTheme } from "@emotion/react";
 
 import TopCard from "./highlightCards/TopCard";
 
 import speed from '../assets/speed.svg';
 import fee from '../assets/fee.svg';
 import energy from '../assets/energy.svg';
+import feeWhite from '../assets/feeWhite.svg';
+import speedWhite from '../assets/speedWhite.svg';
+import energyWhite from '../assets/energyWhite.svg';
 
 
 const HightlightsGridBig = () => {
@@ -19,6 +25,8 @@ const HightlightsGridBig = () => {
         display: 'flex',
         alignItems: 'center'
     };
+
+    const theme = useTheme();
 
     return (
         <Grid
@@ -70,7 +78,7 @@ const HightlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
-                    image={speed}
+                    image={theme.palette.mode === 'light' ? speed : speedWhite}
                 />
             </Grid>
 
@@ -89,7 +97,7 @@ const HightlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
-                    image={energy}
+                    image={theme.palette.mode === 'light' ? energy : energyWhite}
                 />
             </Grid>
 
@@ -108,7 +116,7 @@ const HightlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
-                    image={fee}
+                    image={theme.palette.mode === 'light' ? fee : feeWhite}
                 />
             </Grid>
 
@@ -230,7 +238,7 @@ const HightlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
-                    image={speed}
+                    image={theme.palette.mode === 'light' ? speed : speedWhite}
                 />
             </Grid>
 
@@ -252,7 +260,7 @@ const HightlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
-                    image={energy}
+                    image={theme.palette.mode === 'light' ? energy : energyWhite}
                 />
             </Grid>
 
@@ -274,7 +282,7 @@ const HightlightsGridBig = () => {
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://mui.com/material-ui/react-link/'
-                    image={fee}
+                    image={theme.palette.mode === 'light' ? fee : feeWhite}
                 />
             </Grid>
 

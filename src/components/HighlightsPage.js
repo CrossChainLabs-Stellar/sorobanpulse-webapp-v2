@@ -15,6 +15,9 @@ import { Client } from '../utils/client';
 import fast from '../assets/fast-to-finality.svg';
 import energy_efficient from '../assets/energy-efficient.svg';
 import affordable from '../assets/affordable.svg';
+import fastWhite from '../assets/fast-to-finality-white.svg';
+import energy_efficient_white from '../assets/energy-efficient-white.svg';
+import affordableWhite from '../assets/affordable-white.svg';
 
 const HighlightsPage = () => {
     const mapper = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
@@ -117,7 +120,7 @@ const HighlightsPage = () => {
                         boxStyling={topCardStyling}
                         textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                         link='https://mui.com/material-ui/react-link/'
-                        image={fast}
+                        image={theme.palette.mode === 'light' ? fast : fastWhite}
                     />
                 </Grid>
 
@@ -136,7 +139,7 @@ const HighlightsPage = () => {
                         boxStyling={topCardStyling}
                         textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                         link='https://mui.com/material-ui/react-link/'
-                        image={energy_efficient}
+                        image={theme.palette.mode === 'light' ? energy_efficient : energy_efficient_white}
                     />
                 </Grid>
 
@@ -171,7 +174,7 @@ const HighlightsPage = () => {
                         boxStyling={topCardStyling}
                         textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                         link='https://mui.com/material-ui/react-link/'
-                        image={affordable}
+                        image={theme.palette.mode === 'light' ? affordable : affordableWhite}
                     />
                 </Grid>
 
