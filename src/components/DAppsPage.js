@@ -34,6 +34,7 @@ const DAppsPage = () => {
                 <Grid item xs={12} lg={12} >
                     <Box
                         sx={{
+                            marginTop: '3rem',
                             backgroundColor: 'tableColor.main1',
                             padding: 0,
                             display: 'flex',
@@ -44,7 +45,7 @@ const DAppsPage = () => {
                         }}
                     >
                         <TextField
-                            placeholder='dApps Name'
+                            placeholder='dApp Name'
                             variant="outlined"
                             sx={{
                                 marginLeft: "auto",
