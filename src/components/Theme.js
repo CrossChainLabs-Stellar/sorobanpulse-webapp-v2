@@ -45,8 +45,8 @@ const getPallete = (mode) => {
         },
         chart: {
             stroke: '#fff',
-            primary: '#FDDA24',
-            secondary: '#3E3385',
+            primary: '#f2cb00',
+            secondary: '#605b7a',
         },
         highlightCards: {
             primary: '#fff'

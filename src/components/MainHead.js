@@ -152,7 +152,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '20%',
                         //     md: '7.5rem'
                         // },
-                        backgroundColor: "#FDDA24",
+                        backgroundColor: "#f2cb00",
                         paddingLeft: { xl: '3rem', lg: '1.5rem' },
                         borderTopLeftRadius: '10px',
                         borderBottomLeftRadius: '10px',
@@ -213,7 +213,7 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '7.5rem'
                         // },
                         width: '25%',
-                        backgroundColor: "#FDDA24",
+                        backgroundColor: "#f2cb00",
                         cursor: 'pointer'
                     }}
                     className='parentHead'
@@ -269,7 +269,7 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '10rem',
                         // },
                         // width: '11%',
-                        backgroundColor: "#FDDA24",
+                        backgroundColor: "#f2cb00",
                         cursor: 'pointer'
                     }}
                     className='parentHead'
@@ -309,7 +309,7 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '10rem',
                         // },
                         // width: '11%',
-                        backgroundColor: "#FDDA24",
+                        backgroundColor: "#f2cb00",
                         cursor: 'pointer'
                     }}
                     className='parentHead'
@@ -364,7 +364,7 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '10rem',
                         // },
                         // width: '11%',
-                        backgroundColor: "#FDDA24",
+                        backgroundColor: "#f2cb00",
                         cursor: 'pointer'
                     }}
                     className='parentHead'
@@ -419,7 +419,7 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '15rem'
                         // },
                         // width: '11%',
-                        backgroundColor: "#FDDA24",
+                        backgroundColor: "#f2cb00",
                         cursor: 'pointer'
                     }}
                     className='parentHead'
@@ -476,7 +476,7 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '10rem'
                         // },
                         // width: '11%',
-                        backgroundColor: "#FDDA24",
+                        backgroundColor: "#f2cb00",
                         cursor: 'pointer'
                     }}
                     className='parentHead'
@@ -532,7 +532,7 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '12rem'
                         // },
                         // width: '11%',
-                        backgroundColor: "#FDDA24",
+                        backgroundColor: "#f2cb00",
                         cursor: 'pointer'
                     }}
                     className='parentHead'
@@ -582,7 +582,7 @@ export default function MainHead({ paramsCallback }) {
                     sx={{
                         borderTopRightRadius: '10px',
                         borderBottomRightRadius: '10px',
-                        backgroundColor: "#ffd600",
+                        backgroundColor: "#f2cb00",
                         paddingRight: '3rem',
                         cursor: 'pointer'
                     }}

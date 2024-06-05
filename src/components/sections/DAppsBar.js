@@ -70,15 +70,16 @@ const DAppsBar = () => {
                 colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
             },
         },
-        colors: ["#3E3385", "#FDDA24"],
+        colors: ["#716a95", "#f2cb00"],
         fill: {
-            colors: ["#3E3385", "#FDDA24"],
+            colors: ["#716a95", "#f2cb00"],
             //colors: ["#F2C1B0", "#F15A24"],
         },
         plotOptions: {
             bar: {
                 horizontal: false,
                 borderRadius: 3,
+                columnWidth: '25%'
             },
         },
         tooltip: {
