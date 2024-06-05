@@ -582,7 +582,7 @@ export default function MainHead({ paramsCallback }) {
                     sx={{
                         borderTopRightRadius: '10px',
                         borderBottomRightRadius: '10px',
-                        backgroundColor: "#FDDA24",
+                        backgroundColor: "#ffd600",
                         paddingRight: '3rem',
                         cursor: 'pointer'
                     }}
@@ -604,7 +604,7 @@ export default function MainHead({ paramsCallback }) {
                             }}
                             className='childHead'
                         >
-                            Socials (X)
+                            Socials (X/Twitter)
                         </Typography>
                         <IconButton
                             id="basic-button"

@@ -48,11 +48,11 @@ const HighlightsGridBig = () => {
                     sx={{
                         color: '#fff',
                         width: '33rem',
-                        fontWeight: '600'
+                        fontWeight: '600',
                     }}
                     align="center"
                 >
-                    BTC
+                    Bitcoin BTC
                 </Typography>
             </Grid>
 
@@ -73,7 +73,7 @@ const HighlightsGridBig = () => {
                     }}
                     align="center"
                 >
-                    XML
+                    Stellar XML
                 </Typography >
             </Grid>
 
@@ -94,7 +94,7 @@ const HighlightsGridBig = () => {
                     }}
                     align="center"
                 >
-                    ETH
+                    Ethereum ETH
                 </Typography>
             </Grid>
 
@@ -108,8 +108,9 @@ const HighlightsGridBig = () => {
                 }}
             >
                 <TopCard
-                    title='Speed'
-                    text='tx 3600 seconds'
+                    title='Transaction Speed'
+                    //text={<strong>3600 seconds</strong>}
+                    text='3,600 seconds'
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://ycharts.com/indicators/bitcoin_average_confirmation_time'
@@ -127,9 +128,9 @@ const HighlightsGridBig = () => {
                 }}
             >
                 <TopCard
-                    title='Speed'
-                    text='tx 5 seconds'
-                    boxStyling={{ ...boxStyling, backgroundColor: '#ffff00' }}
+                    title='Transaction Speed'
+                    text={<strong>5 seconds</strong>}
+                    boxStyling={{ ...boxStyling, backgroundColor: '#f2cb00' }}
                     textStyling={{ marginTop: '1rem', color: '#000' }}
                     link='https://stellar.org/sustainability'
                     image={speed}
@@ -146,8 +147,8 @@ const HighlightsGridBig = () => {
                 }}
             >
                 <TopCard
-                    title='Speed'
-                    text='tx 12 seconds'
+                    title='Transaction Speed'
+                    text='12 seconds'
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://ycharts.com/indicators/ethereum_average_block_time'
@@ -164,8 +165,8 @@ const HighlightsGridBig = () => {
                 }}
             >
                 <TopCard
-                    title='Energy'
-                    text='1201090 Wh/txn electricity consumed per transaction'
+                    title='Energy Consumption'
+                    text='1,201,090 Wh/txn'
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://digiconomist.net/bitcoin-energy-consumption'
@@ -183,9 +184,9 @@ const HighlightsGridBig = () => {
                 }}
             >
                 <TopCard
-                    title='Energy'
-                    text='0.173 Wh/txn electricity consumed per transaction'
-                    boxStyling={{ ...boxStyling, backgroundColor: '#ffff00' }}
+                    title='Energy Consumption'
+                    text={<strong>0.173 Wh/txn </strong>}
+                    boxStyling={{ ...boxStyling, backgroundColor: '#f2cb00' }}
                     textStyling={{ marginTop: '1rem', color: '#000' }}
                     link='https://stellar.org/sustainability'
                     image={energy}
@@ -202,8 +203,8 @@ const HighlightsGridBig = () => {
                 }}
             >
                 <TopCard
-                    title='Energy'
-                    text='30 Wh/txn electricity consumed per transaction'
+                    title='Energy Consumption'
+                    text='30 Wh/txn'
                     boxStyling={boxStyling}
                     textStyling={{ marginTop: '1rem', color: 'text.primary' }}
                     link='https://digiconomist.net/ethereum-energy-consumption'
@@ -240,8 +241,8 @@ const HighlightsGridBig = () => {
             >
                 <TopCard
                     title='Transaction Fee'
-                    text='$0.0000065'
-                    boxStyling={{ ...boxStyling, backgroundColor: '#ffff00' }}
+                    text={<strong>$0.0000065 </strong>}
+                    boxStyling={{ ...boxStyling, backgroundColor: '#f2cb00' }}
                     textStyling={{ marginTop: '1rem', color: '#000' }}
                     link='https://stellar.org/learn/lumens'
                     image={fee}

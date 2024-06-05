@@ -84,36 +84,15 @@ export default function EcosystemTriangle({ paramsCallback }) {
             >
                 <Box
                     sx={{
-                        width: '13rem',
+                        width: '11rem',
                         backgroundColor: '#fff',
                     }}
                 >
-                    <Stack
-                        direction="row"
-                        alignItems="center"
-                        sx={{
-                            height: '2.5rem'
-                        }}
-                    >
-                        <Typography
-                            noWrap
-                            sx={{
-                                fontWeight: '500',
-                                fontSize: '15px',
-                                ml: '1rem',
-                            }}
-                        >
-                            Filter by ecosystem
-                        </Typography>
-                        <IconButton onClick={handleClose} sx={{ marginLeft: 'auto', mr: '0.5rem' }}>
-                            <img src={x} alt='x' />
-                        </IconButton>
-                    </Stack>
-
+                    
                     <Paper
                         sx={{
                             backgroundColor: "#fff",
-                            height: '7.5rem',
+                            height: '7rem',
                         }}
                     >
                         <List
