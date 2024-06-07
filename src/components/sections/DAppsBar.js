@@ -111,7 +111,7 @@ const DAppsBar = () => {
                                 fontSize: '20px',
                             }}
                         >
-                            dApps
+                            Ecosystem dApps
                         </Typography>
                         <Typography
                             variant='caption'
