@@ -113,7 +113,7 @@ const DAppsDonut = () => {
                                 fontSize: '15px',
                             }}
                         >
-                            last 6 months
+                            &nbsp;
                         </Typography>
                     </Stack>
                 }
