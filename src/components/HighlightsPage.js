@@ -119,7 +119,7 @@ const HighlightsPage = () => {
                         text='The Stellar network transactions are confirmed within 5 seconds, with all time average ledger speed at 5.19s'
                         boxStyling={topCardStyling}
                         textStyling={{ marginTop: '1rem', color: 'text.primary' }}
-                        link='https://mui.com/material-ui/react-link/'
+                        link='https://stellar.org/sustainability'
                         image={theme.palette.mode === 'light' ? fast : fastWhite}
                     />
                 </Grid>
@@ -138,7 +138,7 @@ const HighlightsPage = () => {
                         text='Research showed the Stellar network’s footprint is the equivalent to the greenhouse gas emissions from 33.7 US homes’ electricity use for one year.'
                         boxStyling={topCardStyling}
                         textStyling={{ marginTop: '1rem', color: 'text.primary' }}
-                        link='https://mui.com/material-ui/react-link/'
+                        link='https://stellar.org/sustainability'
                         image={theme.palette.mode === 'light' ? energy_efficient : energy_efficient_white}
                     />
                 </Grid>
@@ -173,7 +173,7 @@ const HighlightsPage = () => {
                         text='The Stellar network performs transactions for a fraction of a US penny, with the average transaction cost = 0.00005 XLM.'
                         boxStyling={topCardStyling}
                         textStyling={{ marginTop: '1rem', color: 'text.primary' }}
-                        link='https://mui.com/material-ui/react-link/'
+                        link='https://stellar.org/sustainability'
                         image={theme.palette.mode === 'light' ? affordable : affordableWhite}
                     />
                 </Grid>
@@ -271,7 +271,7 @@ const HighlightsPage = () => {
                                         articleImageData={article_image_data}
                                         mainColor='#000'
                                         secondaryColor='#fff'
-                                        link='https://mui.com/material-ui/react-link/'
+                                        link={url}
                                     />
                                 </Grid>
                                 <Waypoint onEnter={handleWaypointEnter} />
@@ -298,7 +298,7 @@ const HighlightsPage = () => {
                                         articleImageData={article_image_data}
                                         mainColor='#fff'
                                         secondaryColor='#000'
-                                        link='https://mui.com/material-ui/react-link/'
+                                        link={url}
                                     />
                                 </Grid>
                                 <Waypoint onEnter={handleWaypointEnter} />
