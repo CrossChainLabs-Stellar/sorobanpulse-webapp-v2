@@ -45,9 +45,9 @@ function App() {
               },
             }}
           >
-            {value === 0 && <HighlightsPage />}
-            {value === 1 && <DAppsPage />}
-            {value === 2 && <Metrics />}
+            {value === 0 && <DAppsPage />}
+            {value === 1 && <Metrics />}
+            {value === 2 && <HighlightsPage />}
           </Box>
           <Footer />
         </div>

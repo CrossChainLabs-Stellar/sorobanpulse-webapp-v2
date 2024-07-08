@@ -47,7 +47,7 @@ const DAppsDonut = () => {
     }, [setState]);
 
     const chartOptions = merge(CustomChart(), {
-        colors: ["#716a95", "#f2cb00"],
+        colors: [theme.palette.chart.secondary, theme.palette.chart.primary],
         chart: {
             width: 500
         },

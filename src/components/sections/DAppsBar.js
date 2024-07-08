@@ -70,9 +70,9 @@ const DAppsBar = () => {
                 colors: [theme.palette.chart.primary, theme.palette.chart.secondary],
             },
         },
-        colors: ["#716a95", "#f2cb00"],
+        colors: [theme.palette.chart.secondary, theme.palette.chart.primary],
         fill: {
-            colors: ["#716a95", "#f2cb00"],
+            colors: [theme.palette.chart.secondary, theme.palette.chart.primary],
             //colors: ["#F2C1B0", "#F15A24"],
         },
         plotOptions: {

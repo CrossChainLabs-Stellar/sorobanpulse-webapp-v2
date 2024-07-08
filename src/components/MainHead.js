@@ -462,7 +462,7 @@ export default function MainHead({ paramsCallback }) {
                     </Stack>
                 </TableCell>
 
-                <TableCell
+                {/* <TableCell
                     align="left"
                     component="th"
                     scope="row"
@@ -516,7 +516,6 @@ export default function MainHead({ paramsCallback }) {
                         </IconButton>
                     </Stack>
                 </TableCell>
-
 
                 <TableCell
                     align="left"
@@ -572,7 +571,8 @@ export default function MainHead({ paramsCallback }) {
                             />
                         </IconButton>
                     </Stack>
-                </TableCell>
+                </TableCell> */}
+
 
                 <TableCell
                     align="left"
