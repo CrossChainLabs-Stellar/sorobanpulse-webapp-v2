@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import DAppsPage from './components/DAppsPage';
 import HighlightsPage from './components/HighlightsPage';
 import Metrics from './components/Metrics';
+import StellarPage from './components/StellarPage';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
             {value === 0 && <DAppsPage />}
             {value === 1 && <Metrics />}
             {value === 2 && <HighlightsPage />}
+            {value === 3 && <StellarPage />}
           </Box>
           <Footer />
         </div>
