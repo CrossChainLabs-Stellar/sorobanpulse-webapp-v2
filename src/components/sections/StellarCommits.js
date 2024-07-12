@@ -18,12 +18,12 @@ const StellarCommits = () => {
             width: 2,
             colors: ["#0000EE"]
         },
-        grid: {
-            borderColor: '#000000',
-        },
-        chart: {
-            foreColor: '#000000'
-        },
+        // grid: {
+        //     borderColor: '#000000',
+        // },
+        // chart: {
+        //     foreColor: '#000000'
+        // },
 
     });
 

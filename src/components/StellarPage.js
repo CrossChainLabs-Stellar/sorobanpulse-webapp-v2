@@ -9,7 +9,7 @@ import StellarTop from './sections/StellarTop';
 const StellarPage = () => {
     return (
         <Box sx={{
-            marginTop: '8rem',
+            marginTop: '10rem',
             marginBottom: '5rem'
         }}
         >

@@ -48,8 +48,8 @@ function App() {
           >
             {value === 0 && <DAppsPage />}
             {value === 1 && <Metrics />}
-            {value === 2 && <HighlightsPage />}
-            {value === 3 && <StellarPage />}
+            {value === 2 && <StellarPage />}
+            {value === 3 && <HighlightsPage />}
           </Box>
           <Footer />
         </div>
