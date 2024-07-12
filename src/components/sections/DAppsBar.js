@@ -28,6 +28,9 @@ const DAppsBar = () => {
 
         client.get('dapps_chart').then((response) => {
             let contributors = response;
+            if (contributors.length < 1) {
+                return;
+            }
             contributors.pop();
             if (contributors.length > 12) {
                 contributors.splice(0, contributors.length - 12);

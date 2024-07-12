@@ -30,6 +30,9 @@ function Contributions() {
 
         client.get('commits').then((response) => {
             let commits = response;
+            if (commits.length < 1) {
+                return;
+            }
             commits.pop();
             if (commits.length > 12) {
                 commits.splice(0, commits.length - 12);

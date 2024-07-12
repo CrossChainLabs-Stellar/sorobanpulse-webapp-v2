@@ -30,6 +30,9 @@ function ActiveProjects() {
 
         client.get('active_repos').then((response) => {
             let repos = response;
+            if (repos.length < 1) {
+                return;
+            }
             repos.pop();
             if (repos.length > 12) {
                 repos.splice(0, repos.length - 12);
@@ -49,7 +52,6 @@ function ActiveProjects() {
                 ecosystemData.push(item.active_repos_ecosystem ? item.active_repos_ecosystem : 0);
                 categories.push(convertToMonthName(item.display_month.slice(0, -3)));
             });
-
             setState({
                 loading: false,
                 categories: categories,

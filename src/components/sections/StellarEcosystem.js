@@ -1,30 +1,32 @@
 import merge from 'lodash/merge';
 import ReactApexChart from 'react-apexcharts';
 import { Card, CardHeader, Box, Typography } from '@mui/material';
-import { CustomChart } from '../chart'
+import { CustomChart } from '../chart';
+import { useTheme } from '@mui/material/styles';
 
 
 const StellarEcosystem = () => {
+    const theme = useTheme();
+
     const chartOptions = merge(CustomChart(), {
         xaxis: {
             // categories: state.categories,
+            lables: {
+                colors: ["#0000EE"],
+            },
         },
         colors: ["#0000EE"],
-        stroke: {
-            width: 2,
+        fill: {
             colors: ["#0000EE"],
         },
-        markers: {
-            colors: ["#0000EE"],
-            strokeColors: '#0000EE',
-        },
-        grid: {
-            borderColor: '#000000',
-        },
-        chart: {
-            foreColor: '#000000',
+        tooltip: {
+            theme: theme.palette.mode
         }
     });
+
+    const data = [
+        { name: 'Repositories', data: [25, 25, 36, 1, 26, 3, 25] },
+    ]
 
     return (
         <Card sx={{ marginTop: '3rem', boxShadow: '0px 8px 10px #00000040' }}>
@@ -42,7 +44,7 @@ const StellarEcosystem = () => {
             <Box sx={{ mt: 3, mx: 3 }} dir="ltr">
                 <ReactApexChart
                     type="line"
-                    series={[26, 26, 15, 33, 3]}
+                    series={data}
                     options={chartOptions}
                     height={364}
                 />
