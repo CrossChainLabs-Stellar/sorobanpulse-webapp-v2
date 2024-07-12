@@ -5,6 +5,7 @@ import StellarCommits from './sections/StellarCommits';
 import StellarEcosystem from './sections/StellarEcosystem';
 import StellarContributors from './sections/StellarContributors';
 import StellarTop from './sections/StellarTop';
+import StellarMetricsTableContainer from './sections/StellarMetricsTableContainer';
 
 import { useState, useEffect } from 'react';
 
@@ -125,7 +126,7 @@ const StellarPage = () => {
                 </Grid>
 
                 <Grid item xs={12} lg={12}>
-                    <StellarRecentCommits />
+                    <StellarMetricsTableContainer />
                 </Grid>
             </Grid>
 

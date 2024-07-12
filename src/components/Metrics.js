@@ -7,6 +7,7 @@ import TopDevelopers from "./sections/TopDevelopers";
 import ActiveDevelopers from "./sections/ActiveDevelopers";
 import Developers from "./sections/Developers";
 import Contributions from "./sections/Contributions";
+import MetricsTableContrainer from './sections/MetricsTableContainer';
 import SmartContracts from "./sections/SmartContracts";
 import SmartContractsBar from './sections/SmartContractsBar';
 
@@ -46,6 +47,10 @@ export default function Metrics() {
 
                 <Grid item xs={12} md={12} lg={8}>
                     <Contributions />
+                </Grid>
+
+                <Grid item xs={12} md={12} lg={12}>
+                    <MetricsTableContrainer />
                 </Grid>
 
                 {/*
