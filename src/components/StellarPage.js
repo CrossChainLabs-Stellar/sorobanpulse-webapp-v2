@@ -19,6 +19,7 @@ const StellarPage = () => {
     const [state, setState] = useState({
         loading: true,
         // commits: '',
+        commits_stellar: '',
         new_commits_last_week: '',
         // new_commits_last_month: '',
         repositories: '',
@@ -37,7 +38,7 @@ const StellarPage = () => {
         client.get('statistics').then((statistics) => {
             setState({
                 loading: false,
-                // commits: statistics.commits,
+                commits: statistics.commits_stellar,
                 new_commits_last_week: statistics.new_commits_last_week_stellar,
                 // new_commits_last_month: statistics.new_commits_last_month,
                 repositories: statistics.repos_stellar,
