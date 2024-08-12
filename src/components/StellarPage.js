@@ -20,16 +20,13 @@ const StellarPage = () => {
         loading: true,
         commits: '',
         new_commits_last_week: '',
-        // new_commits_last_month: '',
         repositories: '',
         new_repos_last_week: '',
-        // new_repos_last_month: '',
         contributors: '',
         new_contributors_last_week: '',
-        // new_contributors_last_month: '',
-        // prs: '',
-        // new_prs_last_week: '',
-        // new_prs_last_month: ''
+        new_contributors_last_month: '',
+        active_contributors: '',
+
     });
     useEffect(() => {
         setState({ loading: true });
@@ -39,16 +36,12 @@ const StellarPage = () => {
                 loading: false,
                 commits: statistics.commits_stellar,
                 new_commits_last_week: statistics.new_commits_last_week_stellar,
-                // new_commits_last_month: statistics.new_commits_last_month,
                 repositories: statistics.repos_stellar,
                 new_repos_last_week: statistics.new_repos_last_week_stellar,
-                // new_repos_last_month: statistics.new_repos_last_month,
                 contributors: statistics.contributors_stellar,
                 new_contributors_last_week: statistics.new_contributors_last_week_stellar,
-                // new_contributors_last_month: statistics.new_contributors_last_month,
-                // prs: statistics.prs,
-                // new_prs_last_week: statistics.new_prs_last_week,
-                // new_prs_last_month: statistics.new_prs_last_month,
+                new_contributors_last_month: statistics.new_contributors_last_month_stellar,
+                active_contributors: statistics.active_contributors_stellar,
             })
 
         });
@@ -97,18 +90,6 @@ const StellarPage = () => {
                                 : ' ')}
                     />
                 </Grid>
-                {/* <Grid item xs={12} md={3}>
-                    <CardWidget
-                        name='PRs'
-                        // value={((state.prs) ? number(state.prs) : ' ')}
-                        // subtitle={((state.new_prs_last_week > 0) ?
-                        //     ('+ ' + number(state.new_prs_last_week)) + ' than last week' :
-                        //     (state.new_prs_last_month) ? ('+ ' + number(state.new_prs_last_month)) + ' then last month'
-                        //         : ' ')}
-                        value={2798}
-                        subtitle="+7 than last week"
-                    />
-                </Grid> */}
                 <Grid item xs={12} md={3} lg={4}>
                     <StellarTop />
                 </Grid>
@@ -118,7 +99,7 @@ const StellarPage = () => {
                 </Grid>
 
                 <Grid item xs={12} md={3} lg={4}>
-                    <StellarContributors />
+                    <StellarContributors active_contributors={state.active_contributors} new_contributors_last_month={state.new_contributors_last_month} />
                 </Grid>
 
                 <Grid item xs={12} md={6} lg={8}>

@@ -27,7 +27,7 @@ const ChartWrapperStyle = styled('div')(({ theme }) => ({
 
 
 
-const StellarContributors = () => {
+const StellarContributors = ({ active_contributors, new_contributors_last_month }) => {
     const chartOptions = merge(CustomChart(), {
         colors: [
             "#BDB8FF",
@@ -99,7 +99,7 @@ const StellarContributors = () => {
                 }
             />
             <ChartWrapperStyle dir="ltr">
-                <ReactApexChart type="donut" series={[19, 75]} options={chartOptions} height={310} />
+                <ReactApexChart type="donut" series={[new_contributors_last_month ? new_contributors_last_month : 0, active_contributors ? active_contributors : 0]} options={chartOptions} height={310} />
             </ChartWrapperStyle>
         </Card>
     );
