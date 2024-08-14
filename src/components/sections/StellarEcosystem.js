@@ -70,8 +70,8 @@ const StellarEcosystem = () => {
                 categories: categories,
                 total: total,
                 data: [
-                    { name: 'Community', data: ecosystemData },
                     { name: 'Core', data: coreData },
+                    { name: 'Community', data: ecosystemData },
                 ]
             });
         });

@@ -1,4 +1,6 @@
 import { Box, Stack, Card, Typography, CardHeader, Link } from '@mui/material';
+import { Client } from '../../utils/client';
+import { useState, useEffect } from 'react';
 
 
 function ContributorItem({ item }) {
@@ -28,6 +30,24 @@ function ContributorItem({ item }) {
 
 
 const StellarTop = () => {
+    const [state, setState] = useState({
+        loading: true,
+        top_contributors: []
+    });
+
+    useEffect(() => {
+        const client = new Client();
+
+
+        client.get('top_contributors_stellar').then((response) => {
+            let top_contributors = response;
+            setState({
+                loading: false,
+                top_contributors: top_contributors?.slice(0, 10),
+            });
+        });
+    }, [setState]);
+
     return (
         <Card sx={{ marginTop: '3rem', boxShadow: '0px 8px 10px #00000040' }}>
             <CardHeader title={
@@ -42,11 +62,11 @@ const StellarTop = () => {
                 </Typography>
             } />
             <Stack spacing={5.37} sx={{ p: 5.4, pr: 0, height: '25.5rem', overflowY: 'scroll' }}>
-                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => (
-                    <ContributorItem key={index} item={{ dev_name: 'placeholder', avatar_url: '', contributions: '300' }} />
+                {state.top_contributors && state.top_contributors.map((item) => (
+                    <ContributorItem key={item.dev_name} item={item} />
                 ))}
             </Stack>
         </Card>
     )
 }
-export default StellarTop
+export default StellarTop;
