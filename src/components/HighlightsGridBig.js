@@ -79,7 +79,7 @@ const HighlightsGridBig = () => {
                     }}
                     align="center"
                 >
-                    Stellar XML
+                    Stellar XLM
                 </Typography >
             </Grid>
 
