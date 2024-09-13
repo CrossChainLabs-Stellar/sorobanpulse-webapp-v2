@@ -300,7 +300,7 @@ export default function StellarMetricsHead() {
                             }}
                             className='childHead'
                         >
-                            Active developers
+                            Active developers (30d)
                         </Typography>
 
                         <IconButton
@@ -319,18 +319,6 @@ export default function StellarMetricsHead() {
                             />
                         </IconButton>
                     </Stack>
-                    <Typography
-                        noWrap
-                        sx={{
-                            fontWeight: 450,
-                            marginTop: 0,
-                            fontSize: 12,
-                            color: '#3E3385'
-                        }}
-                        className='childHead'
-                    >
-                        last 30 days
-                    </Typography>
                 </TableCell>
 
                 <TableCell
@@ -411,7 +399,7 @@ export default function StellarMetricsHead() {
                             }}
                             className='childHead'
                         >
-                            Activity growth
+                            Activity growth (6m)
                         </Typography>
 
                         <IconButton
@@ -430,18 +418,6 @@ export default function StellarMetricsHead() {
                             />
                         </IconButton>
                     </Stack>
-                    <Typography
-                        noWrap
-                        sx={{
-                            fontWeight: 450,
-                            marginTop: 0,
-                            fontSize: 12,
-                            color: '#3E3385'
-                        }}
-                        className='childHead'
-                    >
-                        last 6 months
-                    </Typography>
                 </TableCell>
 
                 <TableCell
@@ -475,7 +451,7 @@ export default function StellarMetricsHead() {
                             }}
                             className='childHead'
                         >
-                            Activity
+                            Activity (6m)
                         </Typography>
 
                         <IconButton
@@ -494,18 +470,6 @@ export default function StellarMetricsHead() {
                             />
                         </IconButton>
                     </Stack>
-                    <Typography
-                        noWrap
-                        sx={{
-                            fontWeight: 450,
-                            marginTop: 0,
-                            fontSize: 12,
-                            color: '#3E3385'
-                        }}
-                        className='childHead'
-                    >
-                        last 6 months
-                    </Typography>
                 </TableCell>
 
 
