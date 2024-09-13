@@ -69,7 +69,7 @@ const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColo
                     {truncateLine(`${TimeAgo(pubDate)}`, 12)}
                 </Typography>
             </Stack>
-            <Typography sx={{ color: secondaryColor, marginY: '1rem' }}>
+            <Typography sx={{ color: secondaryColor, marginY: '1rem', fontWeight: 600, }}>
                 {titleLong}
             </Typography>
             <img
