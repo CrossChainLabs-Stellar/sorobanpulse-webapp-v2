@@ -39,9 +39,10 @@ const DAppsPage = () => {
                             padding: 0,
                             display: 'flex',
                             flexDirection: 'column',
-                            border: 1,
                             borderRadius: '8px',
-                            borderColor: 'tableColor.border',
+                            boxShadow: '0px 4px 4px 0px #00000040',
+                            // border: 1,
+                            // borderColor: 'tableColor.border',
                         }}
                     >
                         <TextField
