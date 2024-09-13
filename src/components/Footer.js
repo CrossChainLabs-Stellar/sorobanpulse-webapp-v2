@@ -17,7 +17,7 @@ export default function Footer() {
         >
             <Link
                 className={s.item}
-                href="https://www.crosschainlabs.tech/"
+                href="https://www.crosschainlabs.tech/meet-the-team/"
                 target="_blank"
                 rel="noopener"
                 sx={{
