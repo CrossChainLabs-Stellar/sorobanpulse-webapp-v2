@@ -44,9 +44,9 @@ export default function Header({ value, handleChange, mode, setMode }) {
                         //     xs: '2rem',
                         // },
                         marginLeft: {
-                            xxl: '4.5rem',
-                            xl: '8rem',
-                            lg_xl: '8rem',
+                            xxl: '14rem',
+                            xl: '14rem',
+                            lg_xl: '14rem',
                             lg: '4rem',
                             md: '4rem',
                             sm: '2rem',

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // material
 import {
     Typography,
@@ -22,9 +22,9 @@ import triunghi from '../assets/triunghi.svg';
 
 export default function MainHead({ paramsCallback }) {
     const [isDescRank, setIsDescRank] = useState(false);
-    const [isDescName, setIsDescName] = useState(true);
+    const [isDescName, setIsDescName] = useState(false);
     const [isDescDevelopers, setIsDescDevelopers] = useState(false);
-    const [isDescContributions, setIsDescContributions] = useState(true);
+    const [isDescContributions, setIsDescContributions] = useState(false);
     const [isDescActivityGr, setIsDescActivityGr] = useState(false);
     const [isDescFollowers, setIsDescFollowers] = useState(false);
     const [sortArray, setSortArray] = useState(new Array(8).fill(0));
@@ -58,6 +58,10 @@ export default function MainHead({ paramsCallback }) {
         transform: !isDescFollowers ? 'rotate(180deg)' : '',
         transition: 'transform 150ms ease', // smooth transition
     }
+
+    useEffect(() => {
+        paramsCallback({ sortBy: 'activity_growth', sortType: isDescActivityGr ? 'asc' : 'desc' });
+    }, [])
 
     const handleChangeSort = (newSort, handleSort) => {
         const newArray = new Array(8).fill(0);
@@ -428,7 +432,7 @@ export default function MainHead({ paramsCallback }) {
                     <Stack
                         direction="row"
                         alignItems="center"
-                        // sx={{ marginTop: '1.2rem' }}
+                    // sx={{ marginTop: '1.2rem' }}
                     >
 
                         <Typography
