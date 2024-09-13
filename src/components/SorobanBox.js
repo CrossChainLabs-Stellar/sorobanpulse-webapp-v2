@@ -42,8 +42,8 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                     // },
                     marginLeft: {
                         xxl: '24rem',
-                        xl: '24rem',
-                        lg_xl: '24rem',
+                        xl: '20rem',
+                        lg_xl: '16rem',
                         lg: '4rem',
                         md: '4rem',
                         sm: '2rem',
@@ -116,8 +116,8 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                     // },
                     marginRight: {
                         xxl: '24rem',
-                        xl: '24rem',
-                        lg_xl: '24rem',
+                        xl: '20rem',
+                        lg_xl: '16rem',
                         lg: '4rem',
                         md: '4rem',
                         sm: '2rem',

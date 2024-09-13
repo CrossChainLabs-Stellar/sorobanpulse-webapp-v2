@@ -37,8 +37,8 @@ function App() {
             sx={{
               paddingX: {
                 xxl: '24rem',
-                xl: '24rem',
-                lg_xl: '24rem',
+                xl: '20rem',
+                lg_xl: '16rem',
                 lg: '4rem',
                 md: '4rem',
                 sm: '2rem',
