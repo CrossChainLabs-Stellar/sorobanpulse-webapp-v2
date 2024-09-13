@@ -34,7 +34,7 @@ const DAppsPage = () => {
                 <Grid item xs={12} lg={12} >
                     <Box
                         sx={{
-                            marginTop: '2rem',
+                            marginTop: '3rem',
                             backgroundColor: 'tableColor.main1',
                             padding: 0,
                             display: 'flex',

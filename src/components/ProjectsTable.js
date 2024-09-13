@@ -39,7 +39,7 @@ export default function ProjectsTable() {
     return (
         <Paper className="container">
             <Stack
-                style={{ backgroundColor: '#FFFFFF', height: '5rem', marginBottom: '2rem' }}
+                style={{ backgroundColor: '#FFFFFF', height: '5rem' }}
                 direction="row"
                 alignItems="bottom"
                 justifyContent="space-between"
@@ -72,7 +72,7 @@ export default function ProjectsTable() {
                 />
             </Stack>
 
-            <MainTable search={search}/>
+            <MainTable search={search} />
 
         </Paper >
     );
