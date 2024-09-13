@@ -36,9 +36,9 @@ function App() {
           <Box
             sx={{
               paddingX: {
-                xxl: '14rem',
-                xl: '14rem',
-                lg_xl: '14rem',
+                xxl: '24rem',
+                xl: '24rem',
+                lg_xl: '24rem',
                 lg: '4rem',
                 md: '4rem',
                 sm: '2rem',
