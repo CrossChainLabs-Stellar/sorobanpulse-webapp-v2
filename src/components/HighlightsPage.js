@@ -272,6 +272,7 @@ const HighlightsPage = () => {
                                         mainColor='#000'
                                         secondaryColor='#fff'
                                         link={url}
+                                        pubDate={pub_date}
                                     />
                                 </Grid>
                                 <Waypoint onEnter={handleWaypointEnter} />
@@ -299,6 +300,7 @@ const HighlightsPage = () => {
                                         mainColor='#fff'
                                         secondaryColor='#000'
                                         link={url}
+                                        pubDate={pub_date}
                                     />
                                 </Grid>
                                 <Waypoint onEnter={handleWaypointEnter} />

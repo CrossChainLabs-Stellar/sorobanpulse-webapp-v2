@@ -1,9 +1,35 @@
 import { Box, Stack, Typography, Link } from "@mui/material"
 
-import CardLogo from '../../assets/placeholderAppsLogos/CardLogo.svg';
+import TimeAgo from "../../utils/TimeAgo";
 
 
-const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColor, secondaryColor, link }) => {
+const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColor, secondaryColor, link, pubDate }) => {
+
+    function truncateLine(line, maxLength, addDots = true) {
+        if (line.length > maxLength) {
+            const words = line.split(' ');
+            let truncatedLine = '';
+
+            for (let i = 0; i < words.length; i++) {
+                const word = words[i];
+                if ((truncatedLine + ' ' + word).length <= maxLength) {
+                    truncatedLine += (truncatedLine === '' ? '' : ' ') + word;
+                } else {
+                    break;
+                }
+            }
+
+            if (addDots) {
+                line = truncatedLine + ' ...';
+            } else {
+                line = truncatedLine + ' ...';
+            }
+        }
+
+        return line;
+    }
+
+
     return (
         <Link
             underline="none"
@@ -24,8 +50,24 @@ const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColo
         >
             <Stack direction='row' alignItems='center'>
                 <img src={iconData} alt='logo' style={{ width: '2rem' }} />
-                <Typography sx={{ color: secondaryColor, marginLeft: '1rem' }}>
+                <Typography sx={{ color: secondaryColor, marginLeft: '1rem', fontSize: '12px' }}>
                     {titleShort}
+                </Typography>
+                <Box
+                    // render a black circle
+                    component='div'
+                    sx={{
+                        marginLeft: '0.5rem',
+                        marginRight: '0.5rem',
+                        fontSize: '5px',
+                        marginBottom: '2px',
+                        color: 'newsDetails.main',
+                    }}
+                >
+                    {`\u2B24`}
+                </Box>
+                <Typography sx={{ color: secondaryColor, marginLeft: '1rem', fontSize: '12px' }}>
+                    {truncateLine(`${TimeAgo(pubDate)}`, 12)}
                 </Typography>
             </Stack>
             <Typography sx={{ color: secondaryColor, marginY: '1rem' }}>
@@ -44,4 +86,4 @@ const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColo
         </Link>
     )
 }
-export default NewsCards
+export default NewsCards;
