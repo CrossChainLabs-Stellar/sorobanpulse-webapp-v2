@@ -50,7 +50,7 @@ const DAppsPage = () => {
                             variant="outlined"
                             sx={{
                                 marginLeft: "auto",
-                                marginY: '1rem',
+                                marginY: '2rem',
                                 marginRight: '1rem',
 
                                 '& .MuiOutlinedInput-root': {
