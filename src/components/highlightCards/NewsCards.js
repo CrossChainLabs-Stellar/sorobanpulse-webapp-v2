@@ -60,7 +60,7 @@ const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColo
                         marginLeft: '0.5rem',
                         marginRight: '0.5rem',
                         fontSize: '5px',
-                        color: 'newsDetails.main',
+                        color: secondaryColor,
                     }}
                 >
                     {`\u2B24`}
