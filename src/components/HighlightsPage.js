@@ -85,7 +85,7 @@ const HighlightsPage = () => {
                 container
                 spacing={3}
                 sx={{
-                    paddingY: '4rem',
+                    paddingY: '5rem',
                 }}
             >
 

@@ -81,7 +81,7 @@ function EcosystemGrowth() {
     return (
         <Card
             sx={{
-                marginTop: '4rem',
+                marginTop: '5rem',
                 boxShadow: '0px 4px 4px 0px #00000040',
                 backgroundColor: theme.palette.tableColor.card
             }}
@@ -112,7 +112,7 @@ function EcosystemGrowth() {
                 }
             />
             <Stack spacing={3.37} sx={{ p: 5, pt: 0, pr: 0, height: '25.25rem', marginTop: '-0.5rem', marginBottom: '0.45rem' }}>
-            <Stack
+                <Stack
                     direction="row"
                     sx={{
                         boxShadow: '0px 12px 24px -4px #0000001F',

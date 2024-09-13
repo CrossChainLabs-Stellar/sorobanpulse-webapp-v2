@@ -49,7 +49,7 @@ const StellarPage = () => {
 
     return (
         <Box sx={{
-            marginTop: '12rem',
+            marginTop: '13rem',
             marginBottom: '5rem'
         }}
         >
