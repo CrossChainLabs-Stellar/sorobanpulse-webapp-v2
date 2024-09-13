@@ -11,7 +11,7 @@ import {
 
 
 // components
-// import EcosystemTriangle from './EcosystemTriangle';
+import StellarEcosystemTriangle from '../StellarEcosystemTriangle';
 
 // assets
 import triunghi from '../../assets/triunghi.svg';
@@ -20,12 +20,13 @@ import triunghi from '../../assets/triunghi.svg';
 
 
 export default function StellarMetricsHead() {
-    const [isDescName, setIsDescName] = useState(true);
-    const [isDescDevelopers, setIsDescDevelopers] = useState(true);
-    const [isDescActiveDevs, setIsDescActiveDevs] = useState(true);
-    const [isDescContributions, setIsDescContributions] = useState(true);
-    const [isDescActivityGr, setIsDescActivityGr] = useState(true);
-    const [isDescActivity, setIsDescActivity] = useState(true);
+    const [isDescName, setIsDescName] = useState(false);
+    const [isDescDevelopers, setIsDescDevelopers] = useState(false);
+    const [isDescActiveDevs, setIsDescActiveDevs] = useState(false);
+    const [isDescContributions, setIsDescContributions] = useState(false);
+    const [isDescActivityGr, setIsDescActivityGr] = useState(false);
+    const [isDescActivity, setIsDescActivity] = useState(false);
+    const [sortArray, setSortArray] = useState(new Array(6).fill(0));
 
     const styleName = {
         transform: !isDescName ? 'rotate(180deg)' : '',
@@ -57,57 +58,85 @@ export default function StellarMetricsHead() {
         transition: 'transform 150ms ease', // smooth transition
     }
 
+    const handleChangeSort = (newSort, handleSort) => {
+        const newArray = new Array(6).fill(0);
+        newArray[newSort] = 1;
+        setSortArray(newArray);
+        handleSort();
+    }
+
     const handleSortName = () => {
+        // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+
         setIsDescName(!isDescName);
+        setIsDescDevelopers(false);
+        setIsDescActiveDevs(false);
+        setIsDescContributions(false);
+        setIsDescActivityGr(false);
+        setIsDescActivity(false);
     }
 
     const handleSortDevelopers = () => {
+        // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+
+        setIsDescName(false);
         setIsDescDevelopers(!isDescDevelopers);
+        setIsDescActiveDevs(false);
+        setIsDescContributions(false);
+        setIsDescActivityGr(false);
+        setIsDescActivity(false);
     }
 
     const handleSortActiveDevs = () => {
+        // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+
+        setIsDescName(false);
+        setIsDescDevelopers(false);
         setIsDescActiveDevs(!isDescActiveDevs);
+        setIsDescContributions(false);
+        setIsDescActivityGr(false);
+        setIsDescActivity(false);
     }
 
     const handleSortContributions = () => {
+        // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+
+        setIsDescName(false);
+        setIsDescDevelopers(false);
+        setIsDescActiveDevs(false);
         setIsDescContributions(!isDescContributions);
+        setIsDescActivityGr(false);
+        setIsDescActivity(false);
     }
 
     const handleSortActivityGr = () => {
+        // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+
+        setIsDescName(false);
+        setIsDescDevelopers(false);
+        setIsDescActiveDevs(false);
+        setIsDescContributions(false);
         setIsDescActivityGr(!isDescActivityGr);
+        setIsDescActivity(false);
     }
 
     const handleSortActivity = () => {
+        // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+
+        setIsDescName(false);
+        setIsDescDevelopers(false);
+        setIsDescActiveDevs(false);
+        setIsDescContributions(false);
+        setIsDescActivityGr(false);
         setIsDescActivity(!isDescActivity);
     }
-
-    // const handleSortNumber = () => {
-    //     paramsCallback({ sortBy: 'number', sortType: isDescNumber ? 'asc' : 'desc' });
-    //     setIsDescNumber(!isDescNumber);
-    //     setIsDescName(true);
-    //     setIsDescUpdatedAt(true);
-    // }
-
-    // const handleSortName = () => {
-    //     paramsCallback({ sortBy: 'title', sortType: isDescName ? 'asc' : 'desc' });
-    //     setIsDescNumber(true);
-    //     setIsDescName(!isDescName);
-    //     setIsDescUpdatedAt(true);
-    // }
-
-    // const handleSortUpdatedAt = () => {
-    //     paramsCallback({ sortBy: 'updated_at', sortType: isDescUpdatedAt ? 'asc' : 'desc' });
-    //     setIsDescNumber(true);
-    //     setIsDescName(true);
-    //     setIsDescUpdatedAt(!isDescUpdatedAt);
-    // }
 
 
     return (
         <TableHead>
             <TableRow
                 sx={{
-                    height: '4rem',
+                    height: '4.25rem',
                 }}
             >
                 <TableCell
@@ -117,11 +146,14 @@ export default function StellarMetricsHead() {
                     padding="none"
                     sx={{
                         width: '20%',
-                        backgroundColor: "#FFEC8D",
+                        backgroundColor: "#BDB8FF",
                         paddingLeft: '3rem',
                         borderTopLeftRadius: '10px',
                         borderBottomLeftRadius: '10px',
+                        cursor: 'pointer',
                     }}
+                    className='parentHead'
+                    onClick={() => handleChangeSort(0, handleSortName)}
                 >
                     <Stack
                         direction="row"
@@ -135,6 +167,7 @@ export default function StellarMetricsHead() {
                                 marginRight: '0.35rem',
                                 color: '#3E3385'
                             }}
+                            className='childHead'
                         >
                             Project name
                         </Typography>
@@ -144,7 +177,8 @@ export default function StellarMetricsHead() {
                             onClick={handleSortName}
                             sx={{
                                 padding: 0,
-                                marginTop: '0.15rem'
+                                marginTop: '0.15rem',
+                                visibility: sortArray[0] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img
@@ -163,8 +197,10 @@ export default function StellarMetricsHead() {
                     padding="none"
                     sx={{
                         width: '12%',
-                        backgroundColor: "#FFEC8D"
+                        backgroundColor: "#BDB8FF",
+                        cursor: 'pointer'
                     }}
+                    className='parentHead'
                 >
                     <Stack
                         direction="row"
@@ -178,25 +214,12 @@ export default function StellarMetricsHead() {
                                 marginRight: '0.35rem',
                                 color: '#3E3385'
                             }}
+                            className='childHead'
                         >
                             Ecosystem
                         </Typography>
 
-                        {/* <EcosystemTriangle /> */}
-                        <IconButton
-                            id="basic-button"
-                            // onClick={handleSortName}
-                            sx={{
-                                padding: 0,
-                                marginTop: '0.15rem'
-                            }}
-                        >
-                            <img
-                                src={triunghi}
-                                alt='triunghi'
-                                style={styleName}
-                            />
-                        </IconButton>
+                        <StellarEcosystemTriangle />
                     </Stack>
                 </TableCell>
 
@@ -207,8 +230,11 @@ export default function StellarMetricsHead() {
                     padding="none"
                     sx={{
                         width: '13%',
-                        backgroundColor: "#FFEC8D"
+                        backgroundColor: "#BDB8FF",
+                        cursor: 'pointer',
                     }}
+                    className='parentHead'
+                    onClick={() => handleChangeSort(1, handleSortDevelopers)}
                 >
                     <Stack
                         direction="row"
@@ -222,6 +248,7 @@ export default function StellarMetricsHead() {
                                 color: '#3E3385',
                                 marginRight: '0.35rem',
                             }}
+                            className='childHead'
                         >
                             Developers
                         </Typography>
@@ -231,7 +258,8 @@ export default function StellarMetricsHead() {
                             onClick={handleSortDevelopers}
                             sx={{
                                 padding: 0,
-                                marginTop: '0.15rem'
+                                marginTop: '0.15rem',
+                                visibility: sortArray[1] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img
@@ -250,8 +278,11 @@ export default function StellarMetricsHead() {
                     padding="none"
                     sx={{
                         width: '20%',
-                        backgroundColor: "#FFEC8D",
+                        backgroundColor: "#BDB8FF",
+                        cursor: 'pointer',
                     }}
+                    className='parentHead'
+                    onClick={() => handleChangeSort(2, handleSortActiveDevs)}
                 >
                     <Stack
                         direction="row"
@@ -267,6 +298,7 @@ export default function StellarMetricsHead() {
                                 marginRight: '0.35rem',
                                 color: '#3E3385'
                             }}
+                            className='childHead'
                         >
                             Active developers
                         </Typography>
@@ -276,7 +308,8 @@ export default function StellarMetricsHead() {
                             onClick={handleSortActiveDevs}
                             sx={{
                                 padding: 0,
-                                marginTop: '0.15rem'
+                                marginTop: '0.15rem',
+                                visibility: sortArray[2] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img
@@ -294,6 +327,7 @@ export default function StellarMetricsHead() {
                             fontSize: 12,
                             color: '#3E3385'
                         }}
+                        className='childHead'
                     >
                         last 30 days
                     </Typography>
@@ -306,8 +340,11 @@ export default function StellarMetricsHead() {
                     padding="none"
                     sx={{
                         width: '13%',
-                        backgroundColor: "#FFEC8D",
+                        backgroundColor: "#BDB8FF",
+                        cursor: 'pointer',
                     }}
+                    className='parentHead'
+                    onClick={() => handleChangeSort(3, handleSortContributions)}
                 >
                     <Stack
                         direction="row"
@@ -321,6 +358,7 @@ export default function StellarMetricsHead() {
                                 marginRight: '0.35rem',
                                 color: '#3E3385'
                             }}
+                            className='childHead'
                         >
                             Contributions
                         </Typography>
@@ -330,7 +368,8 @@ export default function StellarMetricsHead() {
                             onClick={handleSortContributions}
                             sx={{
                                 padding: 0,
-                                marginTop: '0.15rem'
+                                marginTop: '0.15rem',
+                                visibility: sortArray[3] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img
@@ -350,8 +389,11 @@ export default function StellarMetricsHead() {
                     padding="none"
                     sx={{
                         width: '12%',
-                        backgroundColor: "#FFEC8D",
+                        backgroundColor: "#BDB8FF",
+                        cursor: 'pointer',
                     }}
+                    className='parentHead'
+                    onClick={() => handleChangeSort(4, handleSortActivityGr)}
                 >
                     <Stack
                         direction="row"
@@ -367,6 +409,7 @@ export default function StellarMetricsHead() {
                                 marginRight: '0.35rem',
                                 color: '#3E3385'
                             }}
+                            className='childHead'
                         >
                             Activity growth
                         </Typography>
@@ -376,7 +419,8 @@ export default function StellarMetricsHead() {
                             onClick={handleSortActivityGr}
                             sx={{
                                 padding: 0,
-                                marginTop: '0.15rem'
+                                marginTop: '0.15rem',
+                                visibility: sortArray[4] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img
@@ -394,6 +438,7 @@ export default function StellarMetricsHead() {
                             fontSize: 12,
                             color: '#3E3385'
                         }}
+                        className='childHead'
                     >
                         last 6 months
                     </Typography>
@@ -407,9 +452,12 @@ export default function StellarMetricsHead() {
                     sx={{
                         borderTopRightRadius: '10px',
                         borderBottomRightRadius: '10px',
-                        backgroundColor: "#FFEC8D",
+                        backgroundColor: "#BDB8FF",
                         paddingRight: '3rem',
+                        cursor: 'pointer',
                     }}
+                    className='parentHead'
+                    onClick={() => handleChangeSort(5, handleSortActivity)}
                 >
                     <Stack
                         direction="row"
@@ -425,6 +473,7 @@ export default function StellarMetricsHead() {
                                 marginRight: '0.35rem',
                                 color: '#3E3385'
                             }}
+                            className='childHead'
                         >
                             Activity
                         </Typography>
@@ -434,7 +483,8 @@ export default function StellarMetricsHead() {
                             onClick={handleSortActivity}
                             sx={{
                                 padding: 0,
-                                marginTop: '0.15rem'
+                                marginTop: '0.15rem',
+                                visibility: sortArray[5] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img
@@ -452,6 +502,7 @@ export default function StellarMetricsHead() {
                             fontSize: 12,
                             color: '#3E3385'
                         }}
+                        className='childHead'
                     >
                         last 6 months
                     </Typography>
@@ -459,6 +510,6 @@ export default function StellarMetricsHead() {
 
 
             </TableRow>
-        </TableHead>
+        </TableHead >
     );
 }

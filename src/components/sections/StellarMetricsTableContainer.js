@@ -8,7 +8,6 @@ import {
     Paper,
     OutlinedInput,
     InputAdornment,
-    Typography,
 } from '@mui/material';
 
 // components
@@ -46,26 +45,15 @@ export default function StellarMetricsTableContainer() {
     return (
         <Paper className="container">
             <Stack
-                style={{ backgroundColor: '#FFFFFF', height: '5rem', marginBottom: '2rem' }}
+                style={{ backgroundColor: '#FFFFFF' }}
                 direction="row"
                 alignItems="bottom"
                 justifyContent="space-between"
             >
-                <Typography
-                    variant='h6'
-                    sx={{
-                        fontWeight: 600,
-                        marginTop: '2.5rem',
-                        marginLeft: '2.75rem'
-                    }}
-                >
-                    Projects on Stellar
-                </Typography>
                 <SearchStyle
                     sx={{
                         marginLeft: "auto",
-                        marginTop: 'auto',
-                        marginBottom: '0.25rem',
+                        marginY: '2rem',
                         marginRight: '2.75rem'
                     }}
                     value={search}

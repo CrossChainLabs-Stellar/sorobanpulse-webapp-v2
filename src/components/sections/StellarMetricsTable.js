@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 // @mui
 import {
     Box,
@@ -12,7 +12,6 @@ import {
     LinearProgress
 } from '@mui/material';
 
-import styled from '@emotion/styled';
 import merge from 'lodash/merge';
 
 // components
@@ -28,16 +27,8 @@ import CirleFall from "../../assets/CircleFall.svg";
 import Comunity from "../../assets/Comunity.svg";
 import Core from "../../assets/Core.svg";
 
-import { fNumber } from '../../utils/format';
+// import { fNumber } from '../../utils/format';
 // import { Client } from '../utils/client';
-
-
-const StyledLinearProgress = styled((props) => <LinearProgress {...props} />)(
-    ({ theme }) => ({
-
-
-    }),
-);
 
 
 export default function StellarMetricsTable() {
@@ -171,9 +162,10 @@ export default function StellarMetricsTable() {
                                         scope="row"
                                         padding="none"
                                         sx={{
-                                            height: '7rem',
+                                            height: '5rem',
                                             paddingLeft: '3rem',
-                                            border: 'none'
+                                            border: 'none',
+                                            backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1'
                                         }}
                                     >
                                         <Typography
@@ -202,7 +194,10 @@ export default function StellarMetricsTable() {
                                         component="th"
                                         scope="row"
                                         padding="none"
-                                        sx={{ border: 'none' }}
+                                        sx={{
+                                            border: 'none',
+                                            backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1'
+                                        }}
                                     >
 
                                         {/* {is_core_project ?
@@ -231,7 +226,8 @@ export default function StellarMetricsTable() {
                                         scope="row"
                                         padding="none"
                                         sx={{
-                                            border: 'none'
+                                            border: 'none',
+                                            backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1'
                                         }}
                                     >
                                         <Typography
@@ -255,7 +251,8 @@ export default function StellarMetricsTable() {
                                         scope="row"
                                         padding="none"
                                         sx={{
-                                            border: 'none'
+                                            border: 'none',
+                                            backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1'
                                         }}
                                     >
                                         <Stack
@@ -279,12 +276,16 @@ export default function StellarMetricsTable() {
                                                 width: '100%',
                                             }}
                                         >
-                                            <StyledLinearProgress
+                                            <LinearProgress
                                                 sx={{
                                                     width: '12rem',
                                                     height: '0.4rem',
                                                     borderRadius: 5,
-                                                    marginBottom: '1.45rem'
+                                                    marginBottom: '1.45rem',
+                                                    backgroundColor: 'white',
+                                                    '& .MuiLinearProgress-bar': {
+                                                        backgroundColor: 'green'
+                                                    }
                                                 }}
                                                 variant='determinate'
                                                 // value={activeDevelopersPercentage}
@@ -299,7 +300,8 @@ export default function StellarMetricsTable() {
                                         scope="row"
                                         padding="none"
                                         sx={{
-                                            border: 'none'
+                                            border: 'none',
+                                            backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1'
                                         }}
                                     >
                                         <Typography variant="subtitle2" noWrap>
@@ -314,7 +316,8 @@ export default function StellarMetricsTable() {
                                         scope="row"
                                         padding="none"
                                         sx={{
-                                            border: 'none'
+                                            border: 'none',
+                                            backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1'
                                         }}
                                     >
                                         {/* {growth >= 0 && (
@@ -391,6 +394,7 @@ export default function StellarMetricsTable() {
                                         sx={{
                                             border: 'none',
                                             paddingRight: '3rem',
+                                            backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1'
                                         }}
                                     >
                                         {/* {graf === "verde" && (
