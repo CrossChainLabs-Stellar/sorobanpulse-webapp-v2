@@ -287,7 +287,6 @@ export default function MetricsHead() {
                     <Stack
                         direction="row"
                         alignItems="center"
-                        sx={{ marginTop: '1.2rem' }}
                     >
 
                         <Typography
@@ -386,7 +385,6 @@ export default function MetricsHead() {
                     <Stack
                         direction="row"
                         alignItems="center"
-                        sx={{ marginTop: '1.2rem', }}
                     >
 
                         <Typography
@@ -438,7 +436,6 @@ export default function MetricsHead() {
                     <Stack
                         direction="row"
                         alignItems="center"
-                        sx={{ marginTop: '1.2rem', }}
                     >
 
                         <Typography
