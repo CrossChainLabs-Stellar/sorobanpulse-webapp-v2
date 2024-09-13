@@ -60,13 +60,12 @@ const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColo
                         marginLeft: '0.5rem',
                         marginRight: '0.5rem',
                         fontSize: '5px',
-                        marginBottom: '2px',
                         color: 'newsDetails.main',
                     }}
                 >
                     {`\u2B24`}
                 </Box>
-                <Typography sx={{ color: secondaryColor, marginLeft: '1rem', fontSize: '12px' }}>
+                <Typography sx={{ color: secondaryColor, fontSize: '12px' }}>
                     {truncateLine(`${TimeAgo(pubDate)}`, 12)}
                 </Typography>
             </Stack>
