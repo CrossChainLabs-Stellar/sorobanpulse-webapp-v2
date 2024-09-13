@@ -1,4 +1,4 @@
-import { Box, Tab, Tabs, IconButton, Toolbar } from '@mui/material'
+import { Box, Tab, Tabs, IconButton } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 
 import LightBtn from '../assets/LightBtn.svg';
