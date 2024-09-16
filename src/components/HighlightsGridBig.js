@@ -24,8 +24,7 @@ const HighlightsGridBig = () => {
         display: 'flex',
         alignItems: 'center',
         '&: hover': {
-            // boxShadow: 24,
-            boxShadow: '0px 10px 76px 22px rgba(173,173,173,1)'
+            boxShadow: '0px 6px 30px 22px rgba(130,130,130,0.3)'
         }
     };
 
@@ -59,7 +58,7 @@ const HighlightsGridBig = () => {
                         color: '#fff',
                         width: '33rem',
                         fontWeight: '600',
-                        fontSize: '18px',
+                        fontSize: '17px',
                     }}
                     align="center"
                 >
@@ -81,7 +80,7 @@ const HighlightsGridBig = () => {
                         color: '#fff',
                         width: '33rem',
                         fontWeight: '600',
-                        fontSize: '18px',
+                        fontSize: '17px',
                     }}
                     align="center"
                 >
@@ -103,7 +102,7 @@ const HighlightsGridBig = () => {
                         color: '#fff',
                         width: '33rem',
                         fontWeight: '600',
-                        fontSize: '18px',
+                        fontSize: '17px',
                     }}
                     align="center"
                 >

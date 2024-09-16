@@ -42,8 +42,7 @@ const HighlightsPage = () => {
         display: 'flex',
         alignItems: 'center',
         '&: hover': {
-            // boxShadow: 24,
-            boxShadow: '0px 10px 76px 22px rgba(0,0,0,0.75)'
+            boxShadow: '0px 6px 30px 10px rgba(0,0,0,0.3)'
         }
     };
 
