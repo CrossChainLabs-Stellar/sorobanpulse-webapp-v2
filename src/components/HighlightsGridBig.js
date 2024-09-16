@@ -55,6 +55,7 @@ const HighlightsGridBig = () => {
                         color: '#fff',
                         width: '33rem',
                         fontWeight: '600',
+                        fontSize: '18px',
                     }}
                     align="center"
                 >
@@ -75,7 +76,8 @@ const HighlightsGridBig = () => {
                     sx={{
                         color: '#fff',
                         width: '33rem',
-                        fontWeight: '600'
+                        fontWeight: '600',
+                        fontSize: '18px',
                     }}
                     align="center"
                 >
@@ -96,7 +98,8 @@ const HighlightsGridBig = () => {
                     sx={{
                         color: '#fff',
                         width: '33rem',
-                        fontWeight: '600'
+                        fontWeight: '600',
+                        fontSize: '18px',
                     }}
                     align="center"
                 >

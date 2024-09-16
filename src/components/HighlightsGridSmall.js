@@ -55,7 +55,8 @@ const HightlightsGridBig = () => {
                     sx={{
                         color: '#fff',
                         width: '33rem',
-                        fontWeight: '600'
+                        fontWeight: '600',
+                        fontSize: '18px',
                     }}
                     align="center"
                 >
@@ -134,11 +135,12 @@ const HightlightsGridBig = () => {
                     sx={{
                         color: '#fff',
                         width: '33rem',
-                        fontWeight: '600'
+                        fontWeight: '600',
+                        fontSize: '18px',
                     }}
                     align="center"
                 >
-                    Stellar XML
+                    Stellar XLM
                 </Typography >
             </Grid>
 
@@ -212,7 +214,8 @@ const HightlightsGridBig = () => {
                     sx={{
                         color: '#fff',
                         width: '33rem',
-                        fontWeight: '600'
+                        fontWeight: '600',
+                        fontSize: '18px',
                     }}
                     align="center"
                 >
