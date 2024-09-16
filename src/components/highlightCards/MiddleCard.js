@@ -1,7 +1,7 @@
 import { Typography, Link, Stack } from "@mui/material";
 
 
-const TopCard = ({ title, text, boxStyling, textStyling, link, image }) => {
+const MiddleCard = ({ title, text, boxStyling, textStyling, link, image }) => {
     return (
         <Link
             sx={boxStyling}
@@ -19,11 +19,11 @@ const TopCard = ({ title, text, boxStyling, textStyling, link, image }) => {
                 <Stack
                     direction='column'
                 >
-                    <Typography sx={{ fontWeight: 600, fontSize: '20px', color: textStyling.color }}>
+                    <Typography sx={{ fontSize: '16px', color: textStyling.color, marginBottom: '1rem' }}>
                         {title}
                     </Typography>
 
-                    <Typography sx={textStyling}>
+                    <Typography sx={{ fontWeight: 600, fontSize: '18px', color: textStyling.color }}>
                         {text}
                     </Typography>
                 </Stack>
@@ -43,4 +43,4 @@ const TopCard = ({ title, text, boxStyling, textStyling, link, image }) => {
         </Link>
     )
 }
-export default TopCard;
+export default MiddleCard;

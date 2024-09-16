@@ -1,6 +1,5 @@
 import { Box, Grid } from '@mui/material';
 import CardWidget from './CardWidget';
-import StellarRecentCommits from './sections/StellarRecentCommits';
 import StellarCommits from './sections/StellarCommits';
 import StellarEcosystem from './sections/StellarEcosystem';
 import StellarContributors from './sections/StellarContributors';

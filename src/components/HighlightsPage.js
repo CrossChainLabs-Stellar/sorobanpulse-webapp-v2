@@ -20,7 +20,6 @@ import energy_efficient_white from '../assets/energy-efficient-white.svg';
 import affordableWhite from '../assets/affordable-white.svg';
 
 const HighlightsPage = () => {
-    const mapper = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -41,7 +40,11 @@ const HighlightsPage = () => {
         backgroundColor: 'highlightCards.primary',
         cursor: 'pointer',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        '&: hover': {
+            // boxShadow: 24,
+            boxShadow: '0px 10px 76px 22px rgba(0,0,0,0.75)'
+        }
     };
 
     //const [news, setNews] = useState([]);

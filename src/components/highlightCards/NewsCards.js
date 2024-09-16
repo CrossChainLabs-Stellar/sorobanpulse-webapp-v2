@@ -42,7 +42,11 @@ const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColo
                 boxShadow: 12,
                 display: 'flex',
                 flexDirection: 'column',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                '&: hover': {
+                    // boxShadow: 24,
+                    boxShadow: '0px 10px 76px 22px rgba(0,0,0,0.75)'
+                }
             }}
             href={link}
             target="_blank"
@@ -50,7 +54,13 @@ const NewsCards = ({ titleShort, titleLong, iconData, articleImageData, mainColo
         >
             <Stack direction='row' alignItems='center'>
                 <img src={iconData} alt='logo' style={{ width: '2rem' }} />
-                <Typography sx={{ color: secondaryColor, marginLeft: '1rem', fontSize: '12px' }}>
+                <Typography
+                    sx={{
+                        color: secondaryColor,
+                        marginLeft: '1rem',
+                        fontSize: '12px',
+                    }}
+                >
                     {titleShort}
                 </Typography>
                 <Box

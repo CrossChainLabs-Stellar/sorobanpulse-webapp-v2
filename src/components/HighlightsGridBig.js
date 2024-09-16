@@ -2,7 +2,7 @@ import { Grid, Typography } from "@mui/material";
 
 import { useTheme } from "@emotion/react";
 
-import TopCard from "./highlightCards/TopCard";
+import MiddleCard from "./highlightCards/MiddleCard";
 
 import speed from '../assets/speed.svg';
 import fee from '../assets/fee.svg';
@@ -22,7 +22,11 @@ const HighlightsGridBig = () => {
         backgroundColor: 'highlightCards.primary',
         cursor: 'pointer',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        '&: hover': {
+            // boxShadow: 24,
+            boxShadow: '0px 10px 76px 22px rgba(173,173,173,1)'
+        }
     };
 
     const theme = useTheme();
@@ -116,7 +120,7 @@ const HighlightsGridBig = () => {
                     alignItems: 'center'
                 }}
             >
-                <TopCard
+                <MiddleCard
                     title='Transaction Speed'
                     //text={<strong>3600 seconds</strong>}
                     text='3,600 seconds'
@@ -136,7 +140,7 @@ const HighlightsGridBig = () => {
                     alignItems: 'center'
                 }}
             >
-                <TopCard
+                <MiddleCard
                     title='Transaction Speed'
                     text={<strong>5 seconds</strong>}
                     boxStyling={{ ...boxStyling, backgroundColor: '#f2cb00' }}
@@ -155,7 +159,7 @@ const HighlightsGridBig = () => {
                     alignItems: 'center'
                 }}
             >
-                <TopCard
+                <MiddleCard
                     title='Transaction Speed'
                     text='12 seconds'
                     boxStyling={boxStyling}
@@ -173,7 +177,7 @@ const HighlightsGridBig = () => {
                     alignItems: 'center'
                 }}
             >
-                <TopCard
+                <MiddleCard
                     title='Energy Consumption'
                     text='1,201,090 Wh/txn'
                     boxStyling={boxStyling}
@@ -192,7 +196,7 @@ const HighlightsGridBig = () => {
                     alignItems: 'center'
                 }}
             >
-                <TopCard
+                <MiddleCard
                     title='Energy Consumption'
                     text={<strong>0.173 Wh/txn </strong>}
                     boxStyling={{ ...boxStyling, backgroundColor: '#f2cb00' }}
@@ -211,7 +215,7 @@ const HighlightsGridBig = () => {
                     alignItems: 'center'
                 }}
             >
-                <TopCard
+                <MiddleCard
                     title='Energy Consumption'
                     text='30 Wh/txn'
                     boxStyling={boxStyling}
@@ -229,7 +233,7 @@ const HighlightsGridBig = () => {
                     alignItems: 'center'
                 }}
             >
-                <TopCard
+                <MiddleCard
                     title='Transaction Fee'
                     text='$6.12'
                     boxStyling={boxStyling}
@@ -248,7 +252,7 @@ const HighlightsGridBig = () => {
                     alignItems: 'center'
                 }}
             >
-                <TopCard
+                <MiddleCard
                     title='Transaction Fee'
                     text={<strong>$0.0000065 </strong>}
                     boxStyling={{ ...boxStyling, backgroundColor: '#f2cb00' }}
@@ -267,7 +271,7 @@ const HighlightsGridBig = () => {
                     alignItems: 'center'
                 }}
             >
-                <TopCard
+                <MiddleCard
                     title='Transaction Fee'
                     text='$1.55'
                     boxStyling={boxStyling}

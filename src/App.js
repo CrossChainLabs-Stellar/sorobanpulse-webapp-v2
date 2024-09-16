@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 import DAppsPage from './components/DAppsPage';
 import HighlightsPage from './components/HighlightsPage';
 import Metrics from './components/Metrics';
-import StellarPage from './components/StellarPage';
+// import StellarPage from './components/StellarPage';
 
 
 function App() {
