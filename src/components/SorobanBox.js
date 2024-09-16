@@ -78,7 +78,7 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                         fontSize: '16px'
                     }}
                 />
-                <Tab
+                {/* <Tab
                     label="Stellar Metrics"
                     sx={{
                         textTransform: 'none',
@@ -88,7 +88,7 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                         },
                         fontSize: '16px'
                     }}
-                />
+                /> */}
                 <Tab
                     label="Highlights"
                     sx={{
