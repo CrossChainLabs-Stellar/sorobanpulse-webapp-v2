@@ -20,13 +20,19 @@ import triunghi from '../../assets/triunghi.svg';
 
 
 export default function StellarMetricsHead() {
+    const [isDescRank, setIsDescRank] = useState(false);
     const [isDescName, setIsDescName] = useState(false);
     const [isDescDevelopers, setIsDescDevelopers] = useState(false);
     const [isDescActiveDevs, setIsDescActiveDevs] = useState(false);
     const [isDescContributions, setIsDescContributions] = useState(false);
     const [isDescActivityGr, setIsDescActivityGr] = useState(false);
     const [isDescActivity, setIsDescActivity] = useState(false);
-    const [sortArray, setSortArray] = useState(new Array(6).fill(0));
+    const [sortArray, setSortArray] = useState(new Array(7).fill(0));
+
+    const styleRank = {
+        transform: !isDescRank ? 'rotate(180deg)' : '',
+        transition: 'transform 150ms ease', // smooth transition
+    }
 
     const styleName = {
         transform: !isDescName ? 'rotate(180deg)' : '',
@@ -59,15 +65,28 @@ export default function StellarMetricsHead() {
     }
 
     const handleChangeSort = (newSort, handleSort) => {
-        const newArray = new Array(6).fill(0);
+        const newArray = new Array(7).fill(0);
         newArray[newSort] = 1;
         setSortArray(newArray);
         handleSort();
     }
 
+    const handleSortRank = () => {
+        // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+
+        setIsDescRank(!isDescRank);
+        setIsDescName(false);
+        setIsDescDevelopers(false);
+        setIsDescActiveDevs(false);
+        setIsDescContributions(false);
+        setIsDescActivityGr(false);
+        setIsDescActivity(false);
+    }
+
     const handleSortName = () => {
         // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
 
+        setIsDescRank(false);
         setIsDescName(!isDescName);
         setIsDescDevelopers(false);
         setIsDescActiveDevs(false);
@@ -79,6 +98,7 @@ export default function StellarMetricsHead() {
     const handleSortDevelopers = () => {
         // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
 
+        setIsDescRank(false);
         setIsDescName(false);
         setIsDescDevelopers(!isDescDevelopers);
         setIsDescActiveDevs(false);
@@ -90,6 +110,7 @@ export default function StellarMetricsHead() {
     const handleSortActiveDevs = () => {
         // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
 
+        setIsDescRank(false);
         setIsDescName(false);
         setIsDescDevelopers(false);
         setIsDescActiveDevs(!isDescActiveDevs);
@@ -101,6 +122,7 @@ export default function StellarMetricsHead() {
     const handleSortContributions = () => {
         // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
 
+        setIsDescRank(false);
         setIsDescName(false);
         setIsDescDevelopers(false);
         setIsDescActiveDevs(false);
@@ -112,6 +134,7 @@ export default function StellarMetricsHead() {
     const handleSortActivityGr = () => {
         // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
 
+        setIsDescRank(false);
         setIsDescName(false);
         setIsDescDevelopers(false);
         setIsDescActiveDevs(false);
@@ -123,6 +146,7 @@ export default function StellarMetricsHead() {
     const handleSortActivity = () => {
         // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
 
+        setIsDescRank(false);
         setIsDescName(false);
         setIsDescDevelopers(false);
         setIsDescActiveDevs(false);
@@ -145,15 +169,15 @@ export default function StellarMetricsHead() {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: '20%',
-                        backgroundColor: "#BDB8FF",
+                        width: '7%',
+                        backgroundColor: "#f2cb00",
                         paddingLeft: '3rem',
                         borderTopLeftRadius: '10px',
                         borderBottomLeftRadius: '10px',
                         cursor: 'pointer',
                     }}
                     className='parentHead'
-                    onClick={() => handleChangeSort(0, handleSortName)}
+                    onClick={() => handleChangeSort(0, handleSortRank)}
                 >
                     <Stack
                         direction="row"
@@ -165,7 +189,55 @@ export default function StellarMetricsHead() {
                                 fontWeight: 500,
                                 fontSize: 16,
                                 marginRight: '0.35rem',
-                                color: '#3E3385'
+                                color: 'tableColor.headerText',
+                            }}
+                            className='childHead'
+                        >
+                            #
+                        </Typography>
+
+                        <IconButton
+                            id="basic-button"
+                            onClick={handleSortRank}
+                            sx={{
+                                padding: 0,
+                                marginTop: '0.15rem',
+                                visibility: sortArray[0] !== 0 ? 'visible' : 'hidden'
+                            }}
+                        >
+                            <img
+                                src={triunghi}
+                                alt='triunghi'
+                                style={styleRank}
+                            />
+                        </IconButton>
+                    </Stack>
+                </TableCell>
+
+                <TableCell
+                    align="left"
+                    component="th"
+                    scope="row"
+                    padding="none"
+                    sx={{
+                        width: '13%',
+                        backgroundColor: "#f2cb00",
+                        cursor: 'pointer',
+                    }}
+                    className='parentHead'
+                    onClick={() => handleChangeSort(1, handleSortName)}
+                >
+                    <Stack
+                        direction="row"
+                        alignItems="center"
+                    >
+                        <Typography
+                            noWrap
+                            sx={{
+                                fontWeight: 500,
+                                fontSize: 16,
+                                marginRight: '0.35rem',
+                                color: 'tableColor.headerText',
                             }}
                             className='childHead'
                         >
@@ -178,7 +250,7 @@ export default function StellarMetricsHead() {
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem',
-                                visibility: sortArray[0] !== 0 ? 'visible' : 'hidden'
+                                visibility: sortArray[1] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img
@@ -234,7 +306,7 @@ export default function StellarMetricsHead() {
                         cursor: 'pointer',
                     }}
                     className='parentHead'
-                    onClick={() => handleChangeSort(1, handleSortDevelopers)}
+                    onClick={() => handleChangeSort(2, handleSortDevelopers)}
                 >
                     <Stack
                         direction="row"
@@ -259,7 +331,7 @@ export default function StellarMetricsHead() {
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem',
-                                visibility: sortArray[1] !== 0 ? 'visible' : 'hidden'
+                                visibility: sortArray[2] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img
@@ -282,7 +354,7 @@ export default function StellarMetricsHead() {
                         cursor: 'pointer',
                     }}
                     className='parentHead'
-                    onClick={() => handleChangeSort(2, handleSortActiveDevs)}
+                    onClick={() => handleChangeSort(3, handleSortActiveDevs)}
                 >
                     <Stack
                         direction="row"
@@ -308,7 +380,7 @@ export default function StellarMetricsHead() {
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem',
-                                visibility: sortArray[2] !== 0 ? 'visible' : 'hidden'
+                                visibility: sortArray[3] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img
@@ -331,7 +403,7 @@ export default function StellarMetricsHead() {
                         cursor: 'pointer',
                     }}
                     className='parentHead'
-                    onClick={() => handleChangeSort(3, handleSortContributions)}
+                    onClick={() => handleChangeSort(4, handleSortContributions)}
                 >
                     <Stack
                         direction="row"
@@ -356,7 +428,7 @@ export default function StellarMetricsHead() {
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem',
-                                visibility: sortArray[3] !== 0 ? 'visible' : 'hidden'
+                                visibility: sortArray[4] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img
@@ -380,7 +452,7 @@ export default function StellarMetricsHead() {
                         cursor: 'pointer',
                     }}
                     className='parentHead'
-                    onClick={() => handleChangeSort(4, handleSortActivityGr)}
+                    onClick={() => handleChangeSort(5, handleSortActivityGr)}
                 >
                     <Stack
                         direction="row"
@@ -406,7 +478,7 @@ export default function StellarMetricsHead() {
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem',
-                                visibility: sortArray[4] !== 0 ? 'visible' : 'hidden'
+                                visibility: sortArray[5] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img
@@ -431,7 +503,7 @@ export default function StellarMetricsHead() {
                         cursor: 'pointer',
                     }}
                     className='parentHead'
-                    onClick={() => handleChangeSort(5, handleSortActivity)}
+                    onClick={() => handleChangeSort(6, handleSortActivity)}
                 >
                     <Stack
                         direction="row"
@@ -457,7 +529,7 @@ export default function StellarMetricsHead() {
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem',
-                                visibility: sortArray[5] !== 0 ? 'visible' : 'hidden'
+                                visibility: sortArray[6] !== 0 ? 'visible' : 'hidden'
                             }}
                         >
                             <img

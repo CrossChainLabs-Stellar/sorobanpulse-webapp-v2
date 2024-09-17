@@ -162,6 +162,7 @@ export default function MetricsTable() {
                                         scope="row"
                                         padding="none"
                                         sx={{
+                                            height: '5rem',
                                             border: 'none',
                                             backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1',
                                             paddingLeft: '3rem',
@@ -188,7 +189,6 @@ export default function MetricsTable() {
                                         scope="row"
                                         padding="none"
                                         sx={{
-                                            height: '5rem',
                                             border: 'none',
                                             backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1'
                                         }}

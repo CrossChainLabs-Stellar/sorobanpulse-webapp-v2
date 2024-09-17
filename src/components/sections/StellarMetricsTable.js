@@ -155,7 +155,6 @@ export default function StellarMetricsTable() {
                                     key={id}
                                     tabIndex={-1}
                                 >
-
                                     <TableCell
                                         align="left"
                                         component="th"
@@ -163,7 +162,32 @@ export default function StellarMetricsTable() {
                                         padding="none"
                                         sx={{
                                             height: '5rem',
+                                            border: 'none',
+                                            backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1',
                                             paddingLeft: '3rem',
+                                        }}
+                                    >
+                                        <Typography
+                                            variant="subtitle2"
+                                            noWrap
+                                            sx={{
+                                                maxWidth: { xl: '18rem', lg: '10rem' },
+                                                whiteSpace: 'nowrap',
+                                                overflow: 'hidden',
+                                                textOverflow: 'ellipsis',
+                                            }}
+                                        >
+                                            {/* {fNumber(developers)} */}
+                                            1
+                                        </Typography>
+                                    </TableCell>
+
+                                    <TableCell
+                                        align="left"
+                                        component="th"
+                                        scope="row"
+                                        padding="none"
+                                        sx={{
                                             border: 'none',
                                             backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1'
                                         }}
@@ -254,44 +278,38 @@ export default function StellarMetricsTable() {
                                             border: 'none',
                                             backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1'
                                         }}
+                                        className='progressBar'
                                     >
-                                        <Stack
-                                            direction="row"
+                                        <Typography
+                                            variant="subtitle2"
                                             alignItems="center"
+                                            justifyContent='flex-end'
+                                            noWrap
                                             sx={{
                                                 width: '12rem',
+                                                display: 'flex',
                                             }}
+                                            className='progressNumber'
                                         >
-                                            <Typography
-                                                variant="subtitle2"
-                                                noWrap
-                                                sx={{ marginLeft: "auto" }}
-                                            >
-                                                {/* {active_contributors} */}
-                                                5
-                                            </Typography>
-                                        </Stack>
-                                        <Box
+                                            {/* {active_contributors} */}
+                                            5
+                                        </Typography>
+                                        <LinearProgress
                                             sx={{
-                                                width: '100%',
+                                                width: '12rem',
+                                                height: '0.4rem',
+                                                borderRadius: 5,
+                                                marginBottom: '1.45rem',
+                                                backgroundColor: 'white',
+                                                '& .MuiLinearProgress-bar': {
+                                                    backgroundColor: 'green'
+                                                }
                                             }}
-                                        >
-                                            <LinearProgress
-                                                sx={{
-                                                    width: '12rem',
-                                                    height: '0.4rem',
-                                                    borderRadius: 5,
-                                                    marginBottom: '1.45rem',
-                                                    backgroundColor: 'white',
-                                                    '& .MuiLinearProgress-bar': {
-                                                        backgroundColor: 'green'
-                                                    }
-                                                }}
-                                                variant='determinate'
-                                                // value={activeDevelopersPercentage}
-                                                value={50}
-                                            />
-                                        </Box>
+                                            variant='determinate'
+                                            // value={activeDevelopersPercentage}
+                                            value={50}
+
+                                        />
                                     </TableCell>
 
                                     <TableCell
