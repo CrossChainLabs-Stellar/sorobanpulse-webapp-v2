@@ -463,7 +463,7 @@ export default function MainTable({ search }) {
                                             padding="none"
                                             sx={{
                                                 border: 'none',
-                                                paddingRight: '3rem',
+                                                paddingRight: '1rem',
                                                 backgroundColor: id % 2 == 0 ? 'tableColor.main2' : 'tableColor.main1'
                                             }}
                                         >
@@ -477,7 +477,7 @@ export default function MainTable({ search }) {
                                                 ]}
                                                 options={growth_trend ? chartOptionsVerde : chartOptionsRosu}
                                                 height={75}
-                                                width={125}
+                                                width={155}
                                             />}
                                         </TableCell>
 

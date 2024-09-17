@@ -113,7 +113,7 @@ function Contributions() {
                             fontSize: '16px',
                         }}
                     >
-                        {number(state.communityPercentage)}% of all contributions come from the ecosystem's vibrant community
+                        {number(state.communityPercentage)}% of all commits come from the ecosystem's vibrant community
                     </Typography>
                 </Stack>
             }

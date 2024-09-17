@@ -108,7 +108,7 @@ function ActiveProjects() {
                             fontSize: '16px',
                         }}
                     >
-                        Soroban is now thriving with {number(state.total)} dynamic and actively expanding repositories
+                        {number(state.total)} active repositories are dynamically expanding within the Soroban ecosystem
                     </Typography>
                 </Stack>
             } />

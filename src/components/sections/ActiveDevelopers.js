@@ -116,7 +116,7 @@ function ActiveDevelopers() {
                                 fontSize: '16px',
                             }}
                         >
-                            {number(state.total)} active developers are now driving innovation in the Soroban's ecosystem
+                            {number(state.total)} active developers have been driving innovation over the last 30 days
                         </Typography>
                     </Stack>
                 }

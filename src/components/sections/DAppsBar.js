@@ -124,7 +124,7 @@ const DAppsBar = () => {
                                 fontSize: '16px',
                             }}
                         >
-                            The ecosystem is now thriving with {number(state.total)} vibrant and actively growing projects
+                            {number(state.total)} vibrant and actively growing projects are now thriving in the ecosystem
                         </Typography>
                     </Stack>
                 }
