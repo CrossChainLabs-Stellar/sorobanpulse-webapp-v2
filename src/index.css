@@ -90,3 +90,11 @@ code {
 .parentHead:hover .childHead {
   font-weight: 600;
 }
+
+.progressNumber {
+  visibility: hidden;
+}
+
+.progressBar:hover .progressNumber {
+  visibility: visible;
+}
