@@ -67,6 +67,17 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                         fontSize: '16px'
                     }}
                 />
+                 <Tab
+                    label="Highlights"
+                    sx={{
+                        textTransform: 'none',
+                        color: theme.palette.tabsColors.main,
+                        '&.Mui-selected': {
+                            color: theme.palette.tabsColors.selected,
+                        },
+                        fontSize: '16px'
+                    }}
+                />
                 <Tab
                     label="Soroban Metrics"
                     sx={{
@@ -89,17 +100,6 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                         fontSize: '16px'
                     }}
                 /> */}
-                <Tab
-                    label="Highlights"
-                    sx={{
-                        textTransform: 'none',
-                        color: theme.palette.tabsColors.main,
-                        '&.Mui-selected': {
-                            color: theme.palette.tabsColors.selected,
-                        },
-                        fontSize: '16px'
-                    }}
-                />
 
             </Tabs>
             <IconButton

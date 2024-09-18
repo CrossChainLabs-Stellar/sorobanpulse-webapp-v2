@@ -124,7 +124,7 @@ const DAppsBar = () => {
                                 fontSize: '16px',
                             }}
                         >
-                            {number(state.total)} vibrant and actively growing projects were added to the ecosystem last month
+                            {number(state.total)} vibrant and actively growing projects were awarded by Stellar Community Fund last month
                         </Typography>
                     </Stack>
                 }
