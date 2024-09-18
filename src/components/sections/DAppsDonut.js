@@ -42,8 +42,9 @@ const DAppsDonut = () => {
             let stellar = parseInt((statistics?.stellar) ? statistics?.stellar : 0);
             let soroban = parseInt((statistics?.soroban) ? statistics?.soroban : 0);
             let awards = parseInt((statistics?.awards) ? statistics?.awards : 0);
+            let awards_without_round_data = parseInt((statistics?.awards_without_round_data) ? statistics?.awards_without_round_data : 0);
 
-            setState({ loading: false, chartData: [stellar, soroban], awards:awards });
+            setState({ loading: false, chartData: [stellar, soroban], awards:awards, awards_without_round_data: awards_without_round_data });
         });
     }, [setState]);
 
@@ -114,7 +115,7 @@ const DAppsDonut = () => {
                                 fontSize: '16px',
                             }}
                         >
-                            {number(state.awards + 0)} awarded submissions
+                            {number(state.awards + state.awards_without_round_data)} awarded submissions
                         </Typography>
                     </Stack>
                 }
