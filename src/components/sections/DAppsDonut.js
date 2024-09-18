@@ -41,8 +41,9 @@ const DAppsDonut = () => {
         client.get('dapps_statistics').then((statistics) => {
             let stellar = parseInt((statistics?.stellar) ? statistics?.stellar : 0);
             let soroban = parseInt((statistics?.soroban) ? statistics?.soroban : 0);
+            let awards = parseInt((statistics?.awards) ? statistics?.awards : 0);
 
-            setState({ loading: false, chartData: [stellar, soroban] });
+            setState({ loading: false, chartData: [stellar, soroban], awards:awards });
         });
     }, [setState]);
 
@@ -103,17 +104,17 @@ const DAppsDonut = () => {
                                 fontSize: '20px',
                             }}
                         >
-                            Total dApps
+                            Total Projects
                         </Typography>
                         <Typography
                             variant='caption'
                             sx={{
                                 marginX: '1.4rem',
                                 color: 'text.secondary',
-                                fontSize: '15px',
+                                fontSize: '16px',
                             }}
                         >
-                            &nbsp;
+                            {number(state.awards + 0)} awarded submissions
                         </Typography>
                     </Stack>
                 }

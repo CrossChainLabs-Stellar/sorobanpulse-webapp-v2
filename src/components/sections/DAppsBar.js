@@ -114,7 +114,7 @@ const DAppsBar = () => {
                                 fontSize: '20px',
                             }}
                         >
-                            Ecosystem dApps
+                            Project Distribution
                         </Typography>
                         <Typography
                             variant='caption'
@@ -124,7 +124,7 @@ const DAppsBar = () => {
                                 fontSize: '16px',
                             }}
                         >
-                            {number(state.total)} vibrant and actively growing projects are now thriving in the ecosystem
+                            {number(state.total)} vibrant and actively growing projects were added to the ecosystem last month
                         </Typography>
                     </Stack>
                 }

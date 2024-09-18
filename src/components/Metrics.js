@@ -49,11 +49,11 @@ export default function Metrics() {
                     <Contributions />
                 </Grid>
 
+                {/*
                 <Grid item xs={12} md={12} lg={12}>
                     <MetricsTableContrainer />
                 </Grid>
 
-                {/*
                 <Grid item xs={12} md={12} lg={4}>
                     <SmartContracts />
                 </Grid>

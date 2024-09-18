@@ -237,7 +237,7 @@ export default function MainHead({ paramsCallback }) {
                             }}
                             className='childHead'
                         >
-                            dApp Name
+                            Project Name
                         </Typography>
 
                         <IconButton

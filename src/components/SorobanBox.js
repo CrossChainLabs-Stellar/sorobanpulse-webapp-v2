@@ -57,7 +57,7 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
 
             >
                 <Tab
-                    label="dApps"
+                    label="Projects"
                     sx={{
                         textTransform: 'none',
                         color: theme.palette.tabsColors.main,
