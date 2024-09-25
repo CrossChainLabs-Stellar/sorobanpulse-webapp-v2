@@ -1,4 +1,4 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 // @mui
 import {
     Box,
@@ -9,7 +9,8 @@ import {
     TableCell,
     Typography,
     TableContainer,
-    LinearProgress
+    LinearProgress,
+    Paper
 } from '@mui/material';
 
 import merge from 'lodash/merge';
@@ -27,28 +28,67 @@ import CirleFall from "../../assets/CircleFall.svg";
 import Comunity from "../../assets/Comunity.svg";
 import Core from "../../assets/Core.svg";
 
-// import { fNumber } from '../../utils/format';
-// import { Client } from '../utils/client';
+import { fNumber } from '../../utils/format';
+import { Client } from '../../utils/client';
+
+function SearchNotFound({ searchQuery = '', ...other }) {
+    return (
+        <Paper {...other}>
+            <Typography gutterBottom align="center" variant="subtitle1">
+                Not found
+            </Typography>
+            <Typography variant="body2" align="center">
+                No results found for &nbsp;
+                <strong>&quot;{searchQuery}&quot;</strong>. Try checking for typos or using complete words.
+            </Typography>
+        </Paper>
+    );
+}
+
+export default function MetricsTable({ search }) {
+    const [state, setState] = useState({
+        loading: true,
+        total: 0,
+        projects: []
+    });
+    const [params, setParams] = useState({});
+    const [offset, setOffset] = useState(0);
+    const [notFound, setNotFound] = useState(false);
 
 
-export default function MetricsTable() {
-    // const [state, setState] = useState({
-    //     loading: true,
-    //     projects: []
-    // });
+    useEffect(() => {
+        const client = new Client();
+        let newParams = {
+            ...params,
+            offset: offset,
+            search: search || undefined
+        };
 
-    // useEffect(() => {
-    //     const client = new Client();
+        if (search !== params.search && search) {
+            newParams = { ...newParams, search: search, offset: 0 };
+            setOffset(0);
+        }
 
-    //     client.get('projects').then((response) => {
-    //         let projects = response;
+        client.get('projects', newParams).then((response) => {
+            if (newParams.offset > 0) {
+                setState(prevState => ({
+                    loading: false,
+                    total: response?.total,
+                    projects: [...prevState.projects, ...(response?.list || [])],
+                }));
+            } else {
+                setState({
+                    loading: false,
+                    total: response?.total,
+                    projects: response?.list || [],
+                });
+            }
 
-    //         setState({
-    //             loading: false,
-    //             projects: projects,
-    //         });
-    //     });
-    // }, [setState]);
+            setNotFound(response?.total === 0 && search);
+        });
+
+        setParams(newParams);
+    }, [search, offset]);
 
     const chartOptionsVerde = merge(CustomChart(), {
         xaxis: {
@@ -112,6 +152,19 @@ export default function MetricsTable() {
         colors: ["#CA1A0D"],
     });
 
+    const paramsCallback = (new_params) => {
+        setState({
+            loading: true,
+            total: 0,
+            projects: []
+        });
+        new_params.offset = 0;
+        setOffset(0);
+        setParams({
+            ...params,
+            ...new_params,
+        });
+    }
 
     return (
         <>
@@ -122,33 +175,60 @@ export default function MetricsTable() {
             >
                 <Table stickyHeader>
 
-                    <MetricsHead />
+                    <MetricsHead paramsCallback={paramsCallback}/>
 
                     <TableBody>
-                        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((item, id) => {
-                            // const {
-                            //     name,
-                            //     is_core_project,
-                            //     active_contributors,
-                            //     contributions,
-                            //     developers,
-                            //     commits
-                            // } = item;
+                        {state.projects?.map((item, id) => {
+                             const {
+                                 name,
+                                 is_core_project,
+                                 active_contributors,
+                                 contributions,
+                                 developers,
+                                 activity_growth,
+                                 commits
+                             } = item;
 
-                            // let activeDevelopersPercentage;
-                            // if (active_contributors === 0) {
-                            //     activeDevelopersPercentage = 0;
-                            // } else {
-                            //     activeDevelopersPercentage = (active_contributors / developers) * 100;
-                            // }
+                             let activeDevelopersPercentage;
+                             if (active_contributors === 0) {
+                                 activeDevelopersPercentage = 0;
+                             } else {
+                                 activeDevelopersPercentage = (active_contributors / developers) * 100;
+                             }
 
-                            // let growth = 10;
-                            // let graf = 'verde';
-                            // let activity = [];
-                            // /*if (commits?.length > 6) {
-                            //     commits.pop();
-                            //     commits.splice(0, commits.length - 6);
-                            // }*/
+                             let activity = [];
+                             let noActivity = true;
+                             /*if (commits?.length > 6) {
+                                 commits.pop();
+                                 commits.splice(0, commits.length - 6);
+                             }*/
+
+                            try {
+                                let activityItems = JSON.parse(commits);
+                                if (activityItems?.length) {
+                                    for (const a of activityItems) {
+                                        if (a.commits > 0) {
+                                            noActivity = false;
+                                        }
+
+                                        activity.push(parseInt(a.commits));
+                                    }
+                                }
+
+                                /*if (noActivity) {
+                                    activity = [];
+                                }*/
+                            } catch (error) {
+
+                            }
+
+
+                            let growth_trend = true;
+                            if (activity?.length > 0 && activity_growth) {
+                                if (activity_growth < 0) {
+                                    growth_trend = false;
+                                }
+                            }
 
                             return (
                                 <TableRow
@@ -178,8 +258,7 @@ export default function MetricsTable() {
                                                 textOverflow: 'ellipsis',
                                             }}
                                         >
-                                            {/* {fNumber(developers)} */}
-                                            1
+                                            {fNumber(developers)}
                                         </Typography>
                                     </TableCell>
 
@@ -209,8 +288,7 @@ export default function MetricsTable() {
                                                 textOverflow: 'ellipsis',
                                             }}
                                         >
-                                            {/* {name} */}
-                                            placeholder
+                                             {name} 
                                         </Typography>
                                     </TableCell>
 
@@ -225,7 +303,7 @@ export default function MetricsTable() {
                                         }}
                                     >
 
-                                        {/* {is_core_project ?
+                                        {is_core_project ?
                                             (
                                                 <img
                                                     src={Core}
@@ -238,11 +316,7 @@ export default function MetricsTable() {
                                                     alt="Comunity"
                                                 />
                                             )
-                                        } */}
-                                        <img
-                                            src={Core}
-                                            alt="Core"
-                                        />
+                                        }
                                     </TableCell>
 
                                     <TableCell
@@ -265,8 +339,7 @@ export default function MetricsTable() {
                                                 textOverflow: 'ellipsis',
                                             }}
                                         >
-                                            {/* {fNumber(developers)} */}
-                                            3
+                                            {fNumber(developers)}
                                         </Typography>
                                     </TableCell>
 
@@ -292,8 +365,8 @@ export default function MetricsTable() {
                                             }}
                                             className='progressNumber'
                                         >
-                                            {/* {active_contributors} */}
-                                            5
+                                            {active_contributors}
+                                            
                                         </Typography>
                                         <LinearProgress
                                             sx={{
@@ -307,9 +380,7 @@ export default function MetricsTable() {
                                                 }
                                             }}
                                             variant='determinate'
-                                            // value={activeDevelopersPercentage}
-                                            value={50}
-
+                                            value={activeDevelopersPercentage}
                                         />
                                     </TableCell>
 
@@ -324,8 +395,7 @@ export default function MetricsTable() {
                                         }}
                                     >
                                         <Typography variant="subtitle2" noWrap>
-                                            {/* {fNumber(contributions)} */}
-                                            6
+                                             {fNumber(contributions)}
                                         </Typography>
                                     </TableCell>
 
@@ -339,7 +409,7 @@ export default function MetricsTable() {
                                             backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1'
                                         }}
                                     >
-                                        {/* {growth >= 0 && (
+                                        {activity_growth >= 0 && (
                                             <Stack direction="row">
                                                 <img
                                                     src={CirleRise}
@@ -356,12 +426,12 @@ export default function MetricsTable() {
                                                         marginTop: '0.2rem'
                                                     }}
                                                 >
-                                                    {`+${growth}%`}
+                                                    {`+${activity_growth}%`}
                                                 </Typography>
                                             </Stack>
                                         )}
 
-                                        {growth < 0 && (
+                                        {activity_growth < 0 && (
                                             <Stack direction="row">
                                                 <img
                                                     src={CirleFall}
@@ -378,30 +448,10 @@ export default function MetricsTable() {
                                                         marginTop: '0.2rem'
                                                     }}
                                                 >
-                                                    {`${growth}%`}
+                                                    {`${activity_growth}%`}
                                                 </Typography>
                                             </Stack>
-                                        )} */}
-
-                                        <Stack direction="row">
-                                            <img
-                                                src={CirleRise}
-                                                alt="rise"
-                                                style={{
-                                                    height: '1.5rem',
-                                                    marginRight: '0.5rem'
-                                                }}
-                                            />
-                                            <Typography
-                                                variant="subtitle2"
-                                                noWrap
-                                                sx={{
-                                                    marginTop: '0.2rem'
-                                                }}
-                                            >
-                                                {`+${5}%`}
-                                            </Typography>
-                                        </Stack>
+                                        )}
 
                                     </TableCell>
 
@@ -416,7 +466,7 @@ export default function MetricsTable() {
                                             backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1'
                                         }}
                                     >
-                                        {/* {graf === "verde" && (
+                                        {growth_trend && (
                                             <ReactApexChart
                                                 type="line"
                                                 series={[
@@ -431,34 +481,20 @@ export default function MetricsTable() {
                                             />
                                         )}
 
-                                        {graf === "rosu" && (
+                                        {!growth_trend && (
                                             <ReactApexChart
                                                 type="line"
                                                 series={[
                                                     {
                                                         name: "Desktops",
-                                                        data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+                                                        data: activity,
                                                     },
                                                 ]}
                                                 options={chartOptionsRosu}
                                                 height={75}
                                                 width={125}
                                             />
-                                        )} */}
-
-                                        <ReactApexChart
-                                            type="line"
-                                            series={[
-                                                {
-                                                    name: "Desktops",
-                                                    // data: activity,
-                                                    data: [1, 2, 3, 4, 5, 6, 7, 8, 9]
-                                                },
-                                            ]}
-                                            options={chartOptionsVerde}
-                                            height={75}
-                                            width={125}
-                                        />
+                                        )}
 
                                     </TableCell>
 
@@ -468,7 +504,7 @@ export default function MetricsTable() {
                     </TableBody>
 
 
-                    {/* {isUserNotFound && !tableEmpty && !state.loading && (
+                    {notFound && !state.loading && (
                         <TableBody>
                             <TableRow>
                                 <TableCell align="center" colSpan={11} sx={{ py: 3 }}>
@@ -477,16 +513,6 @@ export default function MetricsTable() {
                             </TableRow>
                         </TableBody>
                     )}
-
-                    {tableEmpty && !state.loading && (
-                        <TableBody>
-                            <TableRow>
-                                <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
-                                    <TableEmpty />
-                                </TableCell>
-                            </TableRow>
-                        </TableBody>
-                    )} */}
                 </Table>
             </TableContainer>
         </>
