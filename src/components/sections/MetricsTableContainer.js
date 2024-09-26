@@ -67,7 +67,7 @@ export default function MetricsTableContrainer() {
                 />
             </Stack>
 
-            <MetricsTable />
+            <MetricsTable search={search}/>
 
         </Paper >
     );

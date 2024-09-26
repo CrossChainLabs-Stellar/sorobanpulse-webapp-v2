@@ -115,7 +115,7 @@ export default function SorobanEcosystemTriangle({ paramsCallback }) {
                                     backgroundColor: '#FFFFFF',
                                     height: '3rem',
                                 }}
-                                onClick={() => handleFilterClose('comunity')}
+                                onClick={() => handleFilterClose('community')}
                             >
                                 <img
                                     src={Comunity}

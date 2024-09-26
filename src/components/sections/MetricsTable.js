@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import React from "react";
 // @mui
 import {
     Box,
@@ -16,8 +17,6 @@ import {
 import merge from 'lodash/merge';
 
 // components
-// import SearchNotFound from '../SearchNotFound';
-// import TableEmpty from '../TableEmpty';
 import MetricsHead from './MetricsHead';
 import { CustomChart } from '../chart';
 import ReactApexChart from 'react-apexcharts';
@@ -30,6 +29,7 @@ import Core from "../../assets/Core.svg";
 
 import { fNumber } from '../../utils/format';
 import { Client } from '../../utils/client';
+import { Waypoint } from 'react-waypoint';
 
 function SearchNotFound({ searchQuery = '', ...other }) {
     return (
@@ -164,7 +164,17 @@ export default function MetricsTable({ search }) {
             ...params,
             ...new_params,
         });
+        console.log({
+            ...params,
+            ...new_params,
+        });
     }
+
+    const handleWaypointEnter = () => {
+        if (offset < state.total) {
+            setOffset(offset + 20);
+        }
+    };
 
     return (
         <>
@@ -180,6 +190,7 @@ export default function MetricsTable({ search }) {
                     <TableBody>
                         {state.projects?.map((item, id) => {
                              const {
+                                 rank,
                                  name,
                                  is_core_project,
                                  active_contributors,
@@ -193,7 +204,7 @@ export default function MetricsTable({ search }) {
                              if (active_contributors === 0) {
                                  activeDevelopersPercentage = 0;
                              } else {
-                                 activeDevelopersPercentage = (active_contributors / developers) * 100;
+                                 activeDevelopersPercentage = (active_contributors / developers) * 100.0;
                              }
 
                              let activity = [];
@@ -231,6 +242,7 @@ export default function MetricsTable({ search }) {
                             }
 
                             return (
+                                <React.Fragment key={id}>
                                 <TableRow
                                     key={id}
                                     tabIndex={-1}
@@ -258,7 +270,7 @@ export default function MetricsTable({ search }) {
                                                 textOverflow: 'ellipsis',
                                             }}
                                         >
-                                            {fNumber(developers)}
+                                            {fNumber(rank)}
                                         </Typography>
                                     </TableCell>
 
@@ -499,6 +511,8 @@ export default function MetricsTable({ search }) {
                                     </TableCell>
 
                                 </TableRow>
+                                <Waypoint onEnter={handleWaypointEnter} />
+                                </React.Fragment>
                             );
                         })}
                     </TableBody>
@@ -506,11 +520,13 @@ export default function MetricsTable({ search }) {
 
                     {notFound && !state.loading && (
                         <TableBody>
-                            <TableRow>
-                                <TableCell align="center" colSpan={11} sx={{ py: 3 }}>
-                                    <SearchNotFound searchQuery={search} />
-                                </TableCell>
-                            </TableRow>
+                            <React.Fragment>
+                                <TableRow>
+                                    <TableCell align="center" colSpan={11} sx={{ py: 3 }}>
+                                        <SearchNotFound searchQuery={search} />
+                                    </TableCell>
+                                </TableRow>
+                            </React.Fragment>
                         </TableBody>
                     )}
                 </Table>
