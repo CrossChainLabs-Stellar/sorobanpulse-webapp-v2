@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import React from "react";
 // @mui
 import {
-    Box,
+    Link,
     Stack,
     Table,
     TableRow,
@@ -209,42 +209,9 @@ export default function MetricsTable({ search }) {
                                  contributions,
                                  developers,
                                  activity_growth,
-                                 commits
+                                 active_contributors_percentage,
+                                 activity
                              } = item;
-
-                             let activeDevelopersPercentage;
-                             if (active_contributors === 0) {
-                                 activeDevelopersPercentage = 0;
-                             } else {
-                                 activeDevelopersPercentage = (active_contributors / developers) * 100.0;
-                             }
-
-                             let activity = [];
-                             let noActivity = true;
-                             /*if (commits?.length > 6) {
-                                 commits.pop();
-                                 commits.splice(0, commits.length - 6);
-                             }*/
-
-                            try {
-                                let activityItems = JSON.parse(commits);
-                                if (activityItems?.length) {
-                                    for (const a of activityItems) {
-                                        if (a.commits > 0) {
-                                            noActivity = false;
-                                        }
-
-                                        activity.push(parseInt(a.commits));
-                                    }
-                                }
-
-                                if (noActivity) {
-                                    activity = [0, 0, 0, 0, 0, 0];
-                                }
-                            } catch (error) {
-
-                            }
-
 
                             let growth_trend = true;
                             if (activity?.length > 0 && activity_growth) {
@@ -312,8 +279,16 @@ export default function MetricsTable({ search }) {
                                                 textOverflow: 'ellipsis',
                                             }}
                                         >
-                                             {name} 
+                                             <Link
+                                                    target="_blank"
+                                                    rel="noopener"
+                                                    href={"https://github.com/" + name}
+                                                    color="inherit"
+                                                >
+                                                    {name}
+                                                </Link>
                                         </Typography>
+
                                     </TableCell>
 
                                     <TableCell
@@ -404,7 +379,7 @@ export default function MetricsTable({ search }) {
                                                 }
                                             }}
                                             variant='determinate'
-                                            value={activeDevelopersPercentage}
+                                            value={active_contributors_percentage}
                                         />
                                     </TableCell>
 
