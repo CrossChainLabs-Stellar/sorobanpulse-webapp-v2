@@ -261,7 +261,7 @@ export default function MainTable({ search }) {
                                 }
 
                                 if (noActivity) {
-                                    activity = [];
+                                    activity = [0, 0, 0, 0, 0, 0];
                                 }
                             } catch (error) {
 

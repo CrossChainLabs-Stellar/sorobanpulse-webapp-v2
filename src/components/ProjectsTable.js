@@ -63,7 +63,7 @@ export default function ProjectsTable() {
                     }}
                     value={search}
                     onChange={(e) => handleSearch(e)}
-                    placeholder={"Search by project"}
+                    placeholder={"Search by repository"}
                     startAdornment={
                         <InputAdornment position="start">
                             <Iconify icon="eva:search-fill" sx={{ color: 'text.disabled', width: 20, height: 20 }} />

@@ -241,7 +241,7 @@ export default function MetricsHead({ paramsCallback }) {
                             }}
                             className='childHead'
                         >
-                            Project name
+                            Repository
                         </Typography>
 
                         <IconButton

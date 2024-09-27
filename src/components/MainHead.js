@@ -237,7 +237,7 @@ export default function MainHead({ paramsCallback }) {
                             }}
                             className='childHead'
                         >
-                            Project Name
+                            Project name
                         </Typography>
 
                         <IconButton

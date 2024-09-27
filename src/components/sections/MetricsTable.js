@@ -119,6 +119,12 @@ export default function MetricsTable({ search }) {
             show: false
         },
         colors: ["#67A161"],
+        stroke: {
+            width: 2
+        },
+        tooltip: {
+            enabled: false,
+        },
     });
 
     const chartOptionsRosu = merge(CustomChart(), {
@@ -150,6 +156,12 @@ export default function MetricsTable({ search }) {
             show: false
         },
         colors: ["#CA1A0D"],
+        stroke: {
+            width: 2
+        },
+        tooltip: {
+            enabled: false,
+        },
     });
 
     const paramsCallback = (new_params) => {
@@ -226,9 +238,9 @@ export default function MetricsTable({ search }) {
                                     }
                                 }
 
-                                /*if (noActivity) {
-                                    activity = [];
-                                }*/
+                                if (noActivity) {
+                                    activity = [0, 0, 0, 0, 0, 0];
+                                }
                             } catch (error) {
 
                             }
@@ -489,7 +501,7 @@ export default function MetricsTable({ search }) {
                                                 ]}
                                                 options={chartOptionsVerde}
                                                 height={75}
-                                                width={125}
+                                                width={155}
                                             />
                                         )}
 
@@ -504,7 +516,7 @@ export default function MetricsTable({ search }) {
                                                 ]}
                                                 options={chartOptionsRosu}
                                                 height={75}
-                                                width={125}
+                                                width={155}
                                             />
                                         )}
 
