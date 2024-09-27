@@ -439,7 +439,7 @@ export default function MetricsTable({ search }) {
                                                     src={CirleRise}
                                                     alt="rise"
                                                     style={{
-                                                        height: '1.5rem',
+                                                        height: '1.7rem',
                                                         marginRight: '0.5rem'
                                                     }}
                                                 />
@@ -461,7 +461,7 @@ export default function MetricsTable({ search }) {
                                                     src={CirleFall}
                                                     alt="rise"
                                                     style={{
-                                                        height: '1.5rem',
+                                                        height: '1.7rem',
                                                         marginRight: '0.5rem'
                                                     }}
                                                 />
