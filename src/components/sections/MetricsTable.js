@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import React from "react";
 // @mui
 import {
-    Box,
+    Link,
     Stack,
     Table,
     TableRow,
@@ -279,8 +279,16 @@ export default function MetricsTable({ search }) {
                                                 textOverflow: 'ellipsis',
                                             }}
                                         >
-                                             {name} 
+                                             <Link
+                                                    target="_blank"
+                                                    rel="noopener"
+                                                    href={"https://github.com/" + name}
+                                                    color="inherit"
+                                                >
+                                                    {name}
+                                                </Link>
                                         </Typography>
+
                                     </TableCell>
 
                                     <TableCell
