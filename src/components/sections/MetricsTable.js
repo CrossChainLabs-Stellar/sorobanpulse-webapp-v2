@@ -364,7 +364,7 @@ export default function MetricsTable({ search }) {
                                             }}
                                             className='progressNumber'
                                         >
-                                            {active_contributors}
+                                            {active_contributors} active
                                             
                                         </Typography>
                                         <LinearProgress
@@ -373,7 +373,7 @@ export default function MetricsTable({ search }) {
                                                 height: '0.4rem',
                                                 borderRadius: 5,
                                                 marginBottom: '1.45rem',
-                                                backgroundColor: 'white',
+                                                backgroundColor: 'lightgrey',
                                                 '& .MuiLinearProgress-bar': {
                                                     backgroundColor: 'green'
                                                 }
