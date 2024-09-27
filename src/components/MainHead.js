@@ -441,6 +441,7 @@ export default function MainHead({ paramsCallback }) {
                                 fontWeight: 500,
                                 fontSize: 16,
                                 marginRight: '0.35rem',
+                                marginLeft: '0.5rem',
                                 color: 'tableColor.headerText'
                             }}
                             className='childHead'
