@@ -240,32 +240,12 @@ export default function MainTable({ search }) {
                                 contributions,
                                 developers,
                                 activity_growth,
-                                commits,
                                 soroban,
-                                icon_data
+                                icon_data,
+                                activity
                             } = item;
-                            let activity = [];
-                            let noActivity = true;
+                           
                             let followersValue = formatFollowers(followers);
-
-                            try {
-                                let activityItems = JSON.parse(commits);
-                                if (activityItems?.length) {
-                                    for (const a of activityItems) {
-                                        if (a.commits > 0) {
-                                            noActivity = false;
-                                        }
-
-                                        activity.push(parseInt(a.commits));
-                                    }
-                                }
-
-                                if (noActivity) {
-                                    activity = [];
-                                }
-                            } catch (error) {
-
-                            }
 
                             let growth_trend = true;
                             if (activity?.length > 0 && activity_growth) {
@@ -273,7 +253,6 @@ export default function MainTable({ search }) {
                                     growth_trend = false;
                                 }
                             }
-
 
 
                             return (

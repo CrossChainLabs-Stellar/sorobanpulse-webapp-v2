@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { styled } from '@mui/material/styles';
 
 import {
+    Box,
+    TextField,
     Stack,
     Paper,
     OutlinedInput,
@@ -20,7 +22,7 @@ import MetricsTable from './MetricsTable';
 
 const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
     height: '2.5rem',
-    width: '15.625rem',
+    width: '15rem',
     marginBottom: '0.313rem',
     fontSize: 15,
     /*[theme.breakpoints.down('xl')]: {
@@ -44,31 +46,52 @@ export default function MetricsTableContrainer() {
 
     return (
         <Paper className="container">
-            <Stack
-                style={{ backgroundColor: '#FFFFFF' }}
-                direction="row"
-                alignItems="bottom"
-                justifyContent="space-between"
+            <Box
+                sx={{
+                    marginTop: '3rem',
+                    backgroundColor: 'tableColor.main1',
+                    padding: 0,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    borderRadius: '8px',
+                    boxShadow: '0px 4px 4px 0px #00000040',
+                    // border: 1,
+                    // borderColor: 'tableColor.border',
+                }}
             >
-                <SearchStyle
+                <TextField
+                    placeholder='Search by repository'
+                    variant="outlined"
                     sx={{
                         marginLeft: "auto",
                         marginY: '2rem',
-                        marginRight: '2.75rem'
+                        marginRight: '2.5rem',
+
+                        '& .MuiOutlinedInput-root': {
+                            '& fieldset': {
+                                borderRadius: '4px',
+                                borderColor: '#C8C8C8',
+                            },
+                            '&:hover fieldset': {
+                                borderColor: '#C8C8C8',
+                            },
+                            '&.Mui-focused fieldset': {
+                                borderColor: '#C8C8C8',
+                            },
+                        },
                     }}
                     value={search}
                     onChange={(e) => handleSearch(e)}
-                    placeholder={"Search by project"}
-                    startAdornment={
-                        <InputAdornment position="start">
-                            <Iconify icon="eva:search-fill" sx={{ color: 'text.disabled', width: 20, height: 20 }} />
-                        </InputAdornment>
-                    }
+                    size='small'
+                    InputProps={{
+                        startAdornment:
+                            <InputAdornment position="start">
+                                <Iconify icon="eva:search-fill" sx={{ color: 'text.disabled', width: 20, height: 20 }} />
+                            </InputAdornment>,
+                    }}
                 />
-            </Stack>
-
-            <MetricsTable />
-
+                <MetricsTable search={search}/>
+            </Box>
         </Paper >
     );
 }

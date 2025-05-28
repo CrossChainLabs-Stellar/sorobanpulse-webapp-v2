@@ -59,9 +59,9 @@ export default function SorobanEcosystemTriangle({ paramsCallback }) {
                         setIsSorted(false);
                         paramsCallback({ ecosystem: undefined });
                     }}
-                    style={{ padding: 0, marginLeft: '0.25rem' }}
+                    style={{ padding: 0, paddingTop: '0.10rem', marginLeft: '0.25rem' }}
                 >
-                    <img src={clearFilter} alt='clear' />
+                    <img src={clearFilter} alt='clear' style={{ width: '20px', height: '20px' }} />
                 </IconButton> : ''
             }
             <Menu
@@ -115,7 +115,7 @@ export default function SorobanEcosystemTriangle({ paramsCallback }) {
                                     backgroundColor: '#FFFFFF',
                                     height: '3rem',
                                 }}
-                                onClick={() => handleFilterClose('comunity')}
+                                onClick={() => handleFilterClose('community')}
                             >
                                 <img
                                     src={Comunity}

@@ -241,7 +241,7 @@ export default function StellarMetricsHead() {
                             }}
                             className='childHead'
                         >
-                            Project name
+                            Repository
                         </Typography>
 
                         <IconButton

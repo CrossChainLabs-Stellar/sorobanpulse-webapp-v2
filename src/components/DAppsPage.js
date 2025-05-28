@@ -46,16 +46,16 @@ const DAppsPage = () => {
                         }}
                     >
                         <TextField
-                            placeholder='Project Name'
+                            placeholder='Search by project'
                             variant="outlined"
                             sx={{
                                 marginLeft: "auto",
-                                marginY: '1.6rem',
-                                marginRight: '1rem',
+                                marginY: '2rem',
+                                marginRight: '2.5rem',
 
                                 '& .MuiOutlinedInput-root': {
                                     '& fieldset': {
-                                        borderRadius: '8px',
+                                        borderRadius: '4px',
                                         borderColor: '#C8C8C8',
                                     },
                                     '&:hover fieldset': {

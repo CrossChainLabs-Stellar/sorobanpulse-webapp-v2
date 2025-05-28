@@ -1,7 +1,8 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import React from "react";
 // @mui
 import {
-    Box,
+    Link,
     Stack,
     Table,
     TableRow,
@@ -9,14 +10,13 @@ import {
     TableCell,
     Typography,
     TableContainer,
-    LinearProgress
+    LinearProgress,
+    Paper
 } from '@mui/material';
 
 import merge from 'lodash/merge';
 
 // components
-// import SearchNotFound from '../SearchNotFound';
-// import TableEmpty from '../TableEmpty';
 import MetricsHead from './MetricsHead';
 import { CustomChart } from '../chart';
 import ReactApexChart from 'react-apexcharts';
@@ -27,28 +27,68 @@ import CirleFall from "../../assets/CircleFall.svg";
 import Comunity from "../../assets/Comunity.svg";
 import Core from "../../assets/Core.svg";
 
-// import { fNumber } from '../../utils/format';
-// import { Client } from '../utils/client';
+import { fNumber } from '../../utils/format';
+import { Client } from '../../utils/client';
+import { Waypoint } from 'react-waypoint';
+
+function SearchNotFound({ searchQuery = '', ...other }) {
+    return (
+        <Paper {...other}>
+            <Typography gutterBottom align="center" variant="subtitle1">
+                Not found
+            </Typography>
+            <Typography variant="body2" align="center">
+                No results found for &nbsp;
+                <strong>&quot;{searchQuery}&quot;</strong>. Try checking for typos or using complete words.
+            </Typography>
+        </Paper>
+    );
+}
+
+export default function MetricsTable({ search }) {
+    const [state, setState] = useState({
+        loading: true,
+        total: 0,
+        projects: []
+    });
+    const [params, setParams] = useState({});
+    const [offset, setOffset] = useState(0);
+    const [notFound, setNotFound] = useState(false);
 
 
-export default function MetricsTable() {
-    // const [state, setState] = useState({
-    //     loading: true,
-    //     projects: []
-    // });
+    useEffect(() => {
+        const client = new Client();
+        let newParams = {
+            ...params,
+            offset: offset,
+            search: search || undefined
+        };
 
-    // useEffect(() => {
-    //     const client = new Client();
+        if (search !== params.search && search) {
+            newParams = { ...newParams, search: search, offset: 0 };
+            setOffset(0);
+        }
 
-    //     client.get('projects').then((response) => {
-    //         let projects = response;
+        client.get('projects', newParams).then((response) => {
+            if (newParams.offset > 0) {
+                setState(prevState => ({
+                    loading: false,
+                    total: response?.total,
+                    projects: [...prevState.projects, ...(response?.list || [])],
+                }));
+            } else {
+                setState({
+                    loading: false,
+                    total: response?.total,
+                    projects: response?.list || [],
+                });
+            }
 
-    //         setState({
-    //             loading: false,
-    //             projects: projects,
-    //         });
-    //     });
-    // }, [setState]);
+            setNotFound(response?.total === 0 && search);
+        });
+
+        setParams(newParams);
+    }, [search, offset]);
 
     const chartOptionsVerde = merge(CustomChart(), {
         xaxis: {
@@ -79,6 +119,12 @@ export default function MetricsTable() {
             show: false
         },
         colors: ["#67A161"],
+        stroke: {
+            width: 2
+        },
+        tooltip: {
+            enabled: false,
+        },
     });
 
     const chartOptionsRosu = merge(CustomChart(), {
@@ -110,8 +156,37 @@ export default function MetricsTable() {
             show: false
         },
         colors: ["#CA1A0D"],
+        stroke: {
+            width: 2
+        },
+        tooltip: {
+            enabled: false,
+        },
     });
 
+    const paramsCallback = (new_params) => {
+        setState({
+            loading: true,
+            total: 0,
+            projects: []
+        });
+        new_params.offset = 0;
+        setOffset(0);
+        setParams({
+            ...params,
+            ...new_params,
+        });
+        console.log({
+            ...params,
+            ...new_params,
+        });
+    }
+
+    const handleWaypointEnter = () => {
+        if (offset < state.total) {
+            setOffset(offset + 20);
+        }
+    };
 
     return (
         <>
@@ -122,35 +197,31 @@ export default function MetricsTable() {
             >
                 <Table stickyHeader>
 
-                    <MetricsHead />
+                    <MetricsHead paramsCallback={paramsCallback}/>
 
                     <TableBody>
-                        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((item, id) => {
-                            // const {
-                            //     name,
-                            //     is_core_project,
-                            //     active_contributors,
-                            //     contributions,
-                            //     developers,
-                            //     commits
-                            // } = item;
+                        {state.projects?.map((item, id) => {
+                             const {
+                                 rank,
+                                 name,
+                                 is_core_project,
+                                 active_contributors,
+                                 contributions,
+                                 developers,
+                                 activity_growth,
+                                 active_contributors_percentage,
+                                 activity
+                             } = item;
 
-                            // let activeDevelopersPercentage;
-                            // if (active_contributors === 0) {
-                            //     activeDevelopersPercentage = 0;
-                            // } else {
-                            //     activeDevelopersPercentage = (active_contributors / developers) * 100;
-                            // }
-
-                            // let growth = 10;
-                            // let graf = 'verde';
-                            // let activity = [];
-                            // /*if (commits?.length > 6) {
-                            //     commits.pop();
-                            //     commits.splice(0, commits.length - 6);
-                            // }*/
+                            let growth_trend = true;
+                            if (activity?.length > 0 && activity_growth) {
+                                if (activity_growth < 0) {
+                                    growth_trend = false;
+                                }
+                            }
 
                             return (
+                                <React.Fragment key={id}>
                                 <TableRow
                                     key={id}
                                     tabIndex={-1}
@@ -178,8 +249,7 @@ export default function MetricsTable() {
                                                 textOverflow: 'ellipsis',
                                             }}
                                         >
-                                            {/* {fNumber(developers)} */}
-                                            1
+                                            {fNumber(rank)}
                                         </Typography>
                                     </TableCell>
 
@@ -209,9 +279,16 @@ export default function MetricsTable() {
                                                 textOverflow: 'ellipsis',
                                             }}
                                         >
-                                            {/* {name} */}
-                                            placeholder
+                                             <Link
+                                                    target="_blank"
+                                                    rel="noopener"
+                                                    href={"https://github.com/" + name}
+                                                    color="inherit"
+                                                >
+                                                    {name}
+                                                </Link>
                                         </Typography>
+
                                     </TableCell>
 
                                     <TableCell
@@ -225,7 +302,7 @@ export default function MetricsTable() {
                                         }}
                                     >
 
-                                        {/* {is_core_project ?
+                                        {is_core_project ?
                                             (
                                                 <img
                                                     src={Core}
@@ -238,11 +315,7 @@ export default function MetricsTable() {
                                                     alt="Comunity"
                                                 />
                                             )
-                                        } */}
-                                        <img
-                                            src={Core}
-                                            alt="Core"
-                                        />
+                                        }
                                     </TableCell>
 
                                     <TableCell
@@ -265,8 +338,7 @@ export default function MetricsTable() {
                                                 textOverflow: 'ellipsis',
                                             }}
                                         >
-                                            {/* {fNumber(developers)} */}
-                                            3
+                                            {fNumber(developers)}
                                         </Typography>
                                     </TableCell>
 
@@ -292,8 +364,8 @@ export default function MetricsTable() {
                                             }}
                                             className='progressNumber'
                                         >
-                                            {/* {active_contributors} */}
-                                            5
+                                            {active_contributors} active
+                                            
                                         </Typography>
                                         <LinearProgress
                                             sx={{
@@ -301,15 +373,13 @@ export default function MetricsTable() {
                                                 height: '0.4rem',
                                                 borderRadius: 5,
                                                 marginBottom: '1.45rem',
-                                                backgroundColor: 'white',
+                                                backgroundColor: 'lightgrey',
                                                 '& .MuiLinearProgress-bar': {
                                                     backgroundColor: 'green'
                                                 }
                                             }}
                                             variant='determinate'
-                                            // value={activeDevelopersPercentage}
-                                            value={50}
-
+                                            value={active_contributors_percentage}
                                         />
                                     </TableCell>
 
@@ -324,8 +394,7 @@ export default function MetricsTable() {
                                         }}
                                     >
                                         <Typography variant="subtitle2" noWrap>
-                                            {/* {fNumber(contributions)} */}
-                                            6
+                                             {fNumber(contributions)}
                                         </Typography>
                                     </TableCell>
 
@@ -339,13 +408,13 @@ export default function MetricsTable() {
                                             backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1'
                                         }}
                                     >
-                                        {/* {growth >= 0 && (
+                                        {activity_growth >= 0 && (
                                             <Stack direction="row">
                                                 <img
                                                     src={CirleRise}
                                                     alt="rise"
                                                     style={{
-                                                        height: '1.5rem',
+                                                        height: '1.7rem',
                                                         marginRight: '0.5rem'
                                                     }}
                                                 />
@@ -356,18 +425,18 @@ export default function MetricsTable() {
                                                         marginTop: '0.2rem'
                                                     }}
                                                 >
-                                                    {`+${growth}%`}
+                                                    {`+${activity_growth}%`}
                                                 </Typography>
                                             </Stack>
                                         )}
 
-                                        {growth < 0 && (
+                                        {activity_growth < 0 && (
                                             <Stack direction="row">
                                                 <img
                                                     src={CirleFall}
                                                     alt="rise"
                                                     style={{
-                                                        height: '1.5rem',
+                                                        height: '1.7rem',
                                                         marginRight: '0.5rem'
                                                     }}
                                                 />
@@ -378,30 +447,10 @@ export default function MetricsTable() {
                                                         marginTop: '0.2rem'
                                                     }}
                                                 >
-                                                    {`${growth}%`}
+                                                    {`${activity_growth}%`}
                                                 </Typography>
                                             </Stack>
-                                        )} */}
-
-                                        <Stack direction="row">
-                                            <img
-                                                src={CirleRise}
-                                                alt="rise"
-                                                style={{
-                                                    height: '1.5rem',
-                                                    marginRight: '0.5rem'
-                                                }}
-                                            />
-                                            <Typography
-                                                variant="subtitle2"
-                                                noWrap
-                                                sx={{
-                                                    marginTop: '0.2rem'
-                                                }}
-                                            >
-                                                {`+${5}%`}
-                                            </Typography>
-                                        </Stack>
+                                        )}
 
                                     </TableCell>
 
@@ -416,7 +465,7 @@ export default function MetricsTable() {
                                             backgroundColor: id % 2 === 0 ? 'tableColor.main2' : 'tableColor.main1'
                                         }}
                                     >
-                                        {/* {graf === "verde" && (
+                                        {growth_trend && (
                                             <ReactApexChart
                                                 type="line"
                                                 series={[
@@ -427,66 +476,46 @@ export default function MetricsTable() {
                                                 ]}
                                                 options={chartOptionsVerde}
                                                 height={75}
-                                                width={125}
+                                                width={155}
                                             />
                                         )}
 
-                                        {graf === "rosu" && (
+                                        {!growth_trend && (
                                             <ReactApexChart
                                                 type="line"
                                                 series={[
                                                     {
                                                         name: "Desktops",
-                                                        data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+                                                        data: activity,
                                                     },
                                                 ]}
                                                 options={chartOptionsRosu}
                                                 height={75}
-                                                width={125}
+                                                width={155}
                                             />
-                                        )} */}
-
-                                        <ReactApexChart
-                                            type="line"
-                                            series={[
-                                                {
-                                                    name: "Desktops",
-                                                    // data: activity,
-                                                    data: [1, 2, 3, 4, 5, 6, 7, 8, 9]
-                                                },
-                                            ]}
-                                            options={chartOptionsVerde}
-                                            height={75}
-                                            width={125}
-                                        />
+                                        )}
 
                                     </TableCell>
 
                                 </TableRow>
+                                <Waypoint onEnter={handleWaypointEnter} />
+                                </React.Fragment>
                             );
                         })}
                     </TableBody>
 
 
-                    {/* {isUserNotFound && !tableEmpty && !state.loading && (
+                    {notFound && !state.loading && (
                         <TableBody>
-                            <TableRow>
-                                <TableCell align="center" colSpan={11} sx={{ py: 3 }}>
-                                    <SearchNotFound searchQuery={search} />
-                                </TableCell>
-                            </TableRow>
+                            <React.Fragment>
+                                <TableRow>
+                                    <TableCell align="center" colSpan={11} sx={{ py: 3 }}>
+                                        <SearchNotFound searchQuery={search} />
+                                    </TableCell>
+                                </TableRow>
+                            </React.Fragment>
                         </TableBody>
                     )}
-
-                    {tableEmpty && !state.loading && (
-                        <TableBody>
-                            <TableRow>
-                                <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
-                                    <TableEmpty />
-                                </TableCell>
-                            </TableRow>
-                        </TableBody>
-                    )} */}
                 </Table>
             </TableContainer>
         </>

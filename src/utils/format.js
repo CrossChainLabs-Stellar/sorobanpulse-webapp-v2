@@ -48,3 +48,12 @@ export function convertToMonthName(dateString) {
 
     return monthName;
 }
+
+export function convertToMonthNameWithOffset(dateString, offset) {
+    const date = new Date(dateString);
+    //Adjust date
+    date.setMonth(date.getMonth() + offset);
+    const monthName = date.toLocaleString('default', { month: 'short' });
+
+    return monthName;
+}

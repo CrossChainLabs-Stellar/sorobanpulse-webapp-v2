@@ -19,7 +19,7 @@ import triunghi from '../../assets/triunghi.svg';
 // ----------------------------------------------------------------------
 
 
-export default function MetricsHead() {
+export default function MetricsHead({ paramsCallback }) {
     const [isDescRank, setIsDescRank] = useState(false);
     const [isDescName, setIsDescName] = useState(false);
     const [isDescDevelopers, setIsDescDevelopers] = useState(false);
@@ -72,7 +72,7 @@ export default function MetricsHead() {
     }
 
     const handleSortRank = () => {
-        // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+        paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
 
         setIsDescRank(!isDescRank);
         setIsDescName(false);
@@ -84,7 +84,7 @@ export default function MetricsHead() {
     }
 
     const handleSortName = () => {
-        // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+        paramsCallback({ sortBy: 'name', sortType: isDescName ? 'asc' : 'desc' });
 
         setIsDescRank(false);
         setIsDescName(!isDescName);
@@ -96,7 +96,7 @@ export default function MetricsHead() {
     }
 
     const handleSortDevelopers = () => {
-        // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+        paramsCallback({ sortBy: 'developers', sortType: isDescDevelopers ? 'asc' : 'desc' });
 
         setIsDescRank(false);
         setIsDescName(false);
@@ -108,7 +108,7 @@ export default function MetricsHead() {
     }
 
     const handleSortActiveDevs = () => {
-        // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+        paramsCallback({ sortBy: 'active_contributors', sortType: isDescActiveDevs ? 'asc' : 'desc' });
 
         setIsDescRank(false);
         setIsDescName(false);
@@ -120,7 +120,7 @@ export default function MetricsHead() {
     }
 
     const handleSortContributions = () => {
-        // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+        paramsCallback({ sortBy: 'contributions', sortType: isDescContributions ? 'asc' : 'desc' });
 
         setIsDescRank(false);
         setIsDescName(false);
@@ -132,7 +132,7 @@ export default function MetricsHead() {
     }
 
     const handleSortActivityGr = () => {
-        // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+        paramsCallback({ sortBy: 'activity_growth', sortType: isDescActivityGr ? 'asc' : 'desc' });
 
         setIsDescRank(false);
         setIsDescName(false);
@@ -142,9 +142,9 @@ export default function MetricsHead() {
         setIsDescActivityGr(!isDescActivityGr);
         setIsDescActivity(false);
     }
-
+/*
     const handleSortActivity = () => {
-        // paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
+        paramsCallback({ sortBy: 'rank', sortType: isDescRank ? 'asc' : 'desc' });
 
         setIsDescRank(false);
         setIsDescName(false);
@@ -154,7 +154,7 @@ export default function MetricsHead() {
         setIsDescActivityGr(false);
         setIsDescActivity(!isDescActivity);
     }
-
+*/
 
     return (
         <TableHead>
@@ -241,7 +241,7 @@ export default function MetricsHead() {
                             }}
                             className='childHead'
                         >
-                            Project name
+                            Repository
                         </Typography>
 
                         <IconButton
@@ -291,7 +291,7 @@ export default function MetricsHead() {
                             Ecosystem
                         </Typography>
 
-                        <SorobanEcosystemTriangle />
+                        <SorobanEcosystemTriangle paramsCallback={paramsCallback}/>
                     </Stack>
                 </TableCell>
 
@@ -366,12 +366,11 @@ export default function MetricsHead() {
                             sx={{
                                 fontWeight: 500,
                                 fontSize: 16,
-                                marginRight: '0.35rem',
                                 color: 'tableColor.headerText',
                             }}
                             className='childHead'
                         >
-                            Active developers (30d)
+                            Active developers (6m)
                         </Typography>
 
                         <IconButton
@@ -503,7 +502,7 @@ export default function MetricsHead() {
                         cursor: 'pointer',
                     }}
                     className='parentHead'
-                    onClick={() => handleChangeSort(6, handleSortActivity)}
+                    onClick={() => handleChangeSort(6, handleSortActivityGr)}
                 >
                     <Stack
                         direction="row"
@@ -516,6 +515,7 @@ export default function MetricsHead() {
                                 fontWeight: 500,
                                 fontSize: 16,
                                 marginRight: '0.35rem',
+                                marginLeft: '0.5rem',
                                 color: 'tableColor.headerText',
                             }}
                             className='childHead'
@@ -525,7 +525,7 @@ export default function MetricsHead() {
 
                         <IconButton
                             id="basic-button"
-                            onClick={handleSortActivity}
+                            onClick={handleSortActivityGr}
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem',
