@@ -44,6 +44,8 @@ export function fNumber(number) {
 
 export function convertToMonthName(dateString) {
     const date = new Date(dateString);
+    //Adjust date
+    date.setMonth(date.getMonth() + 3);
     const monthName = date.toLocaleString('default', { month: 'short' });
 
     return monthName;

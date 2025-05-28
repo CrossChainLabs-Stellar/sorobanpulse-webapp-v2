@@ -115,7 +115,7 @@ const DAppsDonut = () => {
                                 fontSize: '16px',
                             }}
                         >
-                            {number(state.awards + state.awards_without_round_data)} awarded submissions
+                            {number(state.awards + state.awards_without_round_data)}+ awarded submissions
                         </Typography>
                     </Stack>
                 }
