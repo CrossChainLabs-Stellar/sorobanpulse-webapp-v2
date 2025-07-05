@@ -57,7 +57,7 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
 
             >
                 <Tab
-                    label="Projects"
+                    label="Soroban Metrics"
                     sx={{
                         textTransform: 'none',
                         color: theme.palette.tabsColors.main,
@@ -67,7 +67,7 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                         fontSize: '16px'
                     }}
                 />
-                 <Tab
+                <Tab
                     label="Highlights"
                     sx={{
                         textTransform: 'none',
@@ -79,7 +79,7 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                     }}
                 />
                 <Tab
-                    label="Soroban Metrics"
+                    label="Projects"
                     sx={{
                         textTransform: 'none',
                         color: theme.palette.tabsColors.main,
@@ -89,6 +89,7 @@ export default function SorobanBox({ value, handleChange, mode, setMode }) {
                         fontSize: '16px'
                     }}
                 />
+
                 {/* <Tab
                     label="Stellar Metrics"
                     sx={{
